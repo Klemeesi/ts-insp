@@ -1,12 +1,14 @@
 import * as fs from "fs";
 import { program } from "commander";
-import { InspOptions } from "./types";
+import { InspOptions, MainOptions } from "./types";
+import { getCompilerOptions } from "./output/tsConfig";
+import { log } from "./output/log";
 
 type CommandLineParams = {
   [K in keyof InspOptions]: string;
 };
 
-export const getConfig = (): InspOptions => {
+export const getConfig = (): MainOptions => {
   program
     .name("ts-insp")
     .description("Traverses file imports and does analyzes")
@@ -25,7 +27,13 @@ export const getConfig = (): InspOptions => {
       "-i, --iterations <iterations>",
       "Amount of iterations done for traversal",
       "5"
+    )
+    .option(
+      "--traverseNodeModules",
+      "Also traversals node module dependencies (might take some time to traversal)",
+      false
     );
+
   program.parse();
 
   const options = program.opts<CommandLineParams>();
@@ -40,13 +48,31 @@ export const getConfig = (): InspOptions => {
     process.exit(-1);
   }
 
-  console.log(options);
+  const compilerOptions = getCompilerOptions(options.file);
+  if (!compilerOptions) {
+    log(
+      !!options.verbose,
+      "Failed to read tsconfig.json for file ${options.file}"
+    );
+  } else {
+    log(
+      !!options.verbose,
+      "Using tsconfig.json from: ",
+      compilerOptions.tsConfigFilePath
+    );
+  }
 
   return {
-    verbose: !!options.verbose,
-    configFile: options.configFile,
-    supportedTypes: options.supportedTypes.split(","),
-    iterations: +options.iterations,
-    file: options.file,
+    tsConfigFilePath: compilerOptions?.tsConfigFilePath,
+    tsConfigPath: compilerOptions?.tsConfigPath,
+    compilerOptions: compilerOptions?.options,
+    inspOptions: {
+      verbose: !!options.verbose,
+      configFile: options.configFile,
+      supportedTypes: options.supportedTypes.split(","),
+      iterations: +options.iterations,
+      file: options.file,
+      traverseNodeModules: !!options.traverseNodeModules,
+    },
   };
 };

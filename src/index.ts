@@ -7,10 +7,10 @@ const main = () => {
 
   const imports = [
     {
-      import: config.file,
+      import: config.inspOptions.file,
       resolved: true,
       level: 0,
-      imports: getImports(config, config.file, 1),
+      imports: getImports(config, config.inspOptions.file, 1),
     },
   ];
   console.log();
