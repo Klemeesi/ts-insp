@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { getImports } from "./helpers";
+import { getImports } from "./traversal";
 import { exportToConsole } from "./output";
 
 const main = () => {

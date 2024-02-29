@@ -49,6 +49,7 @@ Not possible at the moment.
 
 - Configuration file
 - Option to discard the child imports if the dependant file has already been traversed. Otherwise there would be a lot of noice
+- Would be nice to convert relative imports to absolute ones. Just need the root folder
 - Exporting to different formats (JSON, Image, HTML)
 - Take tsconfig.json configuration in to account. aliases, rootDir, etc...
 - Export whole project (user gives the folder)
