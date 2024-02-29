@@ -120,4 +120,3 @@ export const getImports = (
 
   return traverseImports(options, filePath, sourceFile, level || 1) || [];
 };
-export { ImportInfo };

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Tree</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .import-tree {
+            list-style-type: none;
+            margin: 20px;
+            padding: 0;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .import {
+            padding: 8px 16px;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .import:last-child {
+            border-bottom: none;
+        }
+
+        .import.empty {
+            font-style: italic;
+            color: #999;
+        }
+
+        .import .toggle {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .import.open .toggle::before {
+            content: '\\25BC';
+        }
+
+        .import .toggle::before {
+            content: '\\25B6';
+        }
+
+        .children {
+            display: none;
+            padding-left: 24px;
+        }
+
+        .import.open .children {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul class="import-tree">
+        {{importTree}}
+    </ul>
+    <script>
+        document.querySelectorAll('.toggle').forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                toggle.parentNode.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

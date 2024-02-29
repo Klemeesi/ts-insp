@@ -1,6 +1,6 @@
 import * as fs from "fs";
 import { program } from "commander";
-import { InspOptions, MainOptions } from "./types";
+import { InspOptions, MainOptions, OutputFormats } from "./types";
 import { getCompilerOptions } from "./output/tsConfig";
 import { log } from "./output/log";
 
@@ -32,6 +32,11 @@ export const getConfig = (): MainOptions => {
       "--traverseNodeModules",
       "Also traversals node module dependencies (might take some time to traversal)",
       false
+    )
+    .option(
+      "--format <format>",
+      "Format that the inspections are exported. Joined with comma (,)",
+      "console,html"
     );
 
   program.parse();
@@ -73,6 +78,7 @@ export const getConfig = (): MainOptions => {
       iterations: +options.iterations,
       file: options.file,
       traverseNodeModules: !!options.traverseNodeModules,
+      format: options.format.split(",") as OutputFormats[],
     },
   };
 };

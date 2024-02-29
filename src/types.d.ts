@@ -1,5 +1,7 @@
 import { CompilerOptions } from "typescript";
 
+export type OutputFormats = "html" | "console";
+
 export interface ImportInfo {
   import: string;
   resolved: boolean;
@@ -21,6 +23,7 @@ export interface InspOptions {
   file: string;
   /** Defines whether node_modules dependencies are traversed */
   traverseNodeModules?: boolean;
+  format: OutputFormats[];
 }
 
 export interface MainOptions {
