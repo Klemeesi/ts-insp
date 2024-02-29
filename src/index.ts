@@ -1,29 +1,21 @@
-import * as fs from "fs";
 import { getImports } from "./traversal";
-import { exportToConsole } from "./output";
+import { consoleOutput } from "./output/console";
+import { getConfig } from "./commandLine";
 
 const main = () => {
-  const filePath = process.argv[2];
-  if (!filePath) {
-    console.error("Please provide a TypeScript file path as an argument.");
-    return;
-  }
-
-  if (!fs.existsSync(filePath)) {
-    console.error("File does not exist:", filePath);
-    return;
-  }
+  const config = getConfig();
 
   const imports = [
     {
-      import: filePath,
+      import: config.file,
       resolved: true,
       level: 0,
-      imports: getImports(filePath, 1),
+      imports: getImports(config.file, 1),
     },
   ];
   console.log();
-  exportToConsole(imports);
+
+  consoleOutput(imports).forEach((line) => console.log(line));
 };
 
 main();
