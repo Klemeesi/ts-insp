@@ -10,7 +10,7 @@ const main = () => {
       import: config.file,
       resolved: true,
       level: 0,
-      imports: getImports(config.file, 1),
+      imports: getImports(config, config.file, 1),
     },
   ];
   console.log();

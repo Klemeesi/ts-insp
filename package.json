@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "quick": "yarn build && yarn start -f test-data/test1.ts"
+    "quick": "yarn build && yarn start -f test-data/test1.ts -v"
   },
   "author": "",
   "license": "ISC",

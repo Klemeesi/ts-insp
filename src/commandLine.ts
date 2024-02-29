@@ -40,11 +40,13 @@ export const getConfig = (): InspOptions => {
     process.exit(-1);
   }
 
+  console.log(options);
+
   return {
-    verbose: options.verbose === "true",
+    verbose: !!options.verbose,
     configFile: options.configFile,
     supportedTypes: options.supportedTypes.split(","),
-    levelLimit: +options.levelLimit,
+    iterations: +options.iterations,
     file: options.file,
   };
 };

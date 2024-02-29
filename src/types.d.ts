@@ -10,6 +10,6 @@ export interface InspOptions {
   verbose: boolean;
   configFile: string;
   supportedTypes: string[];
-  levelLimit: number;
+  iterations: number;
   file: string;
 }
