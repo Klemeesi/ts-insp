@@ -14,19 +14,16 @@ const main = () => {
     return;
   }
 
-  const imports = getImports(filePath, 1);
+  const imports = [
+    {
+      import: filePath,
+      resolved: true,
+      level: 0,
+      imports: getImports(filePath, 1),
+    },
+  ];
   console.log();
-  console.log("Imports:");
   exportToConsole(imports);
 };
 
 main();
-
-/*
-Imports:
- - fs
-   └ fs
-   └ fs
-     └ fs
-       └ fs
-*/
