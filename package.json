@@ -1,0 +1,19 @@
+{
+  "name": "ts-insp",
+  "version": "0.0.1",
+  "description": "Tool to visualize typescript dependencies in a project",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "quick": "npm run build && npm run start test-data/test1.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.21"
+  }
+}
