@@ -4,6 +4,9 @@ import * as fs from "fs";
 import { ImportInfo, MainOptions } from "./types";
 import { log } from "./output/log";
 
+const isNodeModule = (absolutePath: string) =>
+  absolutePath.search("node_modules") != -1;
+
 /**
  * If the filepath can be resolved (tsconfig located) returns one item.
  * Otherwise uses supportedTypes from configuration and gives couple of options to try
@@ -80,7 +83,11 @@ const traverseImports = (
             resolved: true,
             absolutePath,
             level: currentLevel,
-            imports: getImports(options, absolutePath, currentLevel + 1),
+            imports:
+              options.inspOptions.traverseNodeModules ||
+              !isNodeModule(absolutePath)
+                ? getImports(options, absolutePath, currentLevel + 1)
+                : [],
           },
         ];
       } else {
