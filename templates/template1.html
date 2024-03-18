@@ -3,81 +3,1485 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Import Tree</title>
+    <title>Dynamic Div Generation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        /*
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 20px;
         }
-
-        .import-tree {
-            list-style-type: none;
-            margin: 20px;
-            padding: 0;
-            border: 1px solid #ddd;
-            background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .module {
+            margin-left: 20px;
         }
+        */
+    </style>
+    <style>
+        .level1 { background-color: #ffd1dc; font-size: 20px; max-width: 100% !important;}
+        .level2 { background-color: #ffdead; font-size: 16px; }
+        .level3 { background-color: #f0fff0; font-size: 12px; }
+        .level4 { background-color: #e0ffff; font-size: 10px; }
+        .level5 { background-color: #f0f8ff; }
+        .level6 { background-color: #f0e68c; }
+        .level7 { background-color: #ffb6c1; }
+        .level8 { background-color: #c1ffc1; }
+        .level9 { background-color: #ffe4e1; }
+        .level10 { background-color: #e6e6fa; }
+        .level11 { background-color: #f5f5dc; }
+        .level12 { background-color: #fafad2; }
+        .level13 { background-color: #d8bfd8; }
+        .level14 { background-color: #ffebcd; }
+        .level15 { background-color: #add8e6; }
+        .level16 { background-color: #90ee90; }
+        .level17 { background-color: #f0e68c; }
+        .level18 { background-color: #f08080; }
+        .level19 { background-color: #ffb6c1; }
+        .level20 { background-color: #98fb98; }
+        .module {
+            margin: 5px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
 
-        .import {
-            padding: 8px 16px;
-            border-bottom: 1px solid #ddd;
-            cursor: pointer;
-            position: relative;
+            /* Just testing */
+            overflow: hidden;
+            max-width: 600px;
         }
-
-        .import:last-child {
-            border-bottom: none;
-        }
-
-        .import.empty {
-            font-style: italic;
-            color: #999;
-        }
-
-        .import .toggle {
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            line-height: 16px;
-            text-align: center;
-            color: #888;
-            cursor: pointer;
-        }
-
-        .import.open .toggle::before {
-            content: '\\25BC';
-        }
-
-        .import .toggle::before {
-            content: '\\25B6';
-        }
-
-        .children {
-            display: none;
-            padding-left: 24px;
-        }
-
-        .import.open .children {
-            display: block;
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
         }
     </style>
 </head>
 <body>
-    <ul class="import-tree">
-        {{importTree}}
-    </ul>
+    <div id="root" class="container" />
     <script>
-        document.querySelectorAll('.toggle').forEach(toggle => {
-            toggle.addEventListener('click', () => {
-                toggle.parentNode.classList.toggle('open');
+        const carretUpSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M7 14l5-5 5 5z"/></svg>`;
+        const carretDownSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>`;
+    </script>
+    <script>
+        const imports = [{
+            "import": "../hashtag/App.tsx",
+            "resolved": true,
+            "level": 0,
+            "imports": [
+            {
+                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                "resolved": true,
+                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                "level": 1,
+                "imports": []
+            },
+            {
+                "import": "../hashtag/src/components/AppMenu.tsx",
+                "resolved": true,
+                "absolutePath": "../hashtag/src/components/AppMenu.tsx",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/components/EditSnippetDialog.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/components/EditSnippetDialog.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/SnippetEditor.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/SnippetEditor.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetProvider.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/TagSelector.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/TagSelector.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/helpers.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/helpers.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/TagSelector.styles.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/TagSelector.styles.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/helpers.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/helpers.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetEditor.styles.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetEditor.styles.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/SnippetProvider.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/EditSnippetDialog.styles.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/EditSnippetDialog.styles.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                        "level": 3,
+                        "imports": []
+                    }
+                    ]
+                },
+                {
+                    "import": "../hashtag/src/components/AppMenu.styles.ts",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/components/AppMenu.styles.ts",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    }
+                    ]
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                    "level": 2,
+                    "imports": []
+                }
+                ]
+            },
+            {
+                "import": "../hashtag/src/components/SnippetProvider.tsx",
+                "resolved": true,
+                "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    }
+                    ]
+                },
+                {
+                    "import": "../hashtag/src/models.ts",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/models.ts",
+                    "level": 2,
+                    "imports": []
+                }
+                ]
+            },
+            {
+                "import": "../hashtag/src/views/Search.tsx",
+                "resolved": true,
+                "absolutePath": "../hashtag/src/views/Search.tsx",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/models.ts",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/models.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/views/Search/SearchFilter.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/views/Search/SearchFilter.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/SnippetEditor.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/SnippetEditor.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetProvider.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/TagSelector.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/TagSelector.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/helpers.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/helpers.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/TagSelector.styles.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/TagSelector.styles.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/helpers.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/helpers.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetEditor.styles.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetEditor.styles.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/views/Search/SearchFilter.styles.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/views/Search/SearchFilter.styles.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    }
+                    ]
+                },
+                {
+                    "import": "../hashtag/src/views/Search/SearchResults.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/views/Search/SearchResults.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/SnippetProvider.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/helpers.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/helpers.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/TagList.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/TagList.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/TagSelector.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/TagSelector.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/helpers.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/helpers.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/TagSelector.styles.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/TagSelector.styles.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/TagList.styles.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/TagList.styles.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/hooks/useSnippetCategories.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/hooks/useSnippetCategories.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/moment/ts3.1-typings/moment.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/moment/ts3.1-typings/moment.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/components/EditSnippetDialog.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/EditSnippetDialog.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetEditor.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetEditor.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/SnippetProvider.tsx",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/TagSelector.tsx",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/TagSelector.tsx",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/helpers.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/helpers.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/components/SnippetEditor.styles.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/components/SnippetEditor.styles.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/SnippetProvider.tsx",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                                "level": 5,
+                                "imports": []
+                            },
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/components/EditSnippetDialog.styles.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/EditSnippetDialog.styles.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@expo/vector-icons/build/Icons.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ]
+            },
+            {
+                "import": "../hashtag/App.styles.ts",
+                "resolved": true,
+                "absolutePath": "../hashtag/App.styles.ts",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                }
+                ]
+            },
+            {
+                "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                "resolved": true,
+                "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                "level": 1,
+                "imports": []
+            },
+            {
+                "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                "resolved": true,
+                "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                "level": 1,
+                "imports": []
+            },
+            {
+                "import": "../hashtag/src/views/Settings.tsx",
+                "resolved": true,
+                "absolutePath": "../hashtag/src/views/Settings.tsx",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/components/SnippetProvider.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    }
+                    ]
+                }
+                ]
+            },
+            {
+                "import": "../hashtag/src/views/TrashCan.tsx",
+                "resolved": true,
+                "absolutePath": "../hashtag/src/views/TrashCan.tsx",
+                "level": 1,
+                "imports": [
+                {
+                    "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "resolved": true,
+                    "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                    "level": 2,
+                    "imports": []
+                },
+                {
+                    "import": "../hashtag/src/components/SnippetProvider.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/components/SnippetProvider.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/hooks/useSnippetStorage.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/hooks/useSnippetStorage.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@react-native-async-storage/async-storage/lib/typescript/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native-uuid/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    }
+                    ]
+                },
+                {
+                    "import": "../hashtag/src/components/TagList.tsx",
+                    "resolved": true,
+                    "absolutePath": "../hashtag/src/components/TagList.tsx",
+                    "level": 2,
+                    "imports": [
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "resolved": true,
+                        "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/TagSelector.tsx",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/TagSelector.tsx",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@types/react/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/@rneui/themed/dist/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/helpers.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/helpers.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "../hashtag/src/models.ts",
+                                "resolved": true,
+                                "absolutePath": "../hashtag/src/models.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        },
+                        {
+                            "import": "../hashtag/src/components/TagSelector.styles.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/components/TagSelector.styles.ts",
+                            "level": 4,
+                            "imports": [
+                            {
+                                "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "resolved": true,
+                                "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                                "level": 5,
+                                "imports": []
+                            }
+                            ]
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/models.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/models.ts",
+                        "level": 3,
+                        "imports": []
+                    },
+                    {
+                        "import": "../hashtag/src/components/TagList.styles.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/components/TagList.styles.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/react-native/types/index.d.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    },
+                    {
+                        "import": "../hashtag/src/hooks/useSnippetCategories.ts",
+                        "resolved": true,
+                        "absolutePath": "../hashtag/src/hooks/useSnippetCategories.ts",
+                        "level": 3,
+                        "imports": [
+                        {
+                            "import": "C:/Source/hashtag/node_modules/moment/ts3.1-typings/moment.d.ts",
+                            "resolved": true,
+                            "absolutePath": "C:/Source/hashtag/node_modules/moment/ts3.1-typings/moment.d.ts",
+                            "level": 4,
+                            "imports": []
+                        },
+                        {
+                            "import": "../hashtag/src/models.ts",
+                            "resolved": true,
+                            "absolutePath": "../hashtag/src/models.ts",
+                            "level": 4,
+                            "imports": []
+                        }
+                        ]
+                    }
+                    ]
+                }
+                ]
+            }
+            ]
+        }
+        ];
+    </script>
+    <script>
+
+        // Function to count recursive child imports
+        function countRecursiveImports(module) {
+            let count = module.imports.length;
+            for (const child of module.imports) {
+                count += countRecursiveImports(child);
+            }
+            return count;
+        }
+
+        const generateDivs = (data, parentElement) => {
+            data.forEach(item => {
+                const div = document.createElement("div");
+                div.classList.add("module");
+                div.classList.add("level" + (item.level + 1));
+
+                //div.textContent = item.import;
+                parentElement.appendChild(div);
+
+                // Create module title
+                const title = document.createElement("div");
+                title.textContent = item.import;
+                title.innerHTML = carretDownSvg + title.innerHTML;
+                div.appendChild(title);
+
+                // Sorting function based on the total number of recursive child imports
+                item.imports.sort((a, b) => countRecursiveImports(a) - countRecursiveImports(b))
+
+                
+                if (item.imports.length > 0) {
+                    const childContainer = document.createElement("div");
+                    childContainer.classList.add("container");
+                    div.appendChild(childContainer);
+                    generateDivs(item.imports, childContainer);
+                }
             });
-        });
+        }
+        
+        generateDivs(imports, document.getElementById("root"));
+
     </script>
 </body>
 </html>

@@ -1,2 +1,6 @@
 dist
 node_modules
+export
+
+foo.html
+exports
