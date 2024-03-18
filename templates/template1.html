@@ -54,6 +54,14 @@
             justify-content: flex-start;
             align-items: flex-start;
         }
+
+        .collapsible {
+            cursor: pointer;
+        }
+
+        .collapsed + .container {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1444,7 +1452,7 @@
     <script>
 
         // Function to count recursive child imports
-        function countRecursiveImports(module) {
+        const countRecursiveImports = (module) => {
             let count = module.imports.length;
             for (const child of module.imports) {
                 count += countRecursiveImports(child);
@@ -1454,24 +1462,42 @@
 
         const generateDivs = (data, parentElement) => {
             data.forEach(item => {
+                const hasChildren = item.imports.length > 0;
+                const defaultExpanded = item.level < 2;
                 const div = document.createElement("div");
                 div.classList.add("module");
                 div.classList.add("level" + (item.level + 1));
 
-                //div.textContent = item.import;
                 parentElement.appendChild(div);
 
                 // Create module title
                 const title = document.createElement("div");
                 title.textContent = item.import;
-                title.innerHTML = carretDownSvg + title.innerHTML;
-                div.appendChild(title);
+                if (hasChildren) {
+                    title.classList.add("collapsible");
+                    title.classList.add(defaultExpanded ? "expanded" : "collapsed");
+                    title.innerHTML = (defaultExpanded ? carretDownSvg : carretUpSvg) + title.innerHTML;
+                    title.addEventListener("click", (e) => {
+                        // Toggle expand/collapse state
+                        if (title.classList.contains("expanded")) {
+                            title.classList.remove('expanded');
+                            title.classList.add('collapsed');
+                            title.textContent = item.import;
+                            title.innerHTML = carretUpSvg + title.innerHTML;
+                        } else {
+                            title.classList.remove('collapsed');
+                            title.classList.add('expanded');
+                            title.textContent = item.import;
+                            title.innerHTML = carretDownSvg + title.innerHTML;
+                        }
+                    });
+                }
+                div.appendChild(title);                
 
                 // Sorting function based on the total number of recursive child imports
                 item.imports.sort((a, b) => countRecursiveImports(a) - countRecursiveImports(b))
-
                 
-                if (item.imports.length > 0) {
+                if (hasChildren) {
                     const childContainer = document.createElement("div");
                     childContainer.classList.add("container");
                     div.appendChild(childContainer);
