@@ -5,19 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Div Generation</title>
     <style>
-        /*
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            margin-left: 20px;
-        }
-        .module {
-            margin-left: 20px;
-        }
-        */
-    </style>
-    <style>
         .level1 { background-color: #ffd1dc; font-size: 20px; max-width: 100% !important;}
         .level2 { background-color: #ffdead; font-size: 16px; }
         .level3 { background-color: #f0fff0; font-size: 12px; }
@@ -54,11 +41,9 @@
             justify-content: flex-start;
             align-items: flex-start;
         }
-
         .collapsible {
             cursor: pointer;
         }
-
         .collapsed + .container {
             display: none;
         }
@@ -71,7 +56,7 @@
         const carretDownSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path d="M7 10l5 5 5-5z"/></svg>`;
     </script>
     <script>
-        const imports = [{
+        const testImports = [{
             "import": "../hashtag/App.tsx",
             "resolved": true,
             "level": 0,
@@ -1448,8 +1433,16 @@
             ]
         }
         ];
+        let traversedImports = "";
+        try {
+            traversedImports = JSON.parse(```<!-- IMPORTS -->```);
+        } catch(e) {
+            console.log("INFO: No traversed imports. Using test data")
+        }
+       const imports = traversedImports || testImports;
     </script>
     <script>
+        
 
         // Function to count recursive child imports
         const countRecursiveImports = (module) => {

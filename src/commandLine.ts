@@ -36,7 +36,7 @@ export const getConfig = (): MainOptions => {
     .option(
       "--format <format>",
       "Format that the inspections are exported. Joined with comma (,)",
-      "console,html"
+      "console,html,png"
     );
 
   program.parse();

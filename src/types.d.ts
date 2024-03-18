@@ -1,6 +1,6 @@
 import { CompilerOptions } from "typescript";
 
-export type OutputFormats = "html" | "console" | "json";
+export type OutputFormats = "html" | "console" | "json" | "png";
 
 export interface ImportInfo {
   import: string;
