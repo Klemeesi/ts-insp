@@ -50,10 +50,11 @@ Not possible at the moment.
 - Configuration file
 - Option to discard the child imports if the dependant file has already been traversed. Otherwise there would be a lot of noice
 - Would be nice to convert relative imports to absolute ones. Just need the root folder
-- Exporting to different formats (JSON, Image, ~~HTML~~)
+- ~~Exporting to different formats (JSON, Image, HTML, PNG)~~
 - ~~Take tsconfig.json configuration in to account. aliases, rootDir, etc...~~
 - Export whole project (user gives the folder)
-- Unit tests :)
+- ~~Unit tests :)~~
+- More comprehensive unit tests :)
 - Make it runnable with npx. I don't think it works right now
 - Publish it
 - Maybe add more functionality for it. Check if there are unused dependencies in the package.json
