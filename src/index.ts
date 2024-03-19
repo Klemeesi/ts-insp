@@ -31,7 +31,7 @@ const main = async () => {
 
   if (config.inspOptions.format.some((v) => v === "png")) {
     const templatePath = "templates/template1.html";
-    await generatePng(generateHtmlPage(imports, templatePath));
+    await generatePng(imports, templatePath);
     console.log("Generated PNG.");
   }
 

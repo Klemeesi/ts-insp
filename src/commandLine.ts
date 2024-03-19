@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import { program } from "commander";
 import { InspOptions, MainOptions, OutputFormats } from "./types";
-import { getCompilerOptions } from "./output/tsConfig";
+import { getCompilerOptions } from "./tsConfig";
 import { log } from "./output/log";
 
 type CommandLineParams = {
