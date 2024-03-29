@@ -1,5 +1,6 @@
 import { CompilerOptions } from "typescript";
 import { TraversalPlugin } from "./plugins";
+import { log } from "./output/log";
 
 export type OutputFormats = "html" | "console" | "json" | "png";
 
@@ -33,4 +34,5 @@ export interface MainOptions {
   tsConfigFilePath?: string;
   tsConfigPath?: string;
   compilerOptions?: CompilerOptions;
+  logger: typeof log;
 }

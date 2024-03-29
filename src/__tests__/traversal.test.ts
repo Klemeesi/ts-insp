@@ -11,6 +11,7 @@ const testConfig = {
     format: [],
     plugins: [],
   },
+  logger: () => {},
 };
 
 describe("traversal", () => {

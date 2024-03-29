@@ -26,7 +26,7 @@ export const getConfig = (): MainOptions => {
     )
     .option(
       "-i, --iterations <iterations>",
-      "Amount of iterations done for traversal",
+      "Amount of iterations done for traversal. Be aware that circular imports are bad if number is too large.",
       "5"
     )
     .option(
@@ -37,7 +37,7 @@ export const getConfig = (): MainOptions => {
     .option(
       "--format <format>",
       "Format that the inspections are exported. Joined with comma (,)",
-      "console,html,png"
+      "console"
     )
     .option(
       "-p, --plugins <plugins>",
@@ -70,20 +70,15 @@ export const getConfig = (): MainOptions => {
       .filter((p) => !!p.processor);
   }
 
-  log(!!options.verbose, "Number of traversal plugins:", plugins.length);
+  !!options.verbose && log("Number of traversal plugins:", plugins.length);
 
   const compilerOptions = getCompilerOptions(options.file);
   if (!compilerOptions) {
-    log(
-      !!options.verbose,
-      "Failed to read tsconfig.json for file ${options.file}"
-    );
+    !!options.verbose &&
+      log("Failed to read tsconfig.json for file ${options.file}");
   } else {
-    log(
-      !!options.verbose,
-      "Using tsconfig.json from: ",
-      compilerOptions.tsConfigFilePath
-    );
+    !!options.verbose &&
+      log("Using tsconfig.json from: ", compilerOptions.tsConfigFilePath);
   }
 
   return {
@@ -100,5 +95,6 @@ export const getConfig = (): MainOptions => {
       format: options.format.split(",") as OutputFormats[],
       plugins,
     },
+    logger: !!options.verbose ? log : () => {},
   };
 };

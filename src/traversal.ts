@@ -52,16 +52,12 @@ const traverseImports = (
     // Limit the depth of import traversal
     return;
   }
-  log(verbose, "Traversing file: ", filePath);
+  options.logger("Traversing file: ", filePath);
 
   ts.forEachChild(sourceFile, (childNode) => {
     // Run plugins
     options.inspOptions.plugins.forEach((plugin) => {
-      log(
-        options.inspOptions.verbose,
-        `Running ${plugin.name} plugin for`,
-        filePath
-      );
+      options.logger(`Running ${plugin.name} plugin for`, filePath);
       plugin.processor(childNode, filePath, options.inspOptions);
     });
 
@@ -72,7 +68,7 @@ const traverseImports = (
       const resolvedImportPaths =
         resolveImportPaths(options, normalizedPath, filePath) || normalizedPath;
 
-      log(verbose, "Found import: ", resolvedImportPaths);
+      options.logger("Found import: ", resolvedImportPaths);
 
       // Left here for... idk, I'm bad with paths
       // ATM moved to resolveImportPaths function

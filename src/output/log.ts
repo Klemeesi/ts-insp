@@ -1,2 +1,1 @@
-export const log = (enable: boolean, ...data: any[]) =>
-  enable && console.debug("ts-insp >", ...data);
+export const log = (...data: any[]) => console.debug("ts-insp >", ...data);
