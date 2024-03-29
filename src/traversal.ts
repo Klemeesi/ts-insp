@@ -1,8 +1,7 @@
 import * as ts from "typescript";
 import * as path from "path";
 import * as fs from "fs";
-import { ImportInfo, MainOptions } from "./types";
-import { log } from "./output/log";
+import { ImportInfo, MainOptions, TraversalResult } from "./types";
 
 const isNodeModule = (absolutePath: string) =>
   absolutePath.search("node_modules") != -1;
@@ -45,12 +44,12 @@ const traverseImports = (
   filePath: string,
   sourceFile: ts.SourceFile,
   currentLevel: number
-) => {
+): TraversalResult => {
   const { iterations, verbose, supportedTypes } = options.inspOptions;
-  let imports: ImportInfo[] = [];
+  let result: TraversalResult = { imports: [] };
   if (currentLevel > iterations) {
     // Limit the depth of import traversal
-    return;
+    return { imports: [] };
   }
   options.logger("Traversing file: ", filePath);
 
@@ -82,23 +81,24 @@ const traverseImports = (
 
       const absolutePath = resolvedImportPaths.find((p) => fs.existsSync(p));
       if (absolutePath) {
-        imports = [
-          ...imports,
+        const childResult =
+          options.inspOptions.traverseNodeModules || !isNodeModule(absolutePath)
+            ? getImports(options, absolutePath, currentLevel + 1)
+            : { imports: [] };
+
+        result.imports = [
+          ...result.imports,
           {
             import: absolutePath,
             resolved: true,
             absolutePath,
             level: currentLevel,
-            imports:
-              options.inspOptions.traverseNodeModules ||
-              !isNodeModule(absolutePath)
-                ? getImports(options, absolutePath, currentLevel + 1)
-                : [],
+            imports: childResult.imports,
           },
         ];
       } else {
-        imports = [
-          ...imports,
+        result.imports = [
+          ...result.imports,
           {
             import: normalizedPath,
             resolved: false,
@@ -109,14 +109,14 @@ const traverseImports = (
       }
     }
   });
-  return imports;
+  return result;
 };
 
 export const getImports = (
   options: MainOptions,
   filePath: string,
   level: number
-) => {
+): TraversalResult => {
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const sourceFile = ts.createSourceFile(
     filePath,
@@ -125,5 +125,7 @@ export const getImports = (
     true
   );
 
-  return traverseImports(options, filePath, sourceFile, level || 1) || [];
+  const result =
+    traverseImports(options, filePath, sourceFile, level || 1) || [];
+  return result;
 };

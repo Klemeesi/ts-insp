@@ -12,6 +12,10 @@ export interface ImportInfo {
   imports: ImportInfo[];
 }
 
+export interface TraversalResult {
+  imports: ImportInfo[];
+}
+
 export interface InspOptions {
   /** Verbose... */
   verbose: boolean;

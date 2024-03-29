@@ -17,7 +17,7 @@ const testConfig = {
 describe("traversal", () => {
   it("Basic traversal test", () => {
     const result = getImports(testConfig, testConfig.inspOptions.file, 1);
-    expect(result).toMatchSnapshot();
+    expect(result.imports).toMatchSnapshot();
   });
 
   it("Traversal test with compiler options", () => {
@@ -29,6 +29,6 @@ describe("traversal", () => {
       testConfig.inspOptions.file,
       1
     );
-    expect(result).toMatchSnapshot();
+    expect(result.imports).toMatchSnapshot();
   });
 });
