@@ -9,6 +9,7 @@ const testConfig = {
     iterations: 10,
     verbose: false,
     format: [],
+    plugins: [],
   },
 };
 

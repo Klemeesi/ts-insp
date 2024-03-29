@@ -1,4 +1,5 @@
 import { CompilerOptions } from "typescript";
+import { TraversalPlugin } from "./plugins";
 
 export type OutputFormats = "html" | "console" | "json" | "png";
 
@@ -24,6 +25,7 @@ export interface InspOptions {
   /** Defines whether node_modules dependencies are traversed */
   traverseNodeModules?: boolean;
   format: OutputFormats[];
+  plugins: TraversalPlugin[];
 }
 
 export interface MainOptions {

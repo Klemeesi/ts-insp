@@ -4,7 +4,7 @@
   "description": "Tool to visualize typescript dependencies in a project",
   "main": "dist/index.js",
   "author": "Klemeesi",
-  "license": "Apache License 2.0",
+  "license": "Apache-2.0",
   "jest": {
     "preset": "ts-jest",
     "testEnvironment": "node",
@@ -26,7 +26,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "tsc",
-    "quick": "yarn build && yarn start -f test-data/test1.ts -v",
+    "quick": "yarn build && yarn start -f test-data/test1.ts",
     "test": "jest",
     "postinstall": "node -e \"process.env.npm_config_user_agent.includes('npm') ? 'npm' : 'yarn'\" | xargs -I{} {} run build"
   }

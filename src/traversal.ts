@@ -55,6 +55,16 @@ const traverseImports = (
   log(verbose, "Traversing file: ", filePath);
 
   ts.forEachChild(sourceFile, (childNode) => {
+    // Run plugins
+    options.inspOptions.plugins.forEach((plugin) => {
+      log(
+        options.inspOptions.verbose,
+        `Running ${plugin.name} plugin for`,
+        filePath
+      );
+      plugin.processor(childNode, filePath, options.inspOptions);
+    });
+
     if (ts.isImportDeclaration(childNode)) {
       const importPath = childNode.moduleSpecifier.getText(sourceFile);
       // Remove quotes around import path
@@ -115,7 +125,8 @@ export const getImports = (
   const sourceFile = ts.createSourceFile(
     filePath,
     fileContent,
-    ts.ScriptTarget.Latest
+    ts.ScriptTarget.Latest,
+    true
   );
 
   return traverseImports(options, filePath, sourceFile, level || 1) || [];

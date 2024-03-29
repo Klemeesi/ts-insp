@@ -3,6 +3,7 @@ import { program } from "commander";
 import { InspOptions, MainOptions, OutputFormats } from "./types";
 import { getCompilerOptions } from "./tsConfig";
 import { log } from "./output/log";
+import { PluginName, TraversalPlugin, predefinedPlugins } from "./plugins";
 
 type CommandLineParams = {
   [K in keyof InspOptions]: string;
@@ -37,6 +38,11 @@ export const getConfig = (): MainOptions => {
       "--format <format>",
       "Format that the inspections are exported. Joined with comma (,)",
       "console,html,png"
+    )
+    .option(
+      "-p, --plugins <plugins>",
+      "Plugins used in traversal. Only predefined plugins are supported in CLI. Joined with comma (,)",
+      ""
     );
 
   program.parse();
@@ -52,6 +58,19 @@ export const getConfig = (): MainOptions => {
     console.error("File does not exist:", options.file);
     process.exit(-1);
   }
+
+  let plugins: TraversalPlugin[] = [];
+  if (options.plugins) {
+    plugins = options.plugins
+      .split(",")
+      .map((name) => ({
+        name: name as unknown as PluginName,
+        processor: predefinedPlugins[name as PluginName],
+      }))
+      .filter((p) => !!p.processor);
+  }
+
+  log(!!options.verbose, "Number of traversal plugins:", plugins.length);
 
   const compilerOptions = getCompilerOptions(options.file);
   if (!compilerOptions) {
@@ -79,6 +98,7 @@ export const getConfig = (): MainOptions => {
       file: options.file,
       traverseNodeModules: !!options.traverseNodeModules,
       format: options.format.split(",") as OutputFormats[],
+      plugins,
     },
   };
 };

@@ -106,6 +106,97 @@ exports[`traversal Traversal test with compiler options 1`] = `
             "level": 3,
             "resolved": true,
           },
+          {
+            "absolutePath": "src/plugins.ts",
+            "import": "src/plugins.ts",
+            "imports": [
+              {
+                "absolutePath": "src/plugins/debugPlugin.ts",
+                "import": "src/plugins/debugPlugin.ts",
+                "imports": [
+                  {
+                    "absolutePath": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                    "import": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                    "imports": [],
+                    "level": 5,
+                    "resolved": true,
+                  },
+                  {
+                    "absolutePath": "src/types.d.ts",
+                    "import": "src/types.d.ts",
+                    "imports": [
+                      {
+                        "absolutePath": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                        "import": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                        "imports": [],
+                        "level": 6,
+                        "resolved": true,
+                      },
+                      {
+                        "absolutePath": "src/plugins.ts",
+                        "import": "src/plugins.ts",
+                        "imports": [
+                          {
+                            "absolutePath": "src/plugins/debugPlugin.ts",
+                            "import": "src/plugins/debugPlugin.ts",
+                            "imports": [
+                              {
+                                "absolutePath": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                                "import": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                                "imports": [],
+                                "level": 8,
+                                "resolved": true,
+                              },
+                              {
+                                "absolutePath": "src/types.d.ts",
+                                "import": "src/types.d.ts",
+                                "imports": [
+                                  {
+                                    "absolutePath": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                                    "import": "C:/Source/ts-insp/node_modules/typescript/lib/typescript.d.ts",
+                                    "imports": [],
+                                    "level": 9,
+                                    "resolved": true,
+                                  },
+                                  {
+                                    "absolutePath": "src/plugins.ts",
+                                    "import": "src/plugins.ts",
+                                    "imports": [
+                                      {
+                                        "absolutePath": "src/plugins/debugPlugin.ts",
+                                        "import": "src/plugins/debugPlugin.ts",
+                                        "imports": [],
+                                        "level": 10,
+                                        "resolved": true,
+                                      },
+                                    ],
+                                    "level": 9,
+                                    "resolved": true,
+                                  },
+                                ],
+                                "level": 8,
+                                "resolved": true,
+                              },
+                            ],
+                            "level": 7,
+                            "resolved": true,
+                          },
+                        ],
+                        "level": 6,
+                        "resolved": true,
+                      },
+                    ],
+                    "level": 5,
+                    "resolved": true,
+                  },
+                ],
+                "level": 4,
+                "resolved": true,
+              },
+            ],
+            "level": 3,
+            "resolved": true,
+          },
         ],
         "level": 2,
         "resolved": true,
