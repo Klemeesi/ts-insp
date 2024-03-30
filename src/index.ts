@@ -28,7 +28,7 @@ const main = async () => {
 
   const result = includeTopLevel(
     config.inspOptions.file,
-    getImports(config, config.inspOptions.file, 1)
+    getImports(config, config.inspOptions.file)
   );
 
   console.log();

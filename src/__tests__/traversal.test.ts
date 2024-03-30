@@ -16,7 +16,7 @@ const testConfig = {
 
 describe("traversal", () => {
   it("Basic traversal test", () => {
-    const result = getImports(testConfig, testConfig.inspOptions.file, 1);
+    const result = getImports(testConfig, testConfig.inspOptions.file);
     expect(result.imports).toMatchSnapshot();
   });
 
@@ -26,8 +26,7 @@ describe("traversal", () => {
         ...testConfig,
         compilerOptions: getCompilerOptions("./tsconfig.json")?.options,
       },
-      testConfig.inspOptions.file,
-      1
+      testConfig.inspOptions.file
     );
     expect(result.imports).toMatchSnapshot();
   });

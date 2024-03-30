@@ -7,24 +7,28 @@ exports[`traversal Basic traversal test 1`] = `
     "import": "C:\\Source\\ts-insp\\src\\traversal.ts",
     "imports": [
       {
+        "absolutePath": undefined,
         "import": "typescript",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "path",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "fs",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "./types",
         "imports": [],
         "level": 2,
@@ -39,18 +43,21 @@ exports[`traversal Basic traversal test 1`] = `
     "import": "C:\\Source\\ts-insp\\src\\tsConfig.ts",
     "imports": [
       {
+        "absolutePath": undefined,
         "import": "typescript",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "fs",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "path",
         "imports": [],
         "level": 2,
@@ -77,12 +84,14 @@ exports[`traversal Traversal test with compiler options 1`] = `
         "resolved": true,
       },
       {
+        "absolutePath": undefined,
         "import": "path",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "fs",
         "imports": [],
         "level": 2,
@@ -231,12 +240,14 @@ exports[`traversal Traversal test with compiler options 1`] = `
         "resolved": true,
       },
       {
+        "absolutePath": undefined,
         "import": "fs",
         "imports": [],
         "level": 2,
         "resolved": false,
       },
       {
+        "absolutePath": undefined,
         "import": "path",
         "imports": [],
         "level": 2,
