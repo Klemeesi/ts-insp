@@ -119,10 +119,16 @@ const getImportsFromFile = (
 // Limit the number of iterations based on options
 // Only process import if absolutePath is known. For some modules we don't know the absolutePath (like "fs")
 // Limit node_modules traversal based on options
-const shouldTraverse = (options: MainOptions, info: ImportInfo) =>
+const shouldTraverse = (
+  options: MainOptions,
+  info: ImportInfo,
+  importCounts: Record<string, number>
+) =>
   info.level < options.inspOptions.iterations &&
   info.absolutePath &&
-  (options.inspOptions.traverseNodeModules || !isNodeModule(info.absolutePath));
+  (options.inspOptions.traverseNodeModules ||
+    !isNodeModule(info.absolutePath)) &&
+  (options.inspOptions.retraverse || !importCounts[info.import]);
 
 // Second try with the function. Original was recursive and pretty complex method to modify.
 // This one is supposed to be easier to read and not be recursive.
@@ -131,6 +137,7 @@ export const getImports = (
   filePath: string
 ): TraversalResult => {
   const result: TraversalResult = { imports: [] };
+  const importCounts: Record<string, number> = {};
   let nextBatchToProcess = [
     {
       parent: result,
@@ -144,9 +151,12 @@ export const getImports = (
 
     batch.forEach((oneSet) => {
       const { parent } = oneSet;
+      // Update parent imports. Mutates the object
       parent.imports = [...parent.imports, ...oneSet.imports];
+      // Go thru each import and traverse them
       oneSet.imports.forEach((i) => {
-        if (shouldTraverse(options, i)) {
+        if (shouldTraverse(options, i, importCounts)) {
+          // If the import should be traversed, add it to the next batch
           nextBatchToProcess = [
             ...nextBatchToProcess,
             {
@@ -160,8 +170,18 @@ export const getImports = (
           ];
         }
       });
+      // Keep track of the import counts. Important if user has enabled retraversal
+      oneSet.imports.forEach((i) => {
+        importCounts[i.import] = importCounts[i.import]
+          ? importCounts[i.import] + 1
+          : 1;
+      });
     });
   }
+
+  Object.keys(importCounts).forEach((key) =>
+    options.logger(key, "imported", importCounts[key], "times")
+  );
 
   return result;
 };

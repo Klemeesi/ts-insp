@@ -35,6 +35,11 @@ export const getConfig = (): MainOptions => {
       false
     )
     .option(
+      "--retraverse",
+      "Modules are traversed multiple times if encountered during traversal.",
+      false
+    )
+    .option(
       "--format <format>",
       "Format that the inspections are exported. Joined with comma (,)",
       "console"
@@ -92,6 +97,7 @@ export const getConfig = (): MainOptions => {
       iterations: +options.iterations,
       file: options.file,
       traverseNodeModules: !!options.traverseNodeModules,
+      retraverse: !!options.retraverse,
       format: options.format.split(",") as OutputFormats[],
       plugins,
     },

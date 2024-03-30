@@ -8,6 +8,7 @@ const testConfig = {
     supportedTypes: ["ts"],
     iterations: 10,
     verbose: false,
+    retraverse: true,
     format: [],
     plugins: [],
   },

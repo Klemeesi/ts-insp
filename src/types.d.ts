@@ -29,7 +29,11 @@ export interface InspOptions {
   file: string;
   /** Defines whether node_modules dependencies are traversed */
   traverseNodeModules?: boolean;
+  /** Defines if same module is retraversed. Good to avoid extra clutter and circular dependencies. By default modules are not retraversed */
+  retraverse: boolean;
+  /** What output formats are done */
   format: OutputFormats[];
+  /** Additional plugins. At the time of writing there is only a debug plugin that prints extra debug information about traversal */
   plugins: TraversalPlugin[];
 }
 
