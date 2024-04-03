@@ -34,20 +34,41 @@ const resolveImportPaths = (options: MainOptions, normalizedPath: string, filePa
     return options.inspOptions.supportedTypes.map((t) => path.resolve(path.dirname(filePath), normalizedPath + "." + t));
 };
 
-const getImportsFromNode = (options: MainOptions, filePath: string, childNode: ts.Node, sourceFile: ts.SourceFile): Import | undefined => {
-    if (ts.isImportDeclaration(childNode)) {
-        const importPath = childNode.moduleSpecifier.getText(sourceFile);
+const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): Import[] => {
+    let results: Import[] = [];
+    let importPath: string | undefined;
+    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
+        importPath = node.moduleSpecifier?.getText(sourceFile);
+    }
+    // FIXME
+    /* else if (ts.isCallExpression(node)) {
+        const text = node.getText(sourceFile);
+        if ((text.includes("require") || text.includes("import")) && node.arguments.length > 0 && node.arguments[0]) {
+            importPath = node.arguments[0].getText(sourceFile);
+        }
+    }*/
+    if (importPath) {
         // Remove quotes around import path
         const normalizedPath = importPath.substring(1, importPath.length - 1);
+
+        // FIXME
+        // const resolvedModule = ts.resolveModuleName(normalizedPath, sourceFile.fileName, options.compilerOptions!, ts.sys).resolvedModule;
+
         const resolvedImportPaths = resolveImportPaths(options, normalizedPath, filePath) || normalizedPath;
         // We don't know the exact extension of the file, so we try all supported types to find it.
         // Would be good to optimize this somehow
         // Doesn't find e.g. "fs" since it is node module
         const absolutePath = resolvedImportPaths.find((p) => fs.existsSync(p));
 
-        return { importPath, normalizedPath, absolutePath };
+        results = [...results, { importPath, normalizedPath, absolutePath }];
     }
-    return undefined;
+
+    // Check also child nodes since code files are trees
+    ts.forEachChild(node, (childNode: ts.Node) => {
+        results = [...results, ...getImportsFromNode(options, filePath, childNode, sourceFile)];
+    });
+
+    return results;
 };
 
 const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfo[] => {
@@ -61,12 +82,12 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
         // Run plugins
         options.inspOptions.plugins.forEach((plugin) => {
             options.logger(`Running ${plugin.name} plugin for`, filePath);
-            plugin.processor(childNode, filePath, options.inspOptions);
+            plugin.processor(childNode, sourceFile, filePath, options.inspOptions);
         });
 
-        const importInfo = getImportsFromNode(options, filePath, childNode, sourceFile);
+        const importInfos = getImportsFromNode(options, filePath, childNode, sourceFile);
 
-        if (importInfo) {
+        importInfos.forEach((importInfo) => {
             // Child node has an import
             options.logger("Found import:", importInfo.normalizedPath, `(${importInfo.absolutePath})`);
             result.push({
@@ -76,7 +97,7 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
                 level: currentLevel,
                 imports: [],
             });
-        }
+        });
     });
     return result;
 };
