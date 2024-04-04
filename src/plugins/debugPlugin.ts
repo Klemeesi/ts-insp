@@ -1,5 +1,6 @@
 import * as ts from "typescript";
-import { InspOptions } from "../types";
+import { MainOptions } from "../types";
+import { getImportsFromNode } from "../helpers/importParser";
 
 const getNameOfNode = (node: ts.Node) => {
     if (
@@ -14,7 +15,7 @@ const getNameOfNode = (node: ts.Node) => {
     }
     return undefined;
 };
-
+/*
 const getImportPaths = (node: ts.Node, sourceFile: ts.SourceFile) => {
     let importPaths: string[] = [];
     if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
@@ -33,8 +34,11 @@ const getImportPaths = (node: ts.Node, sourceFile: ts.SourceFile) => {
     });
     return importPaths;
 };
+*/
 
-export const exportPlugin = (node: ts.Node, sourceFile: ts.SourceFile, key: string, options: InspOptions) => {
-    const entry = [key + ":", ts.SyntaxKind[node.kind], getNameOfNode(node), ...getImportPaths(node, sourceFile)];
+export const exportPlugin = (node: ts.Node, sourceFile: ts.SourceFile, key: string, options: MainOptions) => {
+    // const entry = [key + ":", ts.SyntaxKind[node.kind], getNameOfNode(node), ...getImportPaths(node, sourceFile)];
+    const imports = getImportsFromNode(options, key, node, sourceFile).map((i) => i.absolutePath);
+    const entry = [key + ":", ts.SyntaxKind[node.kind], getNameOfNode(node), ...imports];
     console.log(...entry.filter((e) => !!e));
 };

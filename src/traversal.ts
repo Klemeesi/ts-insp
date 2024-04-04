@@ -1,75 +1,9 @@
 import * as ts from "typescript";
-import * as path from "path";
 import * as fs from "fs";
 import { ImportInfo, MainOptions, TraversalResult } from "./types";
-
-interface Import {
-    importPath: string;
-    normalizedPath: string;
-    absolutePath?: string;
-}
+import { getImportsFromNode } from "./helpers/importParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
-
-/**
- * If the filepath can be resolved (tsconfig located) returns one item.
- * Otherwise uses supportedTypes from configuration and gives couple of options to try
- *
- * Future improvement: Try to locate the file in here. Not outside!
- *
- * @param options yeah
- * @param normalizedPath what the ts file had imported
- * @param filePath source file path
- * @returns Array of options where the file could be located
- */
-const resolveImportPaths = (options: MainOptions, normalizedPath: string, filePath: string): string[] => {
-    if (options.compilerOptions) {
-        const resolvedImportPath = ts.resolveModuleName(normalizedPath, filePath, options.compilerOptions, ts.sys).resolvedModule
-            ?.resolvedFileName;
-        if (resolvedImportPath) {
-            return [resolvedImportPath];
-        }
-    }
-
-    return options.inspOptions.supportedTypes.map((t) => path.resolve(path.dirname(filePath), normalizedPath + "." + t));
-};
-
-const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): Import[] => {
-    let results: Import[] = [];
-    let importPath: string | undefined;
-    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
-        importPath = node.moduleSpecifier?.getText(sourceFile);
-    }
-    // FIXME
-    /* else if (ts.isCallExpression(node)) {
-        const text = node.getText(sourceFile);
-        if ((text.includes("require") || text.includes("import")) && node.arguments.length > 0 && node.arguments[0]) {
-            importPath = node.arguments[0].getText(sourceFile);
-        }
-    }*/
-    if (importPath) {
-        // Remove quotes around import path
-        const normalizedPath = importPath.substring(1, importPath.length - 1);
-
-        // FIXME
-        // const resolvedModule = ts.resolveModuleName(normalizedPath, sourceFile.fileName, options.compilerOptions!, ts.sys).resolvedModule;
-
-        const resolvedImportPaths = resolveImportPaths(options, normalizedPath, filePath) || normalizedPath;
-        // We don't know the exact extension of the file, so we try all supported types to find it.
-        // Would be good to optimize this somehow
-        // Doesn't find e.g. "fs" since it is node module
-        const absolutePath = resolvedImportPaths.find((p) => fs.existsSync(p));
-
-        results = [...results, { importPath, normalizedPath, absolutePath }];
-    }
-
-    // Check also child nodes since code files are trees
-    ts.forEachChild(node, (childNode: ts.Node) => {
-        results = [...results, ...getImportsFromNode(options, filePath, childNode, sourceFile)];
-    });
-
-    return results;
-};
 
 const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfo[] => {
     const result: ImportInfo[] = [];
@@ -82,7 +16,7 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
         // Run plugins
         options.inspOptions.plugins.forEach((plugin) => {
             options.logger(`Running ${plugin.name} plugin for`, filePath);
-            plugin.processor(childNode, sourceFile, filePath, options.inspOptions);
+            plugin.processor(childNode, sourceFile, filePath, options);
         });
 
         const importInfos = getImportsFromNode(options, filePath, childNode, sourceFile);
