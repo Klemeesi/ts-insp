@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dynamic Div Generation</title>
+        <style></style>
+    </head>
+    <body>
+        <script>
+            const imports = [
+                {
+                    import: "test-data/test1.ts",
+                    resolved: true,
+                    level: 0,
+                    imports: [
+                        {
+                            import: "fs",
+                            resolved: false,
+                            level: 1,
+                            imports: [],
+                        },
+                        {
+                            import: "src/index.ts",
+                            resolved: true,
+                            absolutePath: "src/index.ts",
+                            level: 1,
+                            imports: [
+                                {
+                                    import: "src/traversal.ts",
+                                    resolved: true,
+                                    absolutePath: "src/traversal.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "node_modules/typescript/lib/typescript.d.ts",
+                                            resolved: true,
+                                            absolutePath: "node_modules/typescript/lib/typescript.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "fs",
+                                            resolved: false,
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/helpers/importParser.ts",
+                                            resolved: true,
+                                            absolutePath: "src/helpers/importParser.ts",
+                                            level: 3,
+                                            imports: [
+                                                {
+                                                    import: "node_modules/typescript/lib/typescript.d.ts",
+                                                    resolved: true,
+                                                    absolutePath: "node_modules/typescript/lib/typescript.d.ts",
+                                                    level: 4,
+                                                    imports: [],
+                                                },
+                                                {
+                                                    import: "path",
+                                                    resolved: false,
+                                                    level: 4,
+                                                    imports: [],
+                                                },
+                                                {
+                                                    import: "fs",
+                                                    resolved: false,
+                                                    level: 4,
+                                                    imports: [],
+                                                },
+                                                {
+                                                    import: "src/types.d.ts",
+                                                    resolved: true,
+                                                    absolutePath: "src/types.d.ts",
+                                                    level: 4,
+                                                    imports: [],
+                                                },
+                                            ],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/output/console.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/console.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/commandLine.ts",
+                                    resolved: true,
+                                    absolutePath: "src/commandLine.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/output/html.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/html.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "fs",
+                                            resolved: false,
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/output/json.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/json.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "fs",
+                                            resolved: false,
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/output/png.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/png.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "node_modules/node-html-to-image/dist/index.d.ts",
+                                            resolved: true,
+                                            absolutePath: "node_modules/node-html-to-image/dist/index.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/output/html.ts",
+                                            resolved: true,
+                                            absolutePath: "src/output/html.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/types.d.ts",
+                                    resolved: true,
+                                    absolutePath: "src/types.d.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                            ],
+                        },
+                        {
+                            import: "src/commandLine.ts",
+                            resolved: true,
+                            absolutePath: "src/commandLine.ts",
+                            level: 1,
+                            imports: [
+                                {
+                                    import: "fs",
+                                    resolved: false,
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "node_modules/commander/typings/index.d.ts",
+                                    resolved: true,
+                                    absolutePath: "node_modules/commander/typings/index.d.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/types.d.ts",
+                                    resolved: true,
+                                    absolutePath: "src/types.d.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/tsConfig.ts",
+                                    resolved: true,
+                                    absolutePath: "src/tsConfig.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "node_modules/typescript/lib/typescript.d.ts",
+                                            resolved: true,
+                                            absolutePath: "node_modules/typescript/lib/typescript.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "fs",
+                                            resolved: false,
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "path",
+                                            resolved: false,
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                                {
+                                    import: "src/output/log.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/log.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/plugins.ts",
+                                    resolved: true,
+                                    absolutePath: "src/plugins.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                            ],
+                        },
+                        {
+                            import: "src/types.d.ts",
+                            resolved: true,
+                            absolutePath: "src/types.d.ts",
+                            level: 1,
+                            imports: [
+                                {
+                                    import: "node_modules/typescript/lib/typescript.d.ts",
+                                    resolved: true,
+                                    absolutePath: "node_modules/typescript/lib/typescript.d.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/plugins.ts",
+                                    resolved: true,
+                                    absolutePath: "src/plugins.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                                {
+                                    import: "src/output/log.ts",
+                                    resolved: true,
+                                    absolutePath: "src/output/log.ts",
+                                    level: 2,
+                                    imports: [],
+                                },
+                            ],
+                        },
+                        {
+                            import: "src/plugins.ts",
+                            resolved: true,
+                            absolutePath: "src/plugins.ts",
+                            level: 1,
+                            imports: [
+                                {
+                                    import: "src/plugins/debugPlugin.ts",
+                                    resolved: true,
+                                    absolutePath: "src/plugins/debugPlugin.ts",
+                                    level: 2,
+                                    imports: [
+                                        {
+                                            import: "node_modules/typescript/lib/typescript.d.ts",
+                                            resolved: true,
+                                            absolutePath: "node_modules/typescript/lib/typescript.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/types.d.ts",
+                                            resolved: true,
+                                            absolutePath: "src/types.d.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                        {
+                                            import: "src/helpers/importParser.ts",
+                                            resolved: true,
+                                            absolutePath: "src/helpers/importParser.ts",
+                                            level: 3,
+                                            imports: [],
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    ],
+                },
+            ];
+        </script>
+        <script>
+            const primaryFont = "bold 9pt helvetica, bold arial, sans-serif";
+            const secondaryFont = "8pt helvetica, arial, sans-serif";
+            const fillBrush = (type) => (type === "Node module" ? "#90CAF9" : type === "Source file" ? "whitesmoke" : "#c0c0c0");
+
+            const getKey = (input) => input.absolutePath || input.import;
+            const getType = (input) =>
+                input.absolutePath?.includes("node_modules") ? "Node module" : input.absolutePath ? "Source file" : "Unknown";
+            const getName = (input) => input.absolutePath || input.import;
+            const getLink = (input) => "https://www.google.com";
+            const getTooltip = (input) => "This is tooltip";
+            const toDataSource = (inputImports, parent) => {
+                let results = [];
+                inputImports?.forEach((i) => {
+                    const key = getKey(i);
+                    results.push({
+                        parent: parent,
+                        key,
+                        name: getName(i),
+                        type: getType(i),
+                        href: getLink(i),
+                    });
+                    results = [...results, ...toDataSource(i.imports, key)];
+                });
+                return results;
+            };
+        </script>
+        <script src="https://unpkg.com/gojs/release/go-debug.js"></script>
+        <div id="myDiagramDiv" style="width: 100%; height: 1200px; background-color: #dae4e4"></div>
+        <script>
+            const diagram = new go.Diagram("myDiagramDiv", {});
+            diagram.layout = new go.TreeLayout({});
+            diagram.linkTemplate = new go.Link({ routing: go.Link.Orthogonal, corner: 5 }).add(
+                new go.Shape({ strokeWidth: 3, stroke: "#555" })
+            );
+            diagram.nodeTemplate = new go.Node("Auto", {})
+                .add(
+                    new go.Shape("Rectangle", { fill: "white", border: { stroke: "black", strokeWidth: 2 } }).bind(
+                        "fill",
+                        "type",
+                        fillBrush
+                    )
+                )
+                .add(
+                    new go.Panel("Vertical", { margin: 8 })
+                        .add(new go.TextBlock("Undefined", { font: primaryFont }).bind("text", "name"))
+                        .add(new go.TextBlock("Undefined", { font: secondaryFont }).bind("text", "type"))
+                );
+
+            diagram.model = new go.TreeModel(toDataSource(imports));
+            diagram.zoomToFit();
+        </script>
+    </body>
+</html>

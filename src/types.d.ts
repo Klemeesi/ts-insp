@@ -12,6 +12,35 @@ export interface ImportInfo {
     imports: ImportInfo[];
 }
 
+type ImportType = "Node module" | "Source file" | "Unknown";
+
+export interface ImportInfoV2 {
+    // Same as absolutePath
+    id: string;
+    // Globally unique identifier for the file
+    uniqueId: string;
+    // Name of the import as in the source file
+    import: string;
+    // Absolute path relative to project root
+    absolutePath?: string;
+    // Full path relative to disk root
+    fullPath?: string;
+    // Type of the file
+    type: ImportType;
+    // Name of the module.
+    moduleName: string;
+    // Level that the file was traversed
+    level: number;
+    // Was this file traversed
+    resolved: boolean;
+    // Child imports
+    imports: ImportInfoV2[];
+    // Description parsed from the file
+    description: string;
+    // Git href
+    gitHref?: string;
+}
+
 export interface TraversalResult {
     imports: ImportInfo[];
 }
