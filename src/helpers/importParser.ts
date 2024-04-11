@@ -1,12 +1,17 @@
 import * as ts from "typescript";
 import * as path from "path";
 import * as fs from "fs";
-import { MainOptions } from "../types";
+const { v4: uuidv4 } = require("uuid");
+import { ImportInfoV2, MainOptions } from "../types";
 
-export interface Import {
-    importPath: string;
-    normalizedPath: string;
-    absolutePath?: string;
+const getType = (absolutePath?: string) =>
+    absolutePath?.includes("node_modules") ? "Node module" : absolutePath ? "Source file" : "Unknown";
+
+interface ImportPaths {
+    moduleName: string;
+    fullPath: string;
+    extension: string;
+    absolutePath: string;
 }
 
 /**
@@ -18,24 +23,48 @@ export interface Import {
  * @param filePath source file path
  * @returns Array of options where the file could be located
  */
-const resolveImportPath = (options: MainOptions, normalizedPath: string, filePath: string): string | undefined => {
+const resolveImportPath = (options: MainOptions, normalizedPath: string, filePath: string): ImportPaths | undefined => {
+    let absolutePath: string | undefined = undefined;
+    let extension: string = "";
+    let moduleName: string | undefined = undefined;
     if (options.compilerOptions) {
         const module = ts.resolveModuleName(normalizedPath, filePath, options.compilerOptions, ts.sys).resolvedModule;
         if (module) {
-            return (module as unknown as ts.ProjectReference).originalPath || module.resolvedFileName;
+            absolutePath = (module as unknown as ts.ProjectReference).originalPath || module.resolvedFileName;
+            moduleName = module.packageId?.name;
+            extension = module.extension;
         }
     }
 
-    // If compilerOptions are not defined or resolving failed
-    const pathOptions = options.inspOptions.supportedTypes.map((t) => path.resolve(path.dirname(filePath), normalizedPath + "." + t));
-    // We don't know the exact extension of the file, so we try all supported types to find it.
-    // Would be good to optimize this somehow
-    // Doesn't find e.g. "fs" since it is node module
-    return pathOptions.find((p) => fs.existsSync(p));
+    if (!absolutePath) {
+        // If compilerOptions are not defined or resolving failed
+        const pathOptions = options.inspOptions.supportedTypes.map((t) => path.resolve(path.dirname(filePath), normalizedPath + "." + t));
+        // We don't know the exact extension of the file, so we try all supported types to find it.
+        // Would be good to optimize this somehow
+        // Doesn't find e.g. "fs" since it is node module
+        absolutePath = pathOptions.find((p) => fs.existsSync(p));
+
+        const lastPathPart = absolutePath?.split("/")?.pop() || "";
+        const fileNameParts = lastPathPart.split(".");
+        fileNameParts.shift();
+        extension = "." + fileNameParts?.join(".") || "";
+    }
+    if (absolutePath) {
+        const fullPath = path.resolve(absolutePath);
+        if (!moduleName) {
+            moduleName = absolutePath.split("/").pop()?.replace(extension, "") || normalizedPath;
+        }
+        return {
+            moduleName,
+            extension,
+            absolutePath,
+            fullPath,
+        };
+    }
 };
 
-export const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): Import[] => {
-    let results: Import[] = [];
+export const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): ImportInfoV2[] => {
+    let results: ImportInfoV2[] = [];
     let importPath: string | undefined;
     let knownImport = false;
 
@@ -52,9 +81,25 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
         // Remove quotes around import path
         const normalizedPath = importPath.substring(1, importPath.length - 1);
 
-        const absolutePath = resolveImportPath(options, normalizedPath, filePath);
-        if (absolutePath || knownImport) {
-            results = [...results, { importPath, normalizedPath, absolutePath }];
+        const paths = resolveImportPath(options, normalizedPath, filePath);
+        if (paths?.absolutePath || knownImport) {
+            results = [
+                ...results,
+                {
+                    id: paths?.absolutePath || normalizedPath,
+                    uniqueId: uuidv4(),
+                    import: normalizedPath,
+                    extension: paths?.extension || "",
+                    //import: importInfo.absolutePath || importInfo.normalizedPath,
+                    description: "",
+                    fullPath: paths?.fullPath,
+                    type: getType(paths?.absolutePath),
+                    moduleName: paths?.moduleName || normalizedPath,
+                    resolved: !!paths,
+                    absolutePath: paths?.absolutePath,
+                    imports: [],
+                },
+            ];
         }
     }
 

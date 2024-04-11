@@ -4,14 +4,6 @@ import { log } from "./output/log";
 
 export type OutputFormats = "html" | "console" | "json" | "png";
 
-export interface ImportInfo {
-    import: string;
-    resolved: boolean;
-    absolutePath?: string;
-    level: number;
-    imports: ImportInfo[];
-}
-
 type ImportType = "Node module" | "Source file" | "Unknown";
 
 export interface ImportInfoV2 {
@@ -27,22 +19,24 @@ export interface ImportInfoV2 {
     fullPath?: string;
     // Type of the file
     type: ImportType;
+    // File extension
+    extension: string;
     // Name of the module.
     moduleName: string;
     // Level that the file was traversed
-    level: number;
+    level?: number;
     // Was this file traversed
     resolved: boolean;
     // Child imports
     imports: ImportInfoV2[];
     // Description parsed from the file
-    description: string;
+    description?: string;
     // Git href
     gitHref?: string;
 }
 
 export interface TraversalResult {
-    imports: ImportInfo[];
+    imports: ImportInfoV2[];
 }
 
 export interface InspOptions {

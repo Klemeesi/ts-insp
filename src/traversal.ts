@@ -1,12 +1,12 @@
 import * as ts from "typescript";
 import * as fs from "fs";
-import { ImportInfo, MainOptions, TraversalResult } from "./types";
+import { ImportInfoV2, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
 
-const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfo[] => {
-    const result: ImportInfo[] = [];
+const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfoV2[] => {
+    const result: ImportInfoV2[] = [];
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const sourceFile = ts.createSourceFile(filePath, fileContent, ts.ScriptTarget.Latest, true);
 
@@ -23,13 +23,10 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
 
         importInfos.forEach((importInfo) => {
             // Child node has an import
-            options.logger("Found import:", importInfo.normalizedPath, `(${importInfo.absolutePath})`);
+            options.logger("Found import:", importInfo.import, `(${importInfo.absolutePath})`);
             result.push({
-                import: importInfo.absolutePath || importInfo.normalizedPath,
-                resolved: !!importInfo.absolutePath,
-                absolutePath: importInfo.absolutePath,
+                ...importInfo,
                 level: currentLevel,
-                imports: [],
             });
         });
     });
@@ -39,8 +36,8 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
 // Limit the number of iterations based on options
 // Only process import if absolutePath is known. For some modules we don't know the absolutePath (like "fs")
 // Limit node_modules traversal based on options
-const shouldTraverse = (options: MainOptions, info: ImportInfo, importCounts: Record<string, number>) =>
-    info.level < options.inspOptions.iterations &&
+const shouldTraverse = (options: MainOptions, info: ImportInfoV2, importCounts: Record<string, number>) =>
+    info.level! < options.inspOptions.iterations &&
     info.absolutePath &&
     (options.inspOptions.traverseNodeModules || !isNodeModule(info.absolutePath)) &&
     (options.inspOptions.retraverse || !importCounts[info.import]);
@@ -73,7 +70,7 @@ export const getImports = (options: MainOptions, filePath: string): TraversalRes
                         ...nextBatchToProcess,
                         {
                             parent: i,
-                            imports: getImportsFromFile(options, i.absolutePath!, i.level + 1),
+                            imports: getImportsFromFile(options, i.absolutePath!, i.level! + 1),
                         },
                     ];
                 }
