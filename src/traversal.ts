@@ -2,6 +2,7 @@ import * as ts from "typescript";
 import * as fs from "fs";
 import { ImportInfoV2, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
+import { getCommentsFromFile } from "./helpers/commentParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
 
