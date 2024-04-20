@@ -9,7 +9,8 @@ module.exports = {
         png: {
             outputPath: "docs",
             outputName: "DependencyTree",
-            template: "dependencyTree",
+            template: "gojsdependencyTree",
+            customStyles: "body { width: 1700px !important; height: 2500px !important; }",
         },
     },
     plugins: [],

@@ -44,7 +44,7 @@ const main = async () => {
     // Test code for now. Generated with ChatGPT
     if (config.inspOptions.format.some((v) => v === "html")) {
         const templatePath = "templates/template1.html";
-        generateHtmlPage(result.imports, templatePath, true);
+        generateHtmlPage(result.imports, config.inspOptions);
         console.log("Generated HTML.");
     }
 

@@ -41,7 +41,7 @@ const shouldTraverse = (options: MainOptions, info: ImportInfoV2, importCounts: 
     info.level! < options.inspOptions.iterations &&
     info.absolutePath &&
     (options.inspOptions.traverseNodeModules || !isNodeModule(info.absolutePath)) &&
-    (options.inspOptions.retraverse || !importCounts[info.import]);
+    (options.inspOptions.retraverse || !importCounts[info.id]);
 
 // Second try with the function. Original was recursive and pretty complex method to modify.
 // This one is supposed to be easier to read and not be recursive.
@@ -78,7 +78,7 @@ export const getImports = (options: MainOptions, filePath: string): TraversalRes
             });
             // Keep track of the import counts. Important if user has enabled retraversal
             oneSet.imports.forEach((i) => {
-                importCounts[i.import] = importCounts[i.import] ? importCounts[i.import] + 1 : 1;
+                importCounts[i.id] = importCounts[i.id] ? importCounts[i.id] + 1 : 1;
             });
         });
     }

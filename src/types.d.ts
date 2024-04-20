@@ -39,6 +39,15 @@ export interface TraversalResult {
     imports: ImportInfoV2[];
 }
 
+export interface HtmlFormatOptions {
+    outputPath?: string;
+    outputName?: string;
+    template?: string;
+    customStyles?: string;
+}
+
+export interface PngFormatOptions extends HtmlFormatOptions {}
+
 export interface InspOptions {
     /** Verbose... */
     verbose?: boolean;
@@ -57,11 +66,8 @@ export interface InspOptions {
     /** What output formats are done */
     format: OutputFormats[];
     formatOptions?: {
-        png?: {
-            outputPath?: string;
-            outputName?: string;
-            template?: string;
-        };
+        png?: PngFormatOptions;
+        html?: HtmlFormatOptions;
     };
     /** Additional plugins. At the time of writing there is only a debug plugin that prints extra debug information about traversal */
     plugins: TraversalPlugin[];
