@@ -34,9 +34,9 @@ Not possible at the moment.
 
 ## Future improvements
 
--   Configuration file
--   Option to discard the child imports if the dependant file has already been traversed. Otherwise there would be a lot of noice
--   Would be nice to convert relative imports to absolute ones. Just need the root folder
+-   ~~Configuration file~~
+-   ~~Option to discard the child imports if the dependant file has already been traversed. Otherwise there would be a lot of noice~~
+-   ~~Would be nice to convert relative imports to absolute ones. Just need the root folder~~
 -   ~~Exporting to different formats (JSON, Image, HTML, PNG)~~
 -   ~~Take tsconfig.json configuration in to account. aliases, rootDir, etc...~~
 -   Export whole project (user gives the folder)
@@ -45,3 +45,4 @@ Not possible at the moment.
 -   Make it runnable with npx. I don't think it works right now
 -   Publish it
 -   Maybe add more functionality for it. Check if there are unused dependencies in the package.json
+-   Alternative to gojs :(
