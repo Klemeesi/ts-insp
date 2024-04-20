@@ -50,7 +50,7 @@ const main = async () => {
 
     if (config.inspOptions.format.some((v) => v === "png")) {
         const templatePath = "templates/template1.html";
-        await generatePng(result.imports, templatePath);
+        await generatePng(result.imports, config.inspOptions);
         console.log("Generated PNG.");
     }
 

@@ -4,6 +4,13 @@ module.exports = {
     file: "src/index.ts",
     traverseNodeModules: false,
     retraverse: false,
-    format: ["console"],
+    format: ["console", "png"],
+    formatOptions: {
+        png: {
+            outputPath: "docs",
+            outputName: "DependencyTree",
+            template: "dependencyTree",
+        },
+    },
     plugins: [],
 };

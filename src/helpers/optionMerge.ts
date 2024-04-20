@@ -38,6 +38,7 @@ export const commandLineToInspOptions = (options: CommandLineParams): InspOption
 
 export const mergeOptions = (cmdLineOptions: InspOptions, configFileOptions: Partial<InspOptions>): InspOptions => {
     return {
+        ...configFileOptions,
         verbose: cmdLineOptions.verbose || configFileOptions.verbose,
         configFile: cmdLineOptions.configFile,
         supportedTypes: mergeArrays(cmdLineOptions.supportedTypes, configFileOptions.supportedTypes),

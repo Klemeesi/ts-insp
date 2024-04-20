@@ -56,6 +56,13 @@ export interface InspOptions {
     retraverse?: boolean;
     /** What output formats are done */
     format: OutputFormats[];
+    formatOptions?: {
+        png?: {
+            outputPath?: string;
+            outputName?: string;
+            template?: string;
+        };
+    };
     /** Additional plugins. At the time of writing there is only a debug plugin that prints extra debug information about traversal */
     plugins: TraversalPlugin[];
 }
