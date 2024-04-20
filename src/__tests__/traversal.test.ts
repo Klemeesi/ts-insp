@@ -1,6 +1,10 @@
 import { getImports } from "../traversal";
 import { getCompilerOptions } from "../tsConfig";
 
+jest.mock("uuid", () => ({
+    v4: jest.fn().mockReturnValue("mocked-uuid"), // Return a fixed ID 'mocked-uuid'
+}));
+
 const testConfig = {
     inspOptions: {
         file: "./src/__tests__/traversal.test.ts",

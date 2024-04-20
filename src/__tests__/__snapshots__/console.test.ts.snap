@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`console Basic console output test 1`] = `
+[
+  "test-data/test1.ts",
+  "├ fs",
+  "├ src/index.ts",
+  "│ ├ src/traversal.ts",
+  "│ ├ src/output/console.ts",
+  "│ ├ src/commandLine.ts",
+  "│ ├ src/output/html.ts",
+  "│ ├ src/output/json.ts",
+  "│ ├ src/output/png.ts",
+  "│ ├ src/types.d.ts",
+  "├ src/commandLine.ts",
+  "│ ├ fs",
+  "│ ├ node_modules/commander/typings/index.d.ts",
+  "│ ├ src/types.d.ts",
+  "│ ├ src/tsConfig.ts",
+  "│ ├ src/output/log.ts",
+  "│ ├ src/plugins.ts",
+  "├ src/types.d.ts",
+  "│ ├ node_modules/typescript/lib/typescript.d.ts",
+  "│ ├ src/plugins.ts",
+  "│ ├ src/output/log.ts",
+  "├ src/plugins.ts",
+  "│ ├ src/plugins/debugPlugin.ts",
+]
+`;
+
 exports[`traversal Basic console output test 1`] = `
 [
   "test-data/test1.ts",

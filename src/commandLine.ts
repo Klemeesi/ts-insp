@@ -1,20 +1,16 @@
-import * as fs from "fs";
 import { program } from "commander";
-import { InspOptions, MainOptions, OutputFormats } from "./types";
+import { CommandLineParams, MainOptions } from "./types";
 import { getCompilerOptions } from "./tsConfig";
 import { log } from "./output/log";
-import { PluginName, TraversalPlugin, predefinedPlugins } from "./plugins";
-
-type CommandLineParams = {
-    [K in keyof InspOptions]: string;
-};
+import { getSettingsFromConfigFile } from "./configFileParser";
+import { commandLineToInspOptions, mergeOptions, validateInspOptions } from "./helpers/optionMerge";
 
 export const getConfig = (): MainOptions => {
     program
         .name("ts-insp")
         .description("Traverses file imports and does analyzes")
         .option("-f, --file <fileName>", "Root file where the traversal starts")
-        .option("-c, --config-file <configFilename>", "Specify the ts-insp config file name (not supported)")
+        .option("-c, --config-file <configFilename>", "Specify the ts-insp config file name (wip)")
         .option("-v, --verbose", "Enable verbose mode", false)
         .option("-s, --supported-types <supportedTypes>", "Supported file types join with comma (,)", "ts,js,tsx,jsx,d.ts")
         .option(
@@ -34,52 +30,25 @@ export const getConfig = (): MainOptions => {
     program.parse();
 
     const options = program.opts<CommandLineParams>();
+    const cmdLineOptions = commandLineToInspOptions(options);
+    const configFileOptions = options.configFile ? getSettingsFromConfigFile(options.configFile) : {};
+    const inspOptions = mergeOptions(cmdLineOptions, configFileOptions);
+    validateInspOptions(inspOptions);
 
-    if (!options.file) {
-        console.error("Please provide a TypeScript file path as an argument.");
-        process.exit(-1);
-    }
+    !!inspOptions.verbose && log("Number of traversal plugins:", inspOptions.plugins.length);
 
-    if (!fs.existsSync(options.file)) {
-        console.error("File does not exist:", options.file);
-        process.exit(-1);
-    }
-
-    let plugins: TraversalPlugin[] = [];
-    if (options.plugins) {
-        plugins = options.plugins
-            .split(",")
-            .map((name) => ({
-                name: name as unknown as PluginName,
-                processor: predefinedPlugins[name as PluginName],
-            }))
-            .filter((p) => !!p.processor);
-    }
-
-    !!options.verbose && log("Number of traversal plugins:", plugins.length);
-
-    const compilerOptions = getCompilerOptions(options.file);
+    const compilerOptions = getCompilerOptions(inspOptions.file);
     if (!compilerOptions) {
-        !!options.verbose && log("Failed to read tsconfig.json for file ${options.file}");
+        !!inspOptions.verbose && log("Failed to read tsconfig.json for file ${inspOptions.file}");
     } else {
-        !!options.verbose && log("Using tsconfig.json from: ", compilerOptions.tsConfigFilePath);
+        !!inspOptions.verbose && log("Using tsconfig.json from: ", compilerOptions.tsConfigFilePath);
     }
 
     return {
         tsConfigFilePath: compilerOptions?.tsConfigFilePath,
         tsConfigPath: compilerOptions?.tsConfigPath,
         compilerOptions: compilerOptions?.options,
-        inspOptions: {
-            verbose: !!options.verbose,
-            configFile: options.configFile,
-            supportedTypes: options.supportedTypes.split(","),
-            iterations: +options.iterations,
-            file: options.file,
-            traverseNodeModules: !!options.traverseNodeModules,
-            retraverse: !!options.retraverse,
-            format: options.format.split(",") as OutputFormats[],
-            plugins,
-        },
-        logger: !!options.verbose ? log : () => {},
+        inspOptions,
+        logger: !!inspOptions.verbose ? log : () => {},
     };
 };
