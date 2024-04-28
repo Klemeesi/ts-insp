@@ -26,11 +26,59 @@ npm run start test-data/test1.ts
 
 ## Example Output
 
-![Image Alt Text](docs/DependencyTree.png)
+![Dependency Tree of ts-insp tool](docs/DependencyTree.png)
 
 ## Configuration
 
-Not possible at the moment.
+Create configuration file e.g. `./ts-insp.config.ts`. All options are supported in the configuration file (except plugins at the moment).
+
+Example:
+
+```ts
+import { InspOptions } from "ts-insp";
+
+const config: Partial<InspOptions> = {
+    // Debug logs
+    verbose: false,
+    // Supported types. js, ts, jsx, tsx ja d.ts files are officially supported. Some other typescript
+    // friendly files might be too.
+    supportedTypes: ["tsx", "ts", "d.ts"],
+    // Entry point where traversing starts
+    file: "App.tsx",
+    // By default node modules are not traversed. Can be enabled but feature is experimental
+    traverseNodeModules: false,
+    // By default retraversing is disabled. This defines whether same module is processed again when
+    // encountered during traversing. If the amount of iterations for traversing is too high
+    // circular dependencies will be a problem. Use with caution.
+    retraverse: false,
+    // Output format. Supported types are console, json, png, html
+    format: ["console", "png"],
+    // html and png formatting options. More information later
+    formatOptions: {
+        png: {
+            outputPath: "docs",
+            outputName: "DependencyTree",
+            template: "d3dependencyTree",
+            customStyles: "body { width: 2200px !important; height: 100% !important; }",
+            slugs: {
+                diagramWidth: 2000,
+                diagramHeight: 2000,
+                maxRectWidth: 280,
+            },
+        },
+    },
+    // Not supported in config file. Experimental feature which can be enabled from command line.
+    plugins: [],
+};
+
+export default config;
+```
+
+Command line configuration instructions can be read with following command:
+
+```sh
+yarn ts-insp --help
+```
 
 ## Future improvements
 
@@ -42,7 +90,7 @@ Not possible at the moment.
 -   Export whole project (user gives the folder)
 -   ~~Unit tests :)~~
 -   More comprehensive unit tests :)
--   Make it runnable with npx. I don't think it works right now
--   Publish it
+-   Make it runnable with npx. Might work already, not sure...
+-   Publish it, real versions
 -   Maybe add more functionality for it. Check if there are unused dependencies in the package.json
--   Alternative to gojs :(
+-   ~~Alternative to gojs :(~~
