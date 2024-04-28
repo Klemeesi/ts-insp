@@ -31,7 +31,7 @@
     "scripts": {
         "start": "node dist/index.js",
         "build": "tsc",
-        "quick": "yarn build && yarn start -c ts-insp.config.js",
+        "quick": "yarn build && yarn start -c ts-insp.config.ts",
         "test": "jest",
         "postinstall": "node -e \"process.env.npm_config_user_agent.includes('npm') ? 'npm' : 'yarn'\" | xargs -I{} {} run build"
     }

@@ -1,13 +1,13 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "CommonJS",
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "strict": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "types": ["jest"]
-  },
-  "exclude": ["./src/__mocks__", "./src/__tests__", "test-data"]
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "strict": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "types": ["jest"]
+    },
+    "exclude": ["./src/__mocks__", "./src/__tests__", "test-data", "./ts-insp.config.ts"]
 }
