@@ -803,6 +803,7 @@
             ];
         </script>
         <script>
+            const maxRectWidth = 180;
             const getTextSize = (text, className) => {
                 const bbox = d3
                     .select("body")
@@ -823,11 +824,26 @@
                 // Get the bounding box of the text element
                 var bbox1 = getTextSize(getName(i), "text");
                 var bbox2 = getTextSize(getDescription(i) || "a", "secondaryText");
-                return { width: Math.max(bbox1.width, bbox2.width) + sizePadding.x, height: bbox1.height + bbox2.height + sizePadding.y };
+                return {
+                    width: Math.min(maxRectWidth, Math.max(bbox1.width, bbox2.width)) + sizePadding.x,
+                    height: bbox1.height + bbox2.height + sizePadding.y,
+                };
             };
 
             const getName = (i) => i.moduleName;
-            const getDescription = (i) => i.absolutePath;
+            const getDescription = (i) => {
+                if (i.absolutePath && i.type === "Source file") {
+                    const splitted = i.absolutePath.split("/");
+                    while (splitted.length) {
+                        const textWidth = getTextSize(splitted.join("/"), "secondaryText").width;
+                        if (textWidth <= maxRectWidth) {
+                            return splitted.join("/");
+                        }
+                        splitted.splice(0, 1);
+                    }
+                }
+                return "";
+            };
             const toDataSource = (inputImports) => {
                 return inputImports.map((i) => ({
                     ...i,
@@ -879,7 +895,8 @@
                 .attr("class", "link")
                 .attr("d", function (d) {
                     const start = { x: d.source.y + d.source.data.bbox.width, y: d.source.x };
-                    const firstHalf = (d.target.y - start.x) / 2 + start.x;
+                    //const firstHalf = (d.target.y - start.x) / 2 + start.x;
+                    const firstHalf = d.target.y - 10;
                     return `M${start.x},${start.y}` + `H${firstHalf}` + `V${d.target.x}` + `H${d.target.y}`;
                 });
 
@@ -904,7 +921,7 @@
                 });
 
             node.append("text")
-                .attr("y", (d) => (d.data.nodeDescription ? -2 : 5))
+                .attr("y", (d) => (d.data.nodeDescription ? -2 : 3))
                 .attr("x", 7)
                 .attr("class", "text")
                 .style("text-anchor", function (d) {
@@ -917,7 +934,6 @@
             node.append("text")
                 .attr("y", 12)
                 .attr("x", 7)
-                .attr("width", 50)
                 .attr("class", "secondaryText")
                 .style("text-anchor", function (d) {
                     return "start";
