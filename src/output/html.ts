@@ -16,7 +16,8 @@ export const generateHtmlPage = (
 ): string => {
     const opt = { ...defaultOptions, ...(options.formatOptions?.[format] || {}) };
     const templatePath = `templates/${opt.template}.html`;
-    const templateContent = fs.readFileSync(templatePath, "utf-8");
+    const absoluteTemplatePath = path.resolve(__dirname, "../..", templatePath);
+    const templateContent = fs.readFileSync(absoluteTemplatePath, "utf-8");
     const output = path.resolve(opt.outputPath, `${opt.outputName}.html`);
     const outputFolder = path.resolve(opt.outputPath);
 
