@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Dynamic Div Generation</title>
         <style>
+            .node {
+                max-width: 100px;
+            }
             svg {
                 overflow: visible;
             }
@@ -12,25 +15,26 @@
                 font: 12px sans-serif;
                 font-weight: 600;
             }
+            .secondaryText {
+                font: 10px sans-serif;
+            }
             .link {
                 fill: none;
                 stroke: black;
                 stroke-width: 2px;
             }
+            .rect {
+                stroke: black;
+                stroke-width: 1px;
+            }
             .nodeModule {
                 fill: #90caf9;
-                stroke: black;
-                stroke-width: 2px;
             }
             .sourceFile {
                 fill: whitesmoke;
-                stroke: black;
-                stroke-width: 2px;
             }
             .unknown {
                 fill: #c0c0c0;
-                stroke: black;
-                stroke-width: 2px;
             }
         </style>
     </head>
@@ -799,30 +803,38 @@
             ];
         </script>
         <script>
-            const getNodeBBox = (i) => {
-                // Get the bounding box of the text element
-                var bbox = d3
+            const getTextSize = (text, className) => {
+                const bbox = d3
                     .select("body")
                     .append("svg")
                     .append("text")
+                    .attr("class", className)
                     .attr("x", -1000)
                     .attr("y", -1000)
                     .attr("dy", ".35em")
-                    .text(getName(i))
+                    .text(text)
                     .node()
                     .getBBox();
                 d3.select("svg > text").remove(); // Remove the temporary text element
-                return { ...bbox, width: bbox.width + 15, height: bbox.height + 5 }; // Add some padding
+                return bbox;
+            };
+            const getNodeBBox = (i) => {
+                const sizePadding = { x: 15, y: 10 };
+                // Get the bounding box of the text element
+                var bbox1 = getTextSize(getName(i), "text");
+                var bbox2 = getTextSize(getDescription(i) || "a", "secondaryText");
+                return { width: Math.max(bbox1.width, bbox2.width) + sizePadding.x, height: bbox1.height + bbox2.height + sizePadding.y };
             };
 
-            //const getName = (i) => (i.fullPath?.includes("node_modules") || !i.absolutePath ? i.import : i.absolutePath);
             const getName = (i) => i.moduleName;
+            const getDescription = (i) => i.absolutePath;
             const toDataSource = (inputImports) => {
                 return inputImports.map((i) => ({
                     ...i,
                     bbox: getNodeBBox(i),
                     children: toDataSource(i.imports),
                     nodeName: getName(i),
+                    nodeDescription: getDescription(i),
                 }));
             };
         </script>
@@ -834,26 +846,31 @@
         ></script>
         <svg width="100%" height="100%"></svg>
         <script>
-            var diagramWidth = 960;
-            var diagramHeight = 1500;
+            const diagramWidth = 960;
+            const diagramHeight = 1500;
+            const getRectClass = (type) => (type === "Node module" ? "nodeModule" : type === "Source file" ? "sourceFile" : "unknown");
 
-            var margin = { top: 40, right: 90, bottom: 50, left: 90 },
-                width = diagramWidth - margin.left - margin.right,
-                height = diagramHeight - margin.top - margin.bottom;
+            const margin = { top: 40, right: 90, bottom: 50, left: 90 };
+            const width = diagramWidth - margin.left - margin.right;
+            const height = diagramHeight - margin.top - margin.bottom;
 
-            var svg = d3
+            const svg = d3
                 .select("svg")
                 .attr("width", width + margin.left + margin.right)
                 .attr("height", height + margin.top + margin.bottom)
                 .append("g")
                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-            var tree = d3.tree().size([height, width]);
+            const tree = d3
+                .tree()
+                .size([height, width])
+                .separation(function (a, b) {
+                    console.log(a, b);
+                    return a.parent === b.parent ? 3 : 4;
+                });
 
-            var root = d3.hierarchy(toDataSource(imports)[0]);
-
+            const root = d3.hierarchy(toDataSource(imports)[0]);
             tree(root);
 
-            let counter = 0;
             var link = svg
                 .selectAll(".link")
                 .data(root.links())
@@ -883,11 +900,11 @@
                 .attr("height", (d) => d.data.bbox.height)
                 .attr("rx", 5) // Rounded corners
                 .attr("class", (d) => {
-                    return d.data.type === "Node module" ? "nodeModule" : d.data.type === "Source file" ? "sourceFile" : "unknown";
+                    return "rect " + getRectClass(d.data.type);
                 });
 
             node.append("text")
-                .attr("dy", ".35em")
+                .attr("y", (d) => (d.data.nodeDescription ? -2 : 5))
                 .attr("x", 7)
                 .attr("class", "text")
                 .style("text-anchor", function (d) {
@@ -895,6 +912,18 @@
                 })
                 .text(function (d) {
                     return d.data.nodeName;
+                });
+
+            node.append("text")
+                .attr("y", 12)
+                .attr("x", 7)
+                .attr("width", 50)
+                .attr("class", "secondaryText")
+                .style("text-anchor", function (d) {
+                    return "start";
+                })
+                .text(function (d) {
+                    return d.data.nodeDescription;
                 });
         </script>
     </body>
