@@ -25,7 +25,8 @@ export const generateHtmlPage = (
     }
     const htmlContent = templateContent
         .replace("<!-- IMPORTS -->", JSON.stringify(importInfos, undefined, 2))
-        .replace("<!-- CUSTOM-STYLES -->", opt.customStyles || "");
+        .replace("<!-- CUSTOM-STYLES -->", opt.customStyles || "")
+        .replace("<!-- SLUGS -->", opt.slugs ? JSON.stringify(opt.slugs) : "");
     save && fs.writeFileSync(output, htmlContent);
     return htmlContent;
 };

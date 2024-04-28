@@ -44,6 +44,7 @@ export interface HtmlFormatOptions {
     outputName?: string;
     template?: string;
     customStyles?: string;
+    slugs?: { [key: string]: unknown };
 }
 
 export interface PngFormatOptions extends HtmlFormatOptions {}

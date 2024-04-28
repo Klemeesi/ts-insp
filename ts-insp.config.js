@@ -9,8 +9,13 @@ module.exports = {
         png: {
             outputPath: "docs",
             outputName: "DependencyTree",
-            template: "gojsdependencyTree",
-            customStyles: "body { width: 1700px !important; height: 2500px !important; }",
+            template: "d3dependencyTree",
+            customStyles: "body { width: 1200px !important; height: 100% !important; }",
+            slugs: {
+                diagramWidth: 1000,
+                diagramHeight: 1500,
+                maxRectWidth: 180,
+            },
         },
     },
     plugins: [],
