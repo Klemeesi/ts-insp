@@ -10,5 +10,5 @@
         "types": ["jest"],
         "declaration": true
     },
-    "exclude": ["./src/__mocks__", "./src/__tests__", "test-data", "./ts-insp.config.ts"]
+    "exclude": ["./src/__mocks__", "./src/__tests__", "dist", "test-data", "./ts-insp.config.ts"]
 }
