@@ -1,0 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+
+### Added
+
+-
+
+### Changed
+
+-
+
+### Fixed
+
+-   Fixed supportedTypes not to be respected while traversing
+
+## 0.0.2 - 2024-04-29
+
+### Added
+
+-   Published the first version of the tool to npm registry (and soon changing the repository to public)
+-   Following output formats: console, json, png and html (with d3 template)
+-   javascript and typescript configuration files

@@ -1,0 +1,43 @@
+# Contributing to ts-insp
+
+Thank you for considering contributing to my project! I welcome contributions from everyone, whether it's a bug fix, feature enhancement, documentation improvement, or anything else that can make the project better.
+
+## How to Contribute
+
+1. Fork the repository to your GitHub account.
+2. Clone the forked repository to your local machine.
+3. Install dependencies by running `yarn install` (I decided to use yarn).
+4. Make your changes on a new branch:
+
+```sh
+git checkout -b branch-name
+```
+
+5. Write tests for your changes if applicable.
+6. Run tests using `yarn test` to ensure your changes didn't break anything.
+7. Commit your changes:
+
+```sh
+git commit -m "Your descriptive commit message"
+```
+
+8. Push your branch to your forked repository:
+
+```sh
+git push origin feature/your-feature
+```
+
+9. Open a pull request to the main repository's `main` branch.
+
+## Pull Request Guidelines
+
+-   Please provide a clear description of the changes you've made in your pull request.
+-   Ensure that your code follows prettier formatting rules.
+-   Include relevant tests along with your changes.
+-   Update documentation if necessary.
+
+## Questions and Support
+
+If you have any questions or need support, feel free to [open an issue](https://github.com/Klemeesi/ts-insp/issues).
+
+Thank you for contributing to ts-insp!
