@@ -2,7 +2,7 @@ import type { InspOptions } from "./src/types.d.ts";
 
 const config: Partial<InspOptions> = {
     verbose: false as boolean,
-    supportedTypes: ["ts", "js"],
+    supportedTypes: ["ts", "js", "d.ts"],
     file: "src/index.ts",
     traverseNodeModules: false,
     retraverse: false,
