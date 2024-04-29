@@ -1,5 +1,5 @@
-import { PluginName, TraversalPlugin, predefinedPlugins } from "../plugins";
-import { CommandLineParams, InspOptions, OutputFormats } from "../types";
+import { predefinedPlugins } from "../plugins";
+import { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
 import * as fs from "fs";
 
 const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => [...arr1, ...arr2];
