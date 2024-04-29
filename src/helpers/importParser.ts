@@ -82,7 +82,13 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
         const normalizedPath = importPath.substring(1, importPath.length - 1);
 
         const paths = resolveImportPath(options, normalizedPath, filePath);
-        if (paths?.absolutePath || knownImport) {
+        const extensionMatches = !paths?.extension || options.inspOptions.supportedTypes.some((e) => `.${e}` === paths.extension);
+
+        if (!extensionMatches) {
+            options.logger("Skipped", paths?.absolutePath || normalizedPath, "due to supportedTypes");
+        }
+
+        if (extensionMatches && (paths?.absolutePath || knownImport)) {
             results = [
                 ...results,
                 {
@@ -90,7 +96,6 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
                     uniqueId: uuidv4(),
                     import: normalizedPath,
                     extension: paths?.extension || "",
-                    //import: importInfo.absolutePath || importInfo.normalizedPath,
                     description: "",
                     fullPath: paths?.fullPath,
                     type: getType(paths?.absolutePath),
