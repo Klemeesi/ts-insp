@@ -1,10 +1,13 @@
-import { CompilerOptions } from "typescript";
-import type { TraversalPlugin } from "./plugins";
-import type { log } from "./output/log";
+import type { CompilerOptions, SourceFile, Node } from "typescript";
 
 export type OutputFormats = "html" | "console" | "json" | "png";
 
+export type PluginName = "debug" | "doc";
+export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
+export type TraversalPlugin = { name: PluginName; processor: PluginProcessor };
+
 type ImportType = "Node module" | "Source file" | "Unknown";
+type Logger = (...data: any[]) => void;
 
 export interface ImportInfoV2 {
     // Same as absolutePath
@@ -81,7 +84,7 @@ export interface MainOptions {
     tsConfigFilePath?: string;
     tsConfigPath?: string;
     compilerOptions?: CompilerOptions;
-    logger: typeof log;
+    logger: Logger;
 }
 
 export type CommandLineParams = {
