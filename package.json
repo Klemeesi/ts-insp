@@ -1,6 +1,6 @@
 {
     "name": "ts-insp",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Tool to visualize typescript dependencies in a project",
     "main": "dist/index.js",
     "author": "Klemeesi",
@@ -15,7 +15,7 @@
         "dist",
         "bin"
     ],
-    "types": "./src/types.d.ts",
+    "types": "./dist/types.d.ts",
     "jest": {
         "preset": "ts-jest",
         "testEnvironment": "node",
@@ -37,7 +37,7 @@
     },
     "scripts": {
         "start": "node dist/index.js",
-        "build": "tsc",
+        "build": "tsc && cp src/types.d.ts dist/types.d.ts",
         "quick": "yarn build && yarn start -c ts-insp.config.ts",
         "test": "jest"
     }

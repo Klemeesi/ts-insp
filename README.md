@@ -12,16 +12,28 @@ Currently only these file formats are supported but it all depends on what the t
 -   .jsx
 -   .d.ts
 
-## Building the script
+## Installing and running
 
-```
-npm run build
+### yarn
+
+Install the dev dependency
+
+```sh
+yarn add -D ts-insp
 ```
 
-## Running the script
+Run the script
 
+```sh
+yarn ts-insp --help
 ```
-npm run start test-data/test1.ts
+
+### npx
+
+You can run the tool without installing dependency:
+
+```sh
+npx ts-insp --help
 ```
 
 ## Example Output
@@ -74,7 +86,13 @@ const config: Partial<InspOptions> = {
 export default config;
 ```
 
-Command line configuration instructions can be read with following command:
+After the configuration file has been created you can run the tool with following command:
+
+```sh
+yarn ts-insp -c ts-insp.config.ts
+```
+
+Command line configuration instructions can be read with following command. Command line options will overwrite the configuration file if provided.
 
 ```sh
 yarn ts-insp --help
@@ -87,10 +105,10 @@ yarn ts-insp --help
 -   ~~Would be nice to convert relative imports to absolute ones. Just need the root folder~~
 -   ~~Exporting to different formats (JSON, Image, HTML, PNG)~~
 -   ~~Take tsconfig.json configuration in to account. aliases, rootDir, etc...~~
--   Export whole project (user gives the folder)
 -   ~~Unit tests :)~~
--   More comprehensive unit tests :)
--   Make it runnable with npx. Might work already, not sure...
--   Publish it, real versions
--   Maybe add more functionality for it. Check if there are unused dependencies in the package.json
+-   ~~Make it runnable with npx. Might work already, not sure...~~
+-   ~~Publish it, real versions~~
 -   ~~Alternative to gojs :(~~
+-   More comprehensive unit tests :)
+-   Export whole project (user gives the folder)
+-   Maybe add more functionality for it. Check if there are unused dependencies in the package.json

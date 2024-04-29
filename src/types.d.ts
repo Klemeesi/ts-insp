@@ -1,6 +1,6 @@
 import { CompilerOptions } from "typescript";
-import { TraversalPlugin } from "./plugins";
-import { log } from "./output/log";
+import type { TraversalPlugin } from "./plugins";
+import type { log } from "./output/log";
 
 export type OutputFormats = "html" | "console" | "json" | "png";
 
