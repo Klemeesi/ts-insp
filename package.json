@@ -1,6 +1,6 @@
 {
     "name": "ts-insp",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "Tool to visualize typescript dependencies in a project",
     "main": "dist/index.js",
     "author": "Klemeesi",
