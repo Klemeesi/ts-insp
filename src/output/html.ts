@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import { ImportInfoV2, InspOptions } from "../types";
+import type { ImportInfoV2, InspOptions } from "../types";
 import path from "path";
 
 const defaultOptions = {

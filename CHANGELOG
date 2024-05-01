@@ -6,6 +6,21 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 
+-   Option to filter modules
+-   Option to skip type imports
+
+### Changed
+
+-   Changed imports to "type imports" if only types were imported
+
+### Fixed
+
+-   Fixed supported types and output format options not being merged correctly
+
+## 0.0.3 - 2024-04-30
+
+### Added
+
 -
 
 ### Changed

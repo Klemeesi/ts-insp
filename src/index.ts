@@ -1,6 +1,6 @@
 import { getImports } from "./traversal";
 import { getConfig } from "./commandLine";
-import { TraversalResult } from "./types";
+import type { TraversalResult } from "./types";
 import { generateOutput } from "./outputFormats";
 
 const includeTopLevel = (topImport: string, result: TraversalResult): TraversalResult => {

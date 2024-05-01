@@ -1,5 +1,5 @@
 import { program } from "commander";
-import { CommandLineParams, MainOptions } from "./types";
+import type { CommandLineParams, MainOptions } from "./types";
 import { getCompilerOptions } from "./tsConfig";
 import { log } from "./output/log";
 import { getSettingsFromConfigFile } from "./configFileParser";

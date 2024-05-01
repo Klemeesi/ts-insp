@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import * as path from "path";
 import * as fs from "fs";
 const { v4: uuidv4 } = require("uuid");
-import { ImportInfoV2, MainOptions } from "../types";
+import type { ImportInfoV2, MainOptions } from "../types";
 
 const getType = (absolutePath?: string) =>
     absolutePath?.includes("node_modules") ? "Node module" : absolutePath ? "Source file" : "Unknown";
@@ -68,7 +68,12 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
     let importPath: string | undefined;
     let knownImport = false;
 
-    if (ts.isImportDeclaration(node) || ts.isExportDeclaration(node)) {
+    if (ts.isImportDeclaration(node)) {
+        if (!options.inspOptions.skipTypeImports || !node.importClause?.isTypeOnly) {
+            importPath = node.moduleSpecifier?.getText(sourceFile);
+            knownImport = true;
+        }
+    } else if (ts.isExportDeclaration(node)) {
         importPath = node.moduleSpecifier?.getText(sourceFile);
         knownImport = true;
     } else if (ts.isCallExpression(node)) {

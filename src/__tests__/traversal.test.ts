@@ -1,5 +1,6 @@
 import { getImports } from "../traversal";
 import { getCompilerOptions } from "../tsConfig";
+import type { ImportInfoV2 } from "../types";
 
 jest.mock("uuid", () => ({
     v4: jest.fn().mockReturnValue("mocked-uuid"), // Return a fixed ID 'mocked-uuid'
@@ -71,6 +72,41 @@ describe("traversal", () => {
 
     it("traversal with supportedTypes", () => {
         const config = { ...testConfig, inspOptions: { ...testConfig.inspOptions, supportedTypes: ["ts"] } };
+        const result = getImports(config, testConfig.inspOptions.file);
+        expect(result.imports.length).toBe(1);
+        expect(result.imports[0].moduleName).toBe("submodule1");
+        expect(result.imports[0].imports.length).toBe(1);
+        expect(result.imports[0].imports[0].moduleName).toBe("fs");
+    });
+
+    it("traversal with filterModules", () => {
+        const config = {
+            ...testConfig,
+            inspOptions: {
+                ...testConfig.inspOptions,
+                filterModules: (a: ImportInfoV2) => {
+                    return !a.absolutePath?.includes("node_modules");
+                },
+            },
+        };
+        const result = getImports(config, testConfig.inspOptions.file);
+        expect(result.imports.length).toBe(2);
+        expect(result.imports[0].moduleName).toBe("submodule1");
+        expect(result.imports[0].imports.length).toBe(1);
+        expect(result.imports[0].imports[0].moduleName).toBe("fs");
+        expect(result.imports[1].moduleName).toBe("submodule2");
+        expect(result.imports[1].imports.length).toBe(1);
+        expect(result.imports[1].imports[0].moduleName).toBe("submodule1");
+    });
+
+    it("traversal with skipTypeImports", () => {
+        const config = {
+            ...testConfig,
+            inspOptions: {
+                ...testConfig.inspOptions,
+                skipTypeImports: true,
+            },
+        };
         const result = getImports(config, testConfig.inspOptions.file);
         expect(result.imports.length).toBe(1);
         expect(result.imports[0].moduleName).toBe("submodule1");

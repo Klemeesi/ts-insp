@@ -1,4 +1,4 @@
-import { ImportInfoV2 } from "../types";
+import type { ImportInfoV2 } from "../types";
 import * as fs from "fs";
 
 export const generateJson = (imports: ImportInfoV2[]) => {

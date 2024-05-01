@@ -2,7 +2,7 @@ import { consoleOutput } from "./output/console";
 import { generateHtmlPage } from "./output/html";
 import { generateJson } from "./output/json";
 import { generatePng } from "./output/png";
-import { InspOptions, TraversalResult } from "./types";
+import type { InspOptions, TraversalResult } from "./types";
 
 export const generateOutput = async (result: TraversalResult, options: InspOptions) => {
     if (options.format.some((v) => v === "console")) {

@@ -1,10 +1,11 @@
 import * as ts from "typescript";
 import * as fs from "fs";
-import { ImportInfoV2, MainOptions, TraversalResult } from "./types";
+import type { ImportInfoV2, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
 import { getCommentsFromFile } from "./helpers/commentParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
+const defaultFilterModules = () => true;
 
 const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfoV2[] => {
     const result: ImportInfoV2[] = [];
@@ -48,9 +49,11 @@ const shouldTraverse = (options: MainOptions, info: ImportInfoV2, importCounts: 
 export const getImports = (options: MainOptions, filePath: string): TraversalResult => {
     const result: TraversalResult = { imports: [] };
     const importCounts: Record<string, number> = {};
+    const filterModules = options.inspOptions.filterModules || defaultFilterModules;
     let nextBatchToProcess = [
         {
             parent: result,
+            parentInfo: undefined as ImportInfoV2 | undefined,
             imports: getImportsFromFile(options, filePath, 1),
         },
     ];
@@ -60,17 +63,24 @@ export const getImports = (options: MainOptions, filePath: string): TraversalRes
         nextBatchToProcess = [];
 
         batch.forEach((oneSet) => {
-            const { parent } = oneSet;
+            const { parent, parentInfo } = oneSet;
+
+            // Filter imports before adding them to parent
+            const newImports = oneSet.imports.filter((i) => {
+                return filterModules(i, parentInfo);
+            });
+
             // Update parent imports. Mutates the object
-            parent.imports = [...parent.imports, ...oneSet.imports];
+            parent.imports = [...parent.imports, ...newImports];
             // Go thru each import and traverse them
-            oneSet.imports.forEach((i) => {
+            newImports.forEach((i) => {
                 if (shouldTraverse(options, i, importCounts)) {
                     // If the import should be traversed, add it to the next batch
                     nextBatchToProcess = [
                         ...nextBatchToProcess,
                         {
                             parent: i,
+                            parentInfo: { ...i, imports: [] },
                             imports: getImportsFromFile(options, i.absolutePath!, i.level! + 1),
                         },
                     ];

@@ -1,8 +1,8 @@
 import { predefinedPlugins } from "../plugins";
-import { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
+import type { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
 import * as fs from "fs";
 
-const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => [...arr1, ...arr2];
+const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => (arr2.length > 0 ? arr2 : arr1);
 
 export const validateInspOptions = (options: InspOptions) => {
     if (!options.file) {
@@ -26,6 +26,7 @@ export const commandLineToInspOptions = (options: CommandLineParams): InspOption
         traverseNodeModules: !!options.traverseNodeModules,
         retraverse: !!options.retraverse,
         format: options.format.split(",") as OutputFormats[],
+        filterModules: () => true,
         plugins: options.plugins
             .split(",")
             .map((name) => ({
@@ -45,6 +46,7 @@ export const mergeOptions = (cmdLineOptions: InspOptions, configFileOptions: Par
         iterations: cmdLineOptions.iterations || configFileOptions.iterations || 5,
         file: cmdLineOptions.file || configFileOptions.file!,
         traverseNodeModules: !!cmdLineOptions.traverseNodeModules || configFileOptions.traverseNodeModules,
+        filterModules: configFileOptions.filterModules,
         retraverse: !!cmdLineOptions.retraverse || configFileOptions.retraverse,
         format: mergeArrays(cmdLineOptions.format, configFileOptions.format),
         plugins: mergeArrays(cmdLineOptions.plugins, configFileOptions.plugins),
