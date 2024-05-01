@@ -2,7 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+### Added
+
+-   Option to filter modules
+
+### Changed
+
+-
+
+### Fixed
+
+-   Fixed supported types and output format options not being merged correctly
+
+## 0.0.3 - 2024-04-30
 
 ### Added
 
