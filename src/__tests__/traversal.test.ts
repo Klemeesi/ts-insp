@@ -1,6 +1,6 @@
 import { getImports } from "../traversal";
 import { getCompilerOptions } from "../tsConfig";
-import { ImportInfoV2 } from "../types";
+import type { ImportInfoV2 } from "../types";
 
 jest.mock("uuid", () => ({
     v4: jest.fn().mockReturnValue("mocked-uuid"), // Return a fixed ID 'mocked-uuid'
@@ -97,5 +97,20 @@ describe("traversal", () => {
         expect(result.imports[1].moduleName).toBe("submodule2");
         expect(result.imports[1].imports.length).toBe(1);
         expect(result.imports[1].imports[0].moduleName).toBe("submodule1");
+    });
+
+    it("traversal with skipTypeImports", () => {
+        const config = {
+            ...testConfig,
+            inspOptions: {
+                ...testConfig.inspOptions,
+                skipTypeImports: true,
+            },
+        };
+        const result = getImports(config, testConfig.inspOptions.file);
+        expect(result.imports.length).toBe(1);
+        expect(result.imports[0].moduleName).toBe("submodule1");
+        expect(result.imports[0].imports.length).toBe(1);
+        expect(result.imports[0].imports[0].moduleName).toBe("fs");
     });
 });

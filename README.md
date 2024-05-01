@@ -62,6 +62,10 @@ const config: Partial<InspOptions> = {
     // encountered during traversing. If the amount of iterations for traversing is too high
     // circular dependencies will be a problem. Use with caution.
     retraverse: false,
+    // Skip imports that import only types. Not skipped by default.
+    skipTypeImports: false,
+    // Filter modules from results. Everything shown by default.
+    filterModules: (node, parent) => true,
     // Output format. Supported types are console, json, png, html
     format: ["console", "png"],
     // html and png formatting options. More information later

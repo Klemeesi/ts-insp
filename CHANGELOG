@@ -2,13 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+
 ### Added
 
 -   Option to filter modules
+-   Option to skip type imports
 
 ### Changed
 
--
+-   Changed imports to "type imports" if only types were imported
 
 ### Fixed
 

@@ -1,5 +1,5 @@
 import * as ts from "typescript";
-import { MainOptions } from "../types";
+import type { MainOptions } from "../types";
 import { getImportsFromNode } from "../helpers/importParser";
 
 const getNameOfNode = (node: ts.Node) => {

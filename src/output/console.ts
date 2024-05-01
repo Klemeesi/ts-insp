@@ -1,4 +1,4 @@
-import { ImportInfoV2 } from "../types";
+import type { ImportInfoV2 } from "../types";
 
 export const consoleOutput = (imports: ImportInfoV2[]) => {
     let lines: string[] = [];

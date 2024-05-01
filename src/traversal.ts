@@ -1,6 +1,6 @@
 import * as ts from "typescript";
 import * as fs from "fs";
-import { ImportInfoV2, MainOptions, TraversalResult } from "./types";
+import type { ImportInfoV2, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
 import { getCommentsFromFile } from "./helpers/commentParser";
 

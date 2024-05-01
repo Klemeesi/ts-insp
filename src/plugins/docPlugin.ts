@@ -1,5 +1,5 @@
-import * as ts from "typescript";
-import { MainOptions } from "../types";
+import type * as ts from "typescript";
+import type { MainOptions } from "../types";
 import { getCommentsFromFile } from "../helpers/commentParser";
 
 export const docPlugin = (node: ts.Node, sourceFile: ts.SourceFile, key: string, options: MainOptions) => {

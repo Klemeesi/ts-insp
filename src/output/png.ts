@@ -1,5 +1,5 @@
 import nodeHtmlToImage from "node-html-to-image";
-import { ImportInfoV2, InspOptions } from "../types";
+import type { ImportInfoV2, InspOptions } from "../types";
 import { generateHtmlPage } from "./html";
 import path from "path";
 import fs from "fs";

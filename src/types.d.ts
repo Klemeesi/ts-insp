@@ -65,6 +65,8 @@ export interface InspOptions {
     file: string;
     /** Defines whether node_modules dependencies are traversed */
     traverseNodeModules?: boolean;
+    /** Skip type imports */
+    skipTypeImports?: boolean;
     /** Defines if same module is retraversed. Good to avoid extra clutter and circular dependencies. By default modules are not retraversed */
     retraverse?: boolean;
     /** Return false to filter out results. By default everything is included */
