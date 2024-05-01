@@ -2,7 +2,7 @@ import { predefinedPlugins } from "../plugins";
 import { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
 import * as fs from "fs";
 
-const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => [...arr1, ...arr2];
+const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => (arr2.length > 0 ? arr2 : arr1);
 
 export const validateInspOptions = (options: InspOptions) => {
     if (!options.file) {
