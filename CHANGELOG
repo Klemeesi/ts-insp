@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
 
 -   Option to filter modules
 -   Option to skip type imports
+-   Added a **alreadyTraversed** property to modules in traversal result
 
 ### Changed
 

@@ -74,6 +74,7 @@ export const getImports = (options: MainOptions, filePath: string): TraversalRes
             parent.imports = [...parent.imports, ...newImports];
             // Go thru each import and traverse them
             newImports.forEach((i) => {
+                i.alreadyTraversed = !!importCounts[i.id];
                 if (shouldTraverse(options, i, importCounts)) {
                     // If the import should be traversed, add it to the next batch
                     nextBatchToProcess = [
