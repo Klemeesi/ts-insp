@@ -101,6 +101,7 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
                     uniqueId: uuidv4(),
                     import: normalizedPath,
                     extension: paths?.extension || "",
+                    alreadyTraversed: false,
                     description: "",
                     fullPath: paths?.fullPath,
                     type: getType(paths?.absolutePath),

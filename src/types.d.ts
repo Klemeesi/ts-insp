@@ -20,6 +20,8 @@ export interface ImportInfoV2 {
     absolutePath?: string;
     // Full path relative to disk root
     fullPath?: string;
+    // Was the traversal stopped for this node. Usually same module is not retraversed.
+    alreadyTraversed: boolean;
     // Type of the file
     type: ImportType;
     // File extension

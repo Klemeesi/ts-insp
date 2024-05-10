@@ -11,6 +11,7 @@ const includeTopLevel = (topImport: string, result: TraversalResult): TraversalR
                 id: "root",
                 uniqueId: "root",
                 import: topImport,
+                alreadyTraversed: false,
                 // absolutePath
                 // fullPath
                 // Technically could be "Node module" too
