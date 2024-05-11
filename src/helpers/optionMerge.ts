@@ -1,3 +1,4 @@
+import { getDefaultPlugin } from "../outputFormats";
 import { predefinedPlugins } from "../plugins";
 import type { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
 import * as fs from "fs";
@@ -25,7 +26,7 @@ export const commandLineToInspOptions = (options: CommandLineParams): InspOption
         file: options.file,
         traverseNodeModules: !!options.traverseNodeModules,
         retraverse: !!options.retraverse,
-        format: options.format.split(",") as OutputFormats[],
+        format: options.format.split(",").map((name) => getDefaultPlugin(name)),
         filterModules: () => true,
         plugins: options.plugins
             .split(",")

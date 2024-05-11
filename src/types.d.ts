@@ -6,6 +6,8 @@ export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
 export type TraversalPlugin = { name: PluginName; processor: PluginProcessor };
 
+export type OutputFormatPlugin = (imports: ImportInfoV2[]) => Promise<unknown>;
+
 type ImportType = "Node module" | "Source file" | "Unknown";
 type Logger = (...data: any[]) => void;
 
@@ -44,12 +46,17 @@ export interface TraversalResult {
     imports: ImportInfoV2[];
 }
 
-export interface HtmlFormatOptions {
+export interface JsonFormatOptions {
     outputPath?: string;
     outputName?: string;
+}
+
+export interface HtmlFormatOptions extends JsonFormatOptions {
     template?: string;
     customStyles?: string;
     slugs?: { [key: string]: unknown };
+    // Only relevant for HTML output format
+    dontSave?: boolean;
 }
 
 export interface PngFormatOptions extends HtmlFormatOptions {}
@@ -74,11 +81,7 @@ export interface InspOptions {
     /** Return false to filter out results. By default everything is included */
     filterModules?: (node: ImportInfoV2, parent?: ImportInfoV2) => boolean;
     /** What output formats are done */
-    format: OutputFormats[];
-    formatOptions?: {
-        png?: PngFormatOptions;
-        html?: HtmlFormatOptions;
-    };
+    format: OutputFormatPlugin[];
     /** Additional plugins. At the time of writing there is only a debug plugin that prints extra debug information about traversal */
     plugins: TraversalPlugin[];
 }

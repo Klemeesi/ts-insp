@@ -32,7 +32,7 @@ const main = async () => {
     const config = getConfig();
     const result = includeTopLevel(config.inspOptions.file, getImports(config, config.inspOptions.file));
     console.log();
-    generateOutput(result, config.inspOptions);
+    generateOutput(result, config.inspOptions.format);
 };
 
 main();

@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import type { ImportInfoV2, InspOptions } from "../types";
+import type { ImportInfoV2, HtmlFormatOptions } from "../types";
 import path from "path";
 
 const defaultOptions = {
@@ -8,13 +8,8 @@ const defaultOptions = {
     template: "dependencyTree",
 };
 
-export const generateHtmlPage = (
-    importInfos: ImportInfoV2[],
-    options: InspOptions,
-    format: "png" | "html" = "html",
-    save: boolean = true
-): string => {
-    const opt = { ...defaultOptions, ...(options.formatOptions?.[format] || {}) };
+export const htmlOutputPlugin = (options: HtmlFormatOptions) => async (importInfos: ImportInfoV2[]) => {
+    const opt = { ...defaultOptions, ...(options || {}) };
     const templatePath = `templates/${opt.template}.html`;
     const absoluteTemplatePath = path.resolve(__dirname, "../..", templatePath);
     const templateContent = fs.readFileSync(absoluteTemplatePath, "utf-8");
@@ -28,6 +23,9 @@ export const generateHtmlPage = (
         .replace("<!-- IMPORTS -->", JSON.stringify(importInfos, undefined, 2))
         .replace("<!-- CUSTOM-STYLES -->", opt.customStyles || "")
         .replace("<!-- SLUGS -->", opt.slugs ? JSON.stringify(opt.slugs) : "");
-    save && fs.writeFileSync(output, htmlContent);
-    return htmlContent;
+    if (!opt.dontSave) {
+        fs.writeFileSync(output, htmlContent);
+        console.log("Saved", output);
+    }
+    return Promise.resolve(htmlContent);
 };

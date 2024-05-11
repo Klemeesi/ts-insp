@@ -1,28 +1,21 @@
-import { consoleOutput } from "./output/console";
-import { generateHtmlPage } from "./output/html";
-import { generateJson } from "./output/json";
-import { generatePng } from "./output/png";
-import type { InspOptions, TraversalResult } from "./types";
+import type { TraversalResult, OutputFormatPlugin } from "./types";
+import { consoleOutputPlugin } from "./output/console";
+import { htmlOutputPlugin } from "./output/html";
+import { jsonOutputPlugin } from "./output/json";
+import { pngOutputPlugin } from "./output/png";
 
-export const generateOutput = async (result: TraversalResult, options: InspOptions) => {
-    if (options.format.some((v) => v === "console")) {
-        consoleOutput(result.imports).forEach((line) => console.log(line));
-    }
-
-    if (options.format.some((v) => v === "html")) {
-        const templatePath = "templates/template1.html";
-        generateHtmlPage(result.imports, options);
-        console.log("Generated HTML.");
-    }
-
-    if (options.format.some((v) => v === "png")) {
-        const templatePath = "templates/template1.html";
-        await generatePng(result.imports, options);
-        console.log("Generated PNG.");
-    }
-
-    if (options.format.some((v) => v === "json")) {
-        generateJson(result.imports);
-        console.log("Generated JSON.");
-    }
+const emptyPlugin: OutputFormatPlugin = async () => {};
+const defaultPlugins: Record<string, OutputFormatPlugin> = {
+    png: pngOutputPlugin({}),
+    html: htmlOutputPlugin({}),
+    json: jsonOutputPlugin({}),
+    console: consoleOutputPlugin(),
 };
+
+export const generateOutput = async (result: TraversalResult, outputFormatPlugins: OutputFormatPlugin[]) => {
+    outputFormatPlugins.forEach(async (plugin) => {
+        await plugin(result.imports);
+    });
+};
+
+export const getDefaultPlugin = (pluginName: string) => (defaultPlugins[pluginName] ? defaultPlugins[pluginName] : emptyPlugin);
