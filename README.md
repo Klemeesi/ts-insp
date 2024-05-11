@@ -25,7 +25,7 @@ An visualisations (ts-insp is run against this github repository)
 
 ### Dependency Tree as json
 
-![Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
+[Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
 
 ## Installing and running
 
