@@ -1,13 +1,13 @@
 import type { ImportInfoV2 } from "../types";
 
-export const consoleOutput = (imports: ImportInfoV2[]) => {
-    let lines: string[] = [];
+const consoleOutput = async (imports: ImportInfoV2[]) => {
     imports.forEach((i) => {
         const indentation = i.level! > 1 ? "│ ".repeat(i.level! - 1) : "";
         const branch = i.level! > 0 ? "├ " : "";
         const name = i.absolutePath || i.import;
-        lines = [...lines, `${indentation}${branch}${name}`];
-        lines = [...lines, ...consoleOutput(i.imports)];
+        console.log(`${indentation}${branch}${name}`);
+        consoleOutput(i.imports);
     });
-    return lines;
 };
+
+export const consoleOutputPlugin = () => consoleOutput;

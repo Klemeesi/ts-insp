@@ -1,6 +1,6 @@
 import nodeHtmlToImage from "node-html-to-image";
-import type { ImportInfoV2, InspOptions } from "../types";
-import { generateHtmlPage } from "./html";
+import type { ImportInfoV2, PngFormatOptions } from "../types";
+import { htmlOutputPlugin } from "./html";
 import path from "path";
 import fs from "fs";
 
@@ -10,8 +10,8 @@ const defaultOptions = {
     template: "dependencyTree",
 };
 
-export const generatePng = async (imports: ImportInfoV2[], options: InspOptions) => {
-    const opt = { ...defaultOptions, ...(options.formatOptions?.png || {}) };
+export const pngOutputPlugin = (options: PngFormatOptions) => async (imports: ImportInfoV2[]) => {
+    const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath, `${opt.outputName}.png`);
     const outputFolder = path.resolve(opt.outputPath);
 
@@ -20,6 +20,7 @@ export const generatePng = async (imports: ImportInfoV2[], options: InspOptions)
     }
     nodeHtmlToImage({
         output,
-        html: generateHtmlPage(imports, options, "png", false),
+        html: await htmlOutputPlugin({ ...options, dontSave: true })(imports),
     });
+    console.log("Saved", output);
 };
