@@ -10,6 +10,7 @@ The tool itself traverses a dependency tree starting from a single typescript or
 -   _JSON_ - Export to JSON file. If you just want to log the dependencies in JSON for future use, it is possible
 -   _HTML_ - Export the dependency tree to HTML file. Currently only one HTML template is available that renders everything in tree shape.
 -   _PNG_ - Same as HTML but the HTML output is rendered to png
+-   _SVG_ - SVG output format generated with d3. Created based on the HTML output
 
 ## Examples
 
@@ -18,6 +19,10 @@ An visualisations (ts-insp is run against this github repository)
 ### Dependency Tree as png
 
 ![Dependency Tree of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.png)
+
+### Dependency Tree as svg (experimental)
+
+![Dependency Tree of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.svg)
 
 ### Dependency Graph as png
 

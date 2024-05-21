@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 -   Option to skip type imports
 -   Added a **alreadyTraversed** property to modules in traversal result
 -   Added an option to export html or png graph instead of tree
+-   Support for SVG output format
 
 ### Changed
 

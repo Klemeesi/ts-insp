@@ -12,7 +12,7 @@
     "imports": [
       {
         "id": "src/traversal.ts",
-        "uniqueId": "45f270b2-3884-456a-bfe4-6985895d4f30",
+        "uniqueId": "eeb875fd-5296-4eaa-b813-dda7b9388a26",
         "import": "./traversal",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -25,7 +25,7 @@
         "imports": [
           {
             "id": "node_modules/typescript/lib/typescript.d.ts",
-            "uniqueId": "2448d706-c865-4bbf-87aa-4a8a08c9df8a",
+            "uniqueId": "b9ae8fa6-50ea-4816-b914-445a4b1d0929",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -40,7 +40,7 @@
           },
           {
             "id": "fs",
-            "uniqueId": "797d4f0c-b509-4928-8605-b88e695c0670",
+            "uniqueId": "d4b90902-c42f-4bb0-9ada-25505067731f",
             "import": "fs",
             "extension": "",
             "alreadyTraversed": false,
@@ -53,7 +53,7 @@
           },
           {
             "id": "src/types.d.ts",
-            "uniqueId": "a36146d6-7c35-4747-8ec7-a7e658ea6037",
+            "uniqueId": "7adaa5e8-39f8-447d-bf1a-5c8d648597e7",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -68,7 +68,7 @@
           },
           {
             "id": "src/helpers/importParser.ts",
-            "uniqueId": "0116b799-00e1-42e3-8348-20bca331688c",
+            "uniqueId": "d4c115d5-3ca2-4822-8331-0e12f56b3a24",
             "import": "./helpers/importParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -81,7 +81,7 @@
             "imports": [
               {
                 "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "4631cb88-92a2-469f-ab3b-d0f817418268",
+                "uniqueId": "55816c96-ef47-4860-bbe8-9e726546db91",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -96,7 +96,7 @@
               },
               {
                 "id": "path",
-                "uniqueId": "071fb9ca-f9bb-449a-8aae-ad7f0c6abb01",
+                "uniqueId": "82a8be5c-b477-4f8e-8d18-512b19ee7a68",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": false,
@@ -109,7 +109,7 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "5755e7e5-11ef-48b6-8431-fdb575329a42",
+                "uniqueId": "4460ee7e-1d8e-4d2a-9018-a1913585cb14",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -122,7 +122,7 @@
               },
               {
                 "id": "node_modules/@types/uuid/index.d.ts",
-                "uniqueId": "efb21712-9aa1-4f32-ae5e-dfa74438d4e8",
+                "uniqueId": "da0bc59f-7c64-4646-bfad-5af1114ce8f5",
                 "import": "uuid",
                 "extension": ".d.ts",
                 "alreadyTraversed": false,
@@ -137,7 +137,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "7fdd2e9f-8715-49a9-89a3-fa18035c20b9",
+                "uniqueId": "d5044cb7-e9ec-4350-b97a-a4e4b3b4e540",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -155,7 +155,7 @@
           },
           {
             "id": "src/helpers/commentParser.ts",
-            "uniqueId": "90066196-d535-4bf3-b9b2-96100887cc48",
+            "uniqueId": "2fbcb09d-244a-472c-a54a-4e60d8e77514",
             "import": "./helpers/commentParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -168,7 +168,7 @@
             "imports": [
               {
                 "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "8d5fe02b-8ba8-490c-a7da-824dbe55ac2b",
+                "uniqueId": "bbca9f09-a1e2-4507-80b1-68c6a96e0bc6",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -189,7 +189,7 @@
       },
       {
         "id": "src/commandLine.ts",
-        "uniqueId": "7b6fae15-2a61-4002-a092-258d7d7d38e8",
+        "uniqueId": "a5a82674-711a-4908-92b4-769c74c75c7e",
         "import": "./commandLine",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -202,7 +202,7 @@
         "imports": [
           {
             "id": "node_modules/commander/typings/index.d.ts",
-            "uniqueId": "022c7e4b-a18f-4e43-900a-f96c704e4282",
+            "uniqueId": "3cfa204d-f796-4744-8060-77af04b5dc48",
             "import": "commander",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -217,7 +217,7 @@
           },
           {
             "id": "src/types.d.ts",
-            "uniqueId": "03c1577b-a940-4039-8ba4-215b3ee28eef",
+            "uniqueId": "ba7f6a0b-c8f4-4cab-b35e-b93c792e56c2",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -232,7 +232,7 @@
           },
           {
             "id": "src/tsConfig.ts",
-            "uniqueId": "bb959c04-dcbb-47b4-b0e5-0b8b2199afe0",
+            "uniqueId": "83c161e4-122f-4069-aeb3-bea4cfb63929",
             "import": "./tsConfig",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -245,7 +245,7 @@
             "imports": [
               {
                 "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "a5eccb49-dd69-4888-a305-a0bb1327ebbe",
+                "uniqueId": "02de649e-d78a-4b88-9e33-57763d544a49",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -260,7 +260,7 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "048772df-f7e3-43d3-8d5f-726005d1f86f",
+                "uniqueId": "110f7014-d94d-4e22-8862-019de2b0977f",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -273,7 +273,7 @@
               },
               {
                 "id": "path",
-                "uniqueId": "9d5395a3-f33c-4c11-9909-84c11453b05e",
+                "uniqueId": "2802e7ab-a845-4888-b16c-3736a6255dae",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -289,7 +289,7 @@
           },
           {
             "id": "src/output/log.ts",
-            "uniqueId": "928c6795-79ad-4ece-8a7d-4b476a05c577",
+            "uniqueId": "b8efe622-8be8-4b77-a3d7-4a826a8d0c51",
             "import": "./output/log",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -304,7 +304,7 @@
           },
           {
             "id": "src/configFileParser.ts",
-            "uniqueId": "814156a7-ff99-4783-9239-b9185ba7bcb6",
+            "uniqueId": "a7ccd540-4e16-4f61-a661-c6323f6f0f5a",
             "import": "./configFileParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -317,7 +317,7 @@
             "imports": [
               {
                 "id": "path",
-                "uniqueId": "7727af0a-e09b-45a8-8336-561348731ab9",
+                "uniqueId": "102d77e1-7ceb-4377-b075-1d66c0b9a37b",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -330,7 +330,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "128190ca-6429-48d3-8749-3969f823b358",
+                "uniqueId": "29773c09-ff75-471b-8797-db48d6a83a1d",
                 "import": "./types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -345,7 +345,7 @@
               },
               {
                 "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "b9c72c10-72f8-459b-ad5d-3362e817e0b2",
+                "uniqueId": "a108af95-4297-447d-8669-8394f183c8b3",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -360,7 +360,7 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "05494398-1c15-44ad-a0c8-426952465c5c",
+                "uniqueId": "baef54ed-c88f-4626-8684-c244fec9b65e",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -376,7 +376,7 @@
           },
           {
             "id": "src/helpers/optionMerge.ts",
-            "uniqueId": "9de205d3-b3ba-4584-a353-4e15b6b2284c",
+            "uniqueId": "aa6eed6f-27ea-45dd-916d-f7b6cd1d0dd3",
             "import": "./helpers/optionMerge",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -389,7 +389,7 @@
             "imports": [
               {
                 "id": "src/outputFormats.ts",
-                "uniqueId": "0f7abccb-a6ac-4047-9047-d2cbfb81ada3",
+                "uniqueId": "411133c3-c4c7-4f81-af47-042478f8dbe0",
                 "import": "../outputFormats",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -404,7 +404,7 @@
               },
               {
                 "id": "src/plugins.ts",
-                "uniqueId": "41f9e006-2b5d-4ade-9683-500b2599b56a",
+                "uniqueId": "1b09e137-58d2-4bd7-bc90-d126a9579c73",
                 "import": "../plugins",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -417,7 +417,7 @@
                 "imports": [
                   {
                     "id": "src/plugins/debugPlugin.ts",
-                    "uniqueId": "5339eb37-097c-43e9-8ae9-72c53881b49b",
+                    "uniqueId": "d5989afd-d155-4475-9efb-2f1d8e323567",
                     "import": "./plugins/debugPlugin",
                     "extension": ".ts",
                     "alreadyTraversed": false,
@@ -430,7 +430,7 @@
                     "imports": [
                       {
                         "id": "node_modules/typescript/lib/typescript.d.ts",
-                        "uniqueId": "c0290dc8-7d76-4956-b116-ea8a21f0a344",
+                        "uniqueId": "c66da1b8-aa59-4d30-847e-110c04cc9431",
                         "import": "typescript",
                         "extension": ".d.ts",
                         "alreadyTraversed": true,
@@ -445,7 +445,7 @@
                       },
                       {
                         "id": "src/types.d.ts",
-                        "uniqueId": "d01f3697-3ee2-41b9-b250-c44c6b5c2671",
+                        "uniqueId": "f3a43ecf-dc5f-4740-8ae8-a830e89fb709",
                         "import": "../types",
                         "extension": ".d.ts",
                         "alreadyTraversed": true,
@@ -460,7 +460,7 @@
                       },
                       {
                         "id": "src/helpers/importParser.ts",
-                        "uniqueId": "5b96e6de-ad71-4750-94b1-d19a84d1038a",
+                        "uniqueId": "6267d99d-b611-407b-8160-19aea353a569",
                         "import": "../helpers/importParser",
                         "extension": ".ts",
                         "alreadyTraversed": true,
@@ -478,7 +478,7 @@
                   },
                   {
                     "id": "src/plugins/docPlugin.ts",
-                    "uniqueId": "e0ec15c4-3d7f-47d8-b39b-f6013e750d38",
+                    "uniqueId": "34c06da2-1f3d-49be-86d8-6145166cea13",
                     "import": "./plugins/docPlugin",
                     "extension": ".ts",
                     "alreadyTraversed": false,
@@ -491,7 +491,7 @@
                     "imports": [
                       {
                         "id": "node_modules/typescript/lib/typescript.d.ts",
-                        "uniqueId": "430a9133-43de-486f-82f3-cb4a61004096",
+                        "uniqueId": "a55cd4c4-d3f4-4e7b-b593-52a95d9406ea",
                         "import": "typescript",
                         "extension": ".d.ts",
                         "alreadyTraversed": true,
@@ -506,7 +506,7 @@
                       },
                       {
                         "id": "src/types.d.ts",
-                        "uniqueId": "7261de23-22a7-4e7e-9b59-349fc5d292e5",
+                        "uniqueId": "f90382bf-7d98-4bca-ae47-087d2111710a",
                         "import": "../types",
                         "extension": ".d.ts",
                         "alreadyTraversed": true,
@@ -521,7 +521,7 @@
                       },
                       {
                         "id": "src/helpers/commentParser.ts",
-                        "uniqueId": "d7885cdc-982f-4b21-9cbe-06d68d1f028b",
+                        "uniqueId": "f94a9616-0f88-4898-a97b-d3ee9257a929",
                         "import": "../helpers/commentParser",
                         "extension": ".ts",
                         "alreadyTraversed": true,
@@ -542,7 +542,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "65d044fa-771b-4b54-a4af-3cc28a7af845",
+                "uniqueId": "52362f2a-5868-4e27-8dc0-518134d378d5",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -557,7 +557,7 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "29181047-5d89-41be-a064-070c3cbcc117",
+                "uniqueId": "a016a94e-119e-4fc5-8adc-0486cac0ce4b",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -576,7 +576,7 @@
       },
       {
         "id": "src/types.d.ts",
-        "uniqueId": "11987f88-d5dd-4be4-9c4a-7b2020f36940",
+        "uniqueId": "4397cd5b-cbac-47bb-8dd4-513bea5358ca",
         "import": "./types",
         "extension": ".d.ts",
         "alreadyTraversed": false,
@@ -589,7 +589,7 @@
         "imports": [
           {
             "id": "node_modules/typescript/lib/typescript.d.ts",
-            "uniqueId": "5d14c67c-0dea-4c52-8d67-c318b8ed88ad",
+            "uniqueId": "d41d98cd-5b3e-4ad0-8f90-bceba42c5b93",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -607,7 +607,7 @@
       },
       {
         "id": "src/outputFormats.ts",
-        "uniqueId": "57d1cdaa-5b10-4589-9517-dd7086d4e432",
+        "uniqueId": "e93cdca9-d2b2-4793-8fb9-5ef5205172fd",
         "import": "./outputFormats",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -620,7 +620,7 @@
         "imports": [
           {
             "id": "src/types.d.ts",
-            "uniqueId": "beb7a704-c24e-4e12-a522-dee9245717f6",
+            "uniqueId": "7fdc160a-3c10-44ca-9bde-7b531b190dd8",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -635,7 +635,7 @@
           },
           {
             "id": "src/output/console.ts",
-            "uniqueId": "e2904c84-3291-4663-bf08-49ee9648dae8",
+            "uniqueId": "c2799e89-be2e-4e5e-8388-c14f76ce76b5",
             "import": "./output/console",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -648,7 +648,7 @@
             "imports": [
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "a3ca67e0-bcc1-4446-8616-3f7e88d19b54",
+                "uniqueId": "ac31f137-cd2c-4d51-b0f9-3aaf97942e90",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -666,7 +666,7 @@
           },
           {
             "id": "src/output/html.ts",
-            "uniqueId": "0956d812-57ab-4389-8b20-f9851844d7be",
+            "uniqueId": "661af454-1c0f-4aa2-8514-2a5949c2db73",
             "import": "./output/html",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -679,7 +679,7 @@
             "imports": [
               {
                 "id": "fs",
-                "uniqueId": "91c24d12-9989-412b-8cf1-e2f0294d3400",
+                "uniqueId": "95a92d0c-2632-4fa8-8cd3-ea90c65455dc",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -692,7 +692,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "71051b31-780e-4cb9-b1db-0a482a46ee6c",
+                "uniqueId": "1510951d-8637-4e6c-ba04-dc9db1b7e61e",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -707,7 +707,7 @@
               },
               {
                 "id": "path",
-                "uniqueId": "681eb56c-9c38-42fd-9c38-89a4bba9d634",
+                "uniqueId": "bfe1e223-deee-4e5b-adfb-b461a813a935",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -723,7 +723,7 @@
           },
           {
             "id": "src/output/json.ts",
-            "uniqueId": "05c396eb-c8c2-49d1-8429-f98a388d270f",
+            "uniqueId": "0953447e-9a6c-49cb-a56d-ba857e5b28d0",
             "import": "./output/json",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -736,7 +736,7 @@
             "imports": [
               {
                 "id": "path",
-                "uniqueId": "f80e1025-59d0-406c-b338-c8bee5b9e019",
+                "uniqueId": "02cb7f47-94a6-4a48-be45-1d0c0481b0cf",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -749,7 +749,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "24c88959-f764-44c7-b1bd-1e42e5984062",
+                "uniqueId": "b908c743-d7d3-4f64-a858-95e168fc6afd",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -764,7 +764,7 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "526aafc7-6a1b-46b1-869e-bdc40d232a29",
+                "uniqueId": "ba74f2fd-1ccc-42db-9ca0-c6d09c46013f",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -780,7 +780,7 @@
           },
           {
             "id": "src/output/png.ts",
-            "uniqueId": "ea4b3595-d210-4fe6-85e0-80e47ec402a3",
+            "uniqueId": "fc81c7a0-6c24-4e89-b7a0-881a0d0214cb",
             "import": "./output/png",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -793,7 +793,7 @@
             "imports": [
               {
                 "id": "node_modules/node-html-to-image/dist/index.d.ts",
-                "uniqueId": "fddac0eb-e7de-42a0-8221-ffc5a14b4727",
+                "uniqueId": "6076b370-ce16-46ec-a060-aa54a69f45e1",
                 "import": "node-html-to-image",
                 "extension": ".d.ts",
                 "alreadyTraversed": false,
@@ -808,7 +808,7 @@
               },
               {
                 "id": "src/types.d.ts",
-                "uniqueId": "c910e7d7-523e-4db9-9214-0d31e59d12f8",
+                "uniqueId": "d49c8375-44bc-4e21-885d-6125290dbc34",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -823,7 +823,7 @@
               },
               {
                 "id": "src/output/html.ts",
-                "uniqueId": "221e020f-2680-496a-8396-daf93b0c18b2",
+                "uniqueId": "a361c8b2-4d12-4d04-a0f9-b8900c7ec009",
                 "import": "./html",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -838,7 +838,7 @@
               },
               {
                 "id": "path",
-                "uniqueId": "37cd601d-bc86-480d-af16-963099ec44bd",
+                "uniqueId": "7e8d7ac8-8ce8-41c5-aa9b-77a51615b222",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -851,7 +851,94 @@
               },
               {
                 "id": "fs",
-                "uniqueId": "12fe13cf-251a-4246-ab5a-098bb96ccebe",
+                "uniqueId": "18979c24-5c68-4c84-b23e-34e7cb42c8df",
+                "import": "fs",
+                "extension": "",
+                "alreadyTraversed": true,
+                "description": "",
+                "type": "Unknown",
+                "moduleName": "fs",
+                "resolved": false,
+                "imports": [],
+                "level": 3
+              }
+            ],
+            "level": 2
+          },
+          {
+            "id": "src/output/svg.ts",
+            "uniqueId": "5df44683-bf42-400b-b8b5-b5de3f1d3973",
+            "import": "./output/svg",
+            "extension": ".ts",
+            "alreadyTraversed": false,
+            "description": "",
+            "fullPath": "C:\\Source\\ts-insp\\src\\output\\svg.ts",
+            "type": "Source file",
+            "moduleName": "svg",
+            "resolved": true,
+            "absolutePath": "src/output/svg.ts",
+            "imports": [
+              {
+                "id": "node_modules/puppeteer/lib/types.d.ts",
+                "uniqueId": "3a3c4b39-5b47-4326-b9f6-390baac84ed3",
+                "import": "puppeteer",
+                "extension": ".d.ts",
+                "alreadyTraversed": false,
+                "description": "",
+                "fullPath": "C:\\Source\\ts-insp\\node_modules\\puppeteer\\lib\\types.d.ts",
+                "type": "Node module",
+                "moduleName": "puppeteer",
+                "resolved": true,
+                "absolutePath": "node_modules/puppeteer/lib/types.d.ts",
+                "imports": [],
+                "level": 3
+              },
+              {
+                "id": "src/types.d.ts",
+                "uniqueId": "0d2499ce-d988-4f7d-8e72-24507abe930b",
+                "import": "../types",
+                "extension": ".d.ts",
+                "alreadyTraversed": true,
+                "description": "",
+                "fullPath": "C:\\Source\\ts-insp\\src\\types.d.ts",
+                "type": "Source file",
+                "moduleName": "types",
+                "resolved": true,
+                "absolutePath": "src/types.d.ts",
+                "imports": [],
+                "level": 3
+              },
+              {
+                "id": "src/output/html.ts",
+                "uniqueId": "a25cc524-223e-48f9-927f-930105563fad",
+                "import": "./html",
+                "extension": ".ts",
+                "alreadyTraversed": true,
+                "description": "",
+                "fullPath": "C:\\Source\\ts-insp\\src\\output\\html.ts",
+                "type": "Source file",
+                "moduleName": "html",
+                "resolved": true,
+                "absolutePath": "src/output/html.ts",
+                "imports": [],
+                "level": 3
+              },
+              {
+                "id": "path",
+                "uniqueId": "870cf4a5-1cdc-40b3-8da0-600a0d270fd4",
+                "import": "path",
+                "extension": "",
+                "alreadyTraversed": true,
+                "description": "",
+                "type": "Unknown",
+                "moduleName": "path",
+                "resolved": false,
+                "imports": [],
+                "level": 3
+              },
+              {
+                "id": "fs",
+                "uniqueId": "069d88df-38af-404b-adb5-fba4a5997c21",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
