@@ -1,6 +1,6 @@
 import type { CompilerOptions, SourceFile, Node } from "typescript";
 
-export type OutputFormats = "html" | "console" | "json" | "png";
+export type OutputFormats = "html" | "console" | "json" | "png" | "svg";
 
 export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;

@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1600">
+<style type="text/css"><![CDATA[
+            body { width: 1200px !important; height: 100% !important; }
+                
+            body {
+                width: 1500px;
+                height: 100%;
+            }
+            svg {
+                overflow: visible;
+            }
+            .text {
+                font: 12px sans-serif;
+                font-weight: 600;
+            }
+            .secondaryText {
+                font: 10px sans-serif;
+            }
+            .link {
+                fill: none;
+                stroke: black;
+                stroke-width: 2px;
+            }
+            .subtleLink {
+                fill: none;
+                /*stroke: gray;*/
+                stroke-width: 1px;
+                stroke-dasharray: 5, 5;
+                stroke-dashoffset: 0;
+            }
+            .rect {
+                stroke: black;
+                stroke-width: 1px;
+            }
+            .nodeModule {
+                fill: #90caf9;
+            }
+            .sourceFile {
+                fill: whitesmoke;
+            }
+            .unknown {
+                fill: #c0c0c0;
+            }
+        ]]></style>
+<g transform="translate(90,40)">
+<path class="link" d="M82.0234375,623.4232365145228H154V144.1078838174274H164">
+</path>
+<path class="link" d="M82.0234375,623.4232365145228H154V504.37759336099583H164">
+</path>
+<path class="link" d="M82.0234375,623.4232365145228H154V745.6016597510373H164">
+</path>
+<path class="link" d="M82.0234375,623.4232365145228H154V1102.7385892116183H164">
+</path>
+<path class="link" d="M244.015625,144.1078838174274H318V25.062240663900415H328">
+</path>
+<path class="link" d="M244.015625,144.1078838174274H318V62.655601659751035H328">
+</path>
+<path class="link" d="M244.015625,144.1078838174274H318V100.24896265560166H328">
+</path>
+<path class="link" d="M244.015625,144.1078838174274H318V137.8423236514523H328">
+</path>
+<path class="link" d="M244.015625,144.1078838174274H318V263.1535269709544H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V313.2780082987552H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V350.8713692946058H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V388.46473029045643H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V460.5186721991701H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V532.5726141078839H328">
+</path>
+<path class="link" d="M268.484375,504.37759336099583H318V695.4771784232365H328">
+</path>
+<path class="link" d="M237.90625,745.6016597510373H318V745.6016597510373H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V795.7261410788382H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V833.3195020746888H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V921.0373443983402H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V1046.3485477178424H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V1209.253112033195H328">
+</path>
+<path class="link" d="M270.140625,1102.7385892116183H318V1409.7510373443984H328">
+</path>
+<path class="link" d="M461.9375,137.8423236514523H482V62.655601659751035H492">
+</path>
+<path class="link" d="M461.9375,137.8423236514523H482V100.24896265560166H492">
+</path>
+<path class="link" d="M461.9375,137.8423236514523H482V137.8423236514523H492">
+</path>
+<path class="link" d="M461.9375,137.8423236514523H482V175.4356846473029H492">
+</path>
+<path class="link" d="M461.9375,137.8423236514523H482V213.02904564315352H492">
+</path>
+<path class="link" d="M475.265625,263.1535269709544H482V263.1535269709544H492">
+</path>
+<path class="link" d="M406.359375,388.46473029045643H482V350.8713692946058H492">
+</path>
+<path class="link" d="M406.359375,388.46473029045643H482V388.46473029045643H492">
+</path>
+<path class="link" d="M406.359375,388.46473029045643H482V426.05809128630705H492">
+</path>
+<path class="link" d="M441.375,532.5726141078839H482V476.18257261410787H492">
+</path>
+<path class="link" d="M441.375,532.5726141078839H482V513.7759336099585H492">
+</path>
+<path class="link" d="M441.375,532.5726141078839H482V551.3692946058092H492">
+</path>
+<path class="link" d="M441.375,532.5726141078839H482V588.9626556016598H492">
+</path>
+<path class="link" d="M460.84375,695.4771784232365H482V639.0871369294606H492">
+</path>
+<path class="link" d="M460.84375,695.4771784232365H482V676.6804979253112H492">
+</path>
+<path class="link" d="M460.84375,695.4771784232365H482V714.2738589211618H492">
+</path>
+<path class="link" d="M460.84375,695.4771784232365H482V751.8672199170124H492">
+</path>
+<path class="link" d="M434.71875,833.3195020746888H482V833.3195020746888H492">
+</path>
+<path class="link" d="M419.140625,921.0373443983402H482V883.4439834024896H492">
+</path>
+<path class="link" d="M419.140625,921.0373443983402H482V921.0373443983402H492">
+</path>
+<path class="link" d="M419.140625,921.0373443983402H482V958.6307053941908H492">
+</path>
+<path class="link" d="M418.59375,1046.3485477178424H482V1008.7551867219917H492">
+</path>
+<path class="link" d="M418.59375,1046.3485477178424H482V1046.3485477178424H492">
+</path>
+<path class="link" d="M418.59375,1046.3485477178424H482V1083.941908713693H492">
+</path>
+<path class="link" d="M416.9375,1209.253112033195H482V1134.0663900414938H492">
+</path>
+<path class="link" d="M416.9375,1209.253112033195H482V1171.6597510373444H492">
+</path>
+<path class="link" d="M416.9375,1209.253112033195H482V1209.253112033195H492">
+</path>
+<path class="link" d="M416.9375,1209.253112033195H482V1246.8464730290457H492">
+</path>
+<path class="link" d="M416.9375,1209.253112033195H482V1284.4398340248963H492">
+</path>
+<path class="link" d="M415.8125,1409.7510373443984H482V1334.5643153526971H492">
+</path>
+<path class="link" d="M415.8125,1409.7510373443984H482V1372.1576763485477H492">
+</path>
+<path class="link" d="M415.8125,1409.7510373443984H482V1409.7510373443984H492">
+</path>
+<path class="link" d="M415.8125,1409.7510373443984H482V1447.344398340249H492">
+</path>
+<path class="link" d="M415.8125,1409.7510373443984H482V1484.9377593360996H492">
+</path>
+<path class="link" d="M565.359375,676.6804979253112H646V614.0248962655602H656">
+</path>
+<path class="link" d="M565.359375,676.6804979253112H646V739.3360995850622H656">
+</path>
+<path class="link" d="M787.75,614.0248962655602H810V576.4315352697096H820">
+</path>
+<path class="link" d="M787.75,614.0248962655602H810V614.0248962655602H820">
+</path>
+<path class="link" d="M787.75,614.0248962655602H810V651.6182572614108H820">
+</path>
+<path class="link" d="M776.0625,739.3360995850622H810V701.7427385892116H820">
+</path>
+<path class="link" d="M776.0625,739.3360995850622H810V739.3360995850622H820">
+</path>
+<path class="link" d="M776.0625,739.3360995850622H810V776.9294605809129H820">
+</path>
+<g class="node" transform="translate(0,623.4232365145228)">
+<rect x="0" y="-17.5" width="82.0234375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">src/index.ts</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(164,144.1078838174274)">
+<rect x="0" y="-17.5" width="80.015625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">traversal</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/traversal.ts</text>
+</g>
+<g class="node" transform="translate(164,504.37759336099583)">
+<rect x="0" y="-17.5" width="104.484375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">commandLine</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/commandLine.ts</text>
+</g>
+<g class="node" transform="translate(164,745.6016597510373)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(164,1102.7385892116183)">
+<rect x="0" y="-17.5" width="106.140625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">outputFormats</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/outputFormats.ts</text>
+</g>
+<g class="node" transform="translate(328,25.062240663900415)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(328,62.655601659751035)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(328,100.24896265560166)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(328,137.8423236514523)">
+<rect x="0" y="-17.5" width="133.9375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">importParser</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/importParser.ts</text>
+</g>
+<g class="node" transform="translate(328,263.1535269709544)">
+<rect x="0" y="-17.5" width="147.265625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">commentParser</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/commentParser.ts</text>
+</g>
+<g class="node" transform="translate(328,313.2780082987552)">
+<rect x="0" y="-17.5" width="84.3515625" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">commander</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(328,350.8713692946058)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(328,388.46473029045643)">
+<rect x="0" y="-17.5" width="78.359375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">tsConfig</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/tsConfig.ts</text>
+</g>
+<g class="node" transform="translate(328,460.5186721991701)">
+<rect x="0" y="-17.5" width="85.59375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">log</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/log.ts</text>
+</g>
+<g class="node" transform="translate(328,532.5726141078839)">
+<rect x="0" y="-17.5" width="113.375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">configFileParser</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/configFileParser.ts</text>
+</g>
+<g class="node" transform="translate(328,695.4771784232365)">
+<rect x="0" y="-17.5" width="132.84375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">optionMerge</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/optionMerge.ts</text>
+</g>
+<g class="node" transform="translate(328,745.6016597510373)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(328,795.7261410788382)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(328,833.3195020746888)">
+<rect x="0" y="-17.5" width="106.71875" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">console</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/console.ts</text>
+</g>
+<g class="node" transform="translate(328,921.0373443983402)">
+<rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
+</g>
+<g class="node" transform="translate(328,1046.3485477178424)">
+<rect x="0" y="-17.5" width="90.59375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">json</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/json.ts</text>
+</g>
+<g class="node" transform="translate(328,1209.253112033195)">
+<rect x="0" y="-17.5" width="88.9375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">png</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/png.ts</text>
+</g>
+<g class="node" transform="translate(328,1409.7510373443984)">
+<rect x="0" y="-17.5" width="87.8125" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">svg</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/svg.ts</text>
+</g>
+<g class="node" transform="translate(492,62.655601659751035)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,100.24896265560166)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,137.8423236514523)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,175.4356846473029)">
+<rect x="0" y="-17.5" width="86.71875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">@types/uuid</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,213.02904564315352)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,263.1535269709544)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,350.8713692946058)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,388.46473029045643)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,426.05809128630705)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,476.18257261410787)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,513.7759336099585)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,551.3692946058092)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,588.9626556016598)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,639.0871369294606)">
+<rect x="0" y="-17.5" width="106.140625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">outputFormats</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/outputFormats.ts</text>
+</g>
+<g class="node" transform="translate(492,676.6804979253112)">
+<rect x="0" y="-17.5" width="73.359375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">plugins</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins.ts</text>
+</g>
+<g class="node" transform="translate(492,714.2738589211618)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,751.8672199170124)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,833.3195020746888)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,883.4439834024896)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,921.0373443983402)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,958.6307053941908)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1008.7551867219917)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1046.3485477178424)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,1083.941908713693)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1134.0663900414938)">
+<rect x="0" y="-17.5" width="127.31640625" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">node-html-to-image</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1171.6597510373444)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,1209.253112033195)">
+<rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
+</g>
+<g class="node" transform="translate(492,1246.8464730290457)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1284.4398340248963)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1334.5643153526971)">
+<rect x="0" y="-17.5" width="74.337890625" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">puppeteer</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1372.1576763485477)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(492,1409.7510373443984)">
+<rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
+</g>
+<g class="node" transform="translate(492,1447.344398340249)">
+<rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">path</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(492,1484.9377593360996)">
+<rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(656,614.0248962655602)">
+<rect x="0" y="-17.5" width="131.75" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">debugPlugin</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins/debugPlugin.ts</text>
+</g>
+<g class="node" transform="translate(656,739.3360995850622)">
+<rect x="0" y="-17.5" width="120.0625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">docPlugin</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins/docPlugin.ts</text>
+</g>
+<g class="node" transform="translate(820,576.4315352697096)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(820,614.0248962655602)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(820,651.6182572614108)">
+<rect x="0" y="-17.5" width="133.9375" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">importParser</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/importParser.ts</text>
+</g>
+<g class="node" transform="translate(820,701.7427385892116)">
+<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
+</rect>
+<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
+</text>
+</g>
+<g class="node" transform="translate(820,739.3360995850622)">
+<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
+</g>
+<g class="node" transform="translate(820,776.9294605809129)">
+<rect x="0" y="-17.5" width="147.265625" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">commentParser</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/commentParser.ts</text>
+</g>
+</g>
+</svg>

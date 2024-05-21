@@ -3,6 +3,7 @@ import { consoleOutputPlugin } from "./output/console";
 import { htmlOutputPlugin } from "./output/html";
 import { jsonOutputPlugin } from "./output/json";
 import { pngOutputPlugin } from "./output/png";
+import { svgOutputPlugin } from "./output/svg";
 
 const emptyPlugin: OutputFormatPlugin = async () => {};
 const defaultPlugins: Record<string, OutputFormatPlugin> = {
@@ -10,6 +11,7 @@ const defaultPlugins: Record<string, OutputFormatPlugin> = {
     html: htmlOutputPlugin({}),
     json: jsonOutputPlugin({}),
     console: consoleOutputPlugin(),
+    svg: svgOutputPlugin({}),
 };
 
 export const generateOutput = async (result: TraversalResult, outputFormatPlugins: OutputFormatPlugin[]) => {
