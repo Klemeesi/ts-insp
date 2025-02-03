@@ -91,19 +91,49 @@ const config: Partial<InspOptions> = {
     // Output format. Supported types are console, json, png, html
     format: ["console", "png"],
     // html and png formatting options. More information later
-    formatOptions: {
-        png: {
+    format: {
+        consoleOutputPlugin(),
+        mermaidOutputPlugin({
+            outputPath: "docs",
+            nodeId: "uniqueId",
+            dir: "LR",
+            outputName: "DependencyGraph"
+        }),
+        jsonOutputPlugin({ outputPath: "docs", outputName: "DependencyTree" }),
+        pngOutputPlugin({
             outputPath: "docs",
             outputName: "DependencyTree",
             template: "d3dependencyTree",
-            customStyles: "body { width: 2200px !important; height: 100% !important; }",
+            customStyles: "body { width: 1200px !important; height: 100% !important; }",
             slugs: {
-                diagramWidth: 2000,
-                diagramHeight: 2000,
-                maxRectWidth: 280,
+                diagramWidth: 1000,
+                diagramHeight: 1600,
+                maxRectWidth: 180,
             },
-        },
-    },
+        }),
+        svgOutputPlugin({
+            outputPath: "docs",
+            outputName: "DependencyTree",
+            template: "d3dependencyTree",
+            customStyles: "body { width: 1200px !important; height: 100% !important; }",
+            slugs: {
+                diagramWidth: 1000,
+                diagramHeight: 1600,
+                maxRectWidth: 180,
+            },
+        }),
+        pngOutputPlugin({
+            outputPath: "docs",
+            outputName: "DependencyGraph",
+            template: "d3dependencyTree",
+            customStyles: "body { width: 1200px !important; height: 100% !important; }",
+            slugs: {
+                diagramWidth: 1000,
+                diagramHeight: 1200,
+                maxRectWidth: 180,
+                graph: true,
+            },
+        }),    },
     // Not supported in config file. Experimental feature which can be enabled from command line.
     plugins: [],
 };
