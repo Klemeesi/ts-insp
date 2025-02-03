@@ -35,7 +35,7 @@ An visualisations (ts-insp is run against this github repository)
 
 ### Dependency Tree as mermaid markdown
 
-[Dependency Tree of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
+[Dependency Tree of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyGraph.md)
 
 ## Installing and running
 
