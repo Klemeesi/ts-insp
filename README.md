@@ -11,6 +11,7 @@ The tool itself traverses a dependency tree starting from a single typescript or
 -   _HTML_ - Export the dependency tree to HTML file. Currently only one HTML template is available that renders everything in tree shape.
 -   _PNG_ - Same as HTML but the HTML output is rendered to png
 -   _SVG_ - SVG output format generated with d3. Created based on the HTML output
+-   _mermaid_ - Markdown file with mermaid chart
 
 ## Examples
 
@@ -31,6 +32,10 @@ An visualisations (ts-insp is run against this github repository)
 ### Dependency Tree as json
 
 [Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
+
+### Dependency Tree as mermaid markdown
+
+[Dependency Tree of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyGraph.md)
 
 ## Installing and running
 

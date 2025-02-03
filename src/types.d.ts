@@ -1,6 +1,6 @@
 import type { CompilerOptions, SourceFile, Node } from "typescript";
 
-export type OutputFormats = "html" | "console" | "json" | "png" | "svg";
+export type OutputFormats = "html" | "console" | "json" | "png" | "svg" | "mermaid";
 
 export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
@@ -57,6 +57,11 @@ export interface HtmlFormatOptions extends JsonFormatOptions {
     slugs?: { [key: string]: unknown };
     // Only relevant for HTML output format
     dontSave?: boolean;
+}
+
+export interface MermaidFormatOptions extends JsonFormatOptions {
+    dir?: "TB" | "BT" | "LR" | "RL";
+    nodeId?: keyof ImportInfoV2;
 }
 
 export interface PngFormatOptions extends HtmlFormatOptions {}

@@ -2,7 +2,8 @@ import type { InspOptions } from "./dist/types.d.ts";
 import { consoleOutputPlugin } from "./dist/output/console";
 import { jsonOutputPlugin } from "./dist/output/json";
 import { pngOutputPlugin } from "./dist/output/png";
-import { svgOutputPlugin } from "./dist/output/svg.js";
+import { svgOutputPlugin } from "./dist/output/svg";
+import { mermaidOutputPlugin } from "./dist/output/mermaid";
 
 const config: Partial<InspOptions> = {
     verbose: false as boolean,
@@ -12,6 +13,7 @@ const config: Partial<InspOptions> = {
     retraverse: false,
     format: [
         consoleOutputPlugin(),
+        mermaidOutputPlugin({ outputPath: "docs", nodeId: "uniqueId", dir: "LR", outputName: "DependencyGraph" }),
         jsonOutputPlugin({ outputPath: "docs", outputName: "DependencyTree" }),
         pngOutputPlugin({
             outputPath: "docs",

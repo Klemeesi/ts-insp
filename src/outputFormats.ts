@@ -4,9 +4,11 @@ import { htmlOutputPlugin } from "./output/html";
 import { jsonOutputPlugin } from "./output/json";
 import { pngOutputPlugin } from "./output/png";
 import { svgOutputPlugin } from "./output/svg";
+import { mermaidOutputPlugin } from "./output/mermaid";
 
 const emptyPlugin: OutputFormatPlugin = async () => {};
 const defaultPlugins: Record<string, OutputFormatPlugin> = {
+    mermaid: mermaidOutputPlugin({}),
     png: pngOutputPlugin({}),
     html: htmlOutputPlugin({}),
     json: jsonOutputPlugin({}),
