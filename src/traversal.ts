@@ -2,7 +2,6 @@ import * as ts from "typescript";
 import * as fs from "fs";
 import type { ImportInfoV2, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
-import { getCommentsFromFile } from "./helpers/commentParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
 const defaultFilterModules = () => true;
@@ -15,12 +14,6 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
     options.logger("Traversing file:", filePath);
 
     ts.forEachChild(sourceFile, (childNode) => {
-        // Run plugins
-        options.inspOptions.plugins.forEach((plugin) => {
-            options.logger(`Running ${plugin.name} plugin for`, filePath);
-            plugin.processor(childNode, sourceFile, filePath, options);
-        });
-
         const importInfos = getImportsFromNode(options, filePath, childNode, sourceFile);
 
         importInfos.forEach((importInfo) => {

@@ -15,7 +15,6 @@ const testConfig = {
         verbose: false,
         retraverse: false,
         format: [],
-        plugins: [],
     },
     logger: () => {},
     compilerOptions: getCompilerOptions("./tsconfig.json")?.options,

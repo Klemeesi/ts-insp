@@ -1,6 +1,5 @@
 import { getDefaultPlugin } from "../outputFormats";
-import { predefinedPlugins } from "../plugins";
-import type { CommandLineParams, InspOptions, OutputFormats, PluginName, TraversalPlugin } from "../types";
+import type { CommandLineParams, InspOptions } from "../types";
 import * as fs from "fs";
 
 const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => (arr2.length > 0 ? arr2 : arr1);
@@ -28,13 +27,6 @@ export const commandLineToInspOptions = (options: CommandLineParams): InspOption
         retraverse: !!options.retraverse,
         format: options.format.split(",").map((name) => getDefaultPlugin(name)),
         filterModules: () => true,
-        plugins: options.plugins
-            .split(",")
-            .map((name) => ({
-                name: name as unknown as PluginName,
-                processor: predefinedPlugins[name as PluginName],
-            }))
-            .filter((p) => !!p.processor),
     };
 };
 
@@ -50,6 +42,5 @@ export const mergeOptions = (cmdLineOptions: InspOptions, configFileOptions: Par
         filterModules: configFileOptions.filterModules,
         retraverse: !!cmdLineOptions.retraverse || configFileOptions.retraverse,
         format: mergeArrays(cmdLineOptions.format, configFileOptions.format),
-        plugins: mergeArrays(cmdLineOptions.plugins, configFileOptions.plugins),
     };
 };

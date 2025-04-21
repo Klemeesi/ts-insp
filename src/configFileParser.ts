@@ -39,6 +39,5 @@ export const getSettingsFromConfigFile = (filePath: string): Partial<InspOptions
         console.log("Errors while reading configuration file.");
         process.exit(-1);
     }
-    // TODO: plugins need to be already converted to correct format. Strings are not allowed
     return contents;
 };

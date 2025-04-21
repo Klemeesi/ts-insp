@@ -63,7 +63,7 @@ npx ts-insp --help
 
 ## Configuration
 
-Create configuration file e.g. `./ts-insp.config.ts` (javascript is possible too if you prefer the older brother more). All options are supported in the configuration file (except plugins at the moment).
+Create configuration file e.g. `./ts-insp.config.ts` (javascript is possible too if you prefer the older brother more). All options are supported in the configuration file.
 
 Example:
 
@@ -133,9 +133,8 @@ const config: Partial<InspOptions> = {
                 maxRectWidth: 180,
                 graph: true,
             },
-        }),    },
-    // Not supported in config file. Experimental feature which can be enabled from command line.
-    plugins: [],
+        }),
+    },
 };
 
 export default config;

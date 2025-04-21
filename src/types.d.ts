@@ -87,8 +87,6 @@ export interface InspOptions {
     filterModules?: (node: ImportInfoV2, parent?: ImportInfoV2) => boolean;
     /** What output formats are done */
     format: OutputFormatPlugin[];
-    /** Additional plugins. At the time of writing there is only a debug plugin that prints extra debug information about traversal */
-    plugins: TraversalPlugin[];
 }
 
 export interface InspConfig extends Partial<InspOptions> {}
