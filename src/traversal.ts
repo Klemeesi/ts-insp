@@ -1,26 +1,19 @@
 import * as ts from "typescript";
 import * as fs from "fs";
-import type { ImportInfoV2, MainOptions, TraversalResult } from "./types";
+import type { ImportInfo, MainOptions, TraversalResult } from "./types";
 import { getImportsFromNode } from "./helpers/importParser";
-import { getCommentsFromFile } from "./helpers/commentParser";
 
 const isNodeModule = (absolutePath: string) => absolutePath.search("node_modules") != -1;
 const defaultFilterModules = () => true;
 
-const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfoV2[] => {
-    const result: ImportInfoV2[] = [];
+const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel: number): ImportInfo[] => {
+    const result: ImportInfo[] = [];
     const fileContent = fs.readFileSync(filePath, "utf-8");
     const sourceFile = ts.createSourceFile(filePath, fileContent, ts.ScriptTarget.Latest, true);
 
     options.logger("Traversing file:", filePath);
 
     ts.forEachChild(sourceFile, (childNode) => {
-        // Run plugins
-        options.inspOptions.plugins.forEach((plugin) => {
-            options.logger(`Running ${plugin.name} plugin for`, filePath);
-            plugin.processor(childNode, sourceFile, filePath, options);
-        });
-
         const importInfos = getImportsFromNode(options, filePath, childNode, sourceFile);
 
         importInfos.forEach((importInfo) => {
@@ -38,7 +31,7 @@ const getImportsFromFile = (options: MainOptions, filePath: string, currentLevel
 // Limit the number of iterations based on options
 // Only process import if absolutePath is known. For some modules we don't know the absolutePath (like "fs")
 // Limit node_modules traversal based on options
-const shouldTraverse = (options: MainOptions, info: ImportInfoV2, importCounts: Record<string, number>) =>
+const shouldTraverse = (options: MainOptions, info: ImportInfo, importCounts: Record<string, number>) =>
     info.level! < options.inspOptions.iterations &&
     info.absolutePath &&
     (options.inspOptions.traverseNodeModules || !isNodeModule(info.absolutePath)) &&
@@ -53,7 +46,7 @@ export const getImports = (options: MainOptions, filePath: string): TraversalRes
     let nextBatchToProcess = [
         {
             parent: result,
-            parentInfo: undefined as ImportInfoV2 | undefined,
+            parentInfo: undefined as ImportInfo | undefined,
             imports: getImportsFromFile(options, filePath, 1),
         },
     ];

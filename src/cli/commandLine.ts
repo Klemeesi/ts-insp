@@ -1,9 +1,14 @@
 import { program } from "commander";
-import type { CommandLineParams, MainOptions } from "./types";
-import { getCompilerOptions } from "./tsConfig";
-import { log } from "./output/log";
-import { getSettingsFromConfigFile } from "./configFileParser";
-import { commandLineToInspOptions, mergeOptions, validateInspOptions } from "./helpers/optionMerge";
+import type { InspOptions, MainOptions } from "../types";
+import { getCompilerOptions } from "../helpers/tsConfig";
+import { getSettingsFromConfigFile } from "../helpers/configFileParser";
+import { commandLineToInspOptions, mergeOptions, validateInspOptions } from "./optionMerge";
+
+const log = (...data: any[]) => console.debug("ts-insp >", ...data);
+
+export type CommandLineParams = {
+    [K in keyof InspOptions]: string;
+};
 
 export const getConfig = (): MainOptions => {
     program
@@ -20,12 +25,7 @@ export const getConfig = (): MainOptions => {
         )
         .option("--traverseNodeModules", "Also traversals node module dependencies (might take some time to traversal)", false)
         .option("--retraverse", "Modules are traversed multiple times if encountered during traversal.", false)
-        .option("--format <format>", "Format that the inspections are exported. Joined with comma (,)", "console")
-        .option(
-            "-p, --plugins <plugins>",
-            "Plugins used in traversal. Only predefined plugins are supported in CLI. Joined with comma (,)",
-            ""
-        );
+        .option("--format <format>", "Format that the inspections are exported. Joined with comma (,)", "console");
 
     program.parse();
 
@@ -34,8 +34,6 @@ export const getConfig = (): MainOptions => {
     const configFileOptions = options.configFile ? getSettingsFromConfigFile(options.configFile) : {};
     const inspOptions = mergeOptions(cmdLineOptions, configFileOptions);
     validateInspOptions(inspOptions);
-
-    !!inspOptions.verbose && log("Number of traversal plugins:", inspOptions.plugins.length);
 
     const compilerOptions = getCompilerOptions(inspOptions.file);
     if (!compilerOptions) {

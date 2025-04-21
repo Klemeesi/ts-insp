@@ -63,7 +63,7 @@ npx ts-insp --help
 
 ## Configuration
 
-Create configuration file e.g. `./ts-insp.config.ts` (javascript is possible too if you prefer the older brother more). All options are supported in the configuration file (except plugins at the moment).
+Create configuration file e.g. `./ts-insp.config.ts` (javascript is possible too if you prefer the older brother more). All options are supported in the configuration file.
 
 Example:
 
@@ -133,9 +133,8 @@ const config: Partial<InspOptions> = {
                 maxRectWidth: 180,
                 graph: true,
             },
-        }),    },
-    // Not supported in config file. Experimental feature which can be enabled from command line.
-    plugins: [],
+        }),
+    }
 };
 
 export default config;
@@ -157,7 +156,6 @@ yarn ts-insp --help
 
 Some features that will come in the future. But first the project needs to be improved to be more maintainable:
 
--   Support for plugins. Ability to add custom inspection capabilities when traversing your dependencies? There are some _experimental proof of concept_ plugins done but the whole concept needs to be built from the ground.
--   Support for custom HTML templates. Don't like the current visualization you get? No worries, me neither! Wanna build your own? Just wait for it, it's coming :)
+-   Planning to add Mermaid chart support and eventually deprecating everything else... So much simpler to work with Mermaid.
 
 But as said, for now I'm concentrating on writing unit tests, writing documentation and making the repository public. More comes later.

@@ -1,5 +1,5 @@
 import { getImports } from "./traversal";
-import { getConfig } from "./commandLine";
+import { getConfig } from "./cli/commandLine";
 import type { TraversalResult } from "./types";
 import { generateOutput } from "./outputFormats";
 

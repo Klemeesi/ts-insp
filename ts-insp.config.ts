@@ -50,7 +50,6 @@ const config: Partial<InspOptions> = {
             },
         }),
     ],
-    plugins: [],
 };
 
 export default config;

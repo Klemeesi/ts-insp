@@ -44,586 +44,495 @@
             }
         ]]></style>
 <g transform="translate(90,40)">
-<path class="link" d="M82.0234375,613.2567049808429H154V133.06513409961687H164">
+<path class="link" d="M82.0234375,574.6558704453441H263.3333333333333V79.47368421052632H273.3333333333333">
 </path>
-<path class="link" d="M82.0234375,613.2567049808429H154V465.727969348659H164">
+<path class="link" d="M82.0234375,574.6558704453441H263.3333333333333V406.53846153846155H273.3333333333333">
 </path>
-<path class="link" d="M82.0234375,613.2567049808429H154V688.4674329501916H164">
+<path class="link" d="M82.0234375,574.6558704453441H263.3333333333333V641.9028340080971H273.3333333333333">
 </path>
-<path class="link" d="M82.0234375,613.2567049808429H154V1093.448275862069H164">
+<path class="link" d="M82.0234375,574.6558704453441H263.3333333333333V1069.8380566801618H273.3333333333333">
 </path>
-<path class="link" d="M244.015625,133.06513409961687H318V23.14176245210728H328">
+<path class="link" d="M353.3489583333333,79.47368421052632H536.6666666666666V24.453441295546558H546.6666666666666">
 </path>
-<path class="link" d="M244.015625,133.06513409961687H318V57.8544061302682H328">
+<path class="link" d="M353.3489583333333,79.47368421052632H536.6666666666666V61.13360323886639H546.6666666666666">
 </path>
-<path class="link" d="M244.015625,133.06513409961687H318V92.56704980842912H328">
+<path class="link" d="M353.3489583333333,79.47368421052632H536.6666666666666V97.81376518218623H546.6666666666666">
 </path>
-<path class="link" d="M244.015625,133.06513409961687H318V127.27969348659003H328">
+<path class="link" d="M353.3489583333333,79.47368421052632H536.6666666666666V134.49392712550608H546.6666666666666">
 </path>
-<path class="link" d="M244.015625,133.06513409961687H318V242.98850574712642H328">
+<path class="link" d="M390.0364583333333,406.53846153846155H536.6666666666666V220.08097165991902H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V289.27203065134097H328">
+<path class="link" d="M390.0364583333333,406.53846153846155H536.6666666666666V256.7611336032389H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V323.9846743295019H328">
+<path class="link" d="M390.0364583333333,406.53846153846155H536.6666666666666V293.4412955465587H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V358.69731800766283H328">
+<path class="link" d="M390.0364583333333,406.53846153846155H536.6666666666666V434.0485829959514H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V425.2298850574713H328">
+<path class="link" d="M390.0364583333333,406.53846153846155H536.6666666666666V592.995951417004H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V491.76245210727967H328">
+<path class="link" d="M347.2395833333333,641.9028340080971H536.6666666666666V641.9028340080971H546.6666666666666">
 </path>
-<path class="link" d="M268.484375,465.727969348659H318V642.183908045977H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V690.8097165991902H546.6666666666666">
 </path>
-<path class="link" d="M237.90625,688.4674329501916H318V688.4674329501916H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V727.48987854251H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V734.7509578544061H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V813.0769230769231H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V769.463601532567H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V935.3441295546559H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V850.4597701149426H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V1094.2914979757084H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V966.1685823754789H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V1289.919028340081H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V1116.5900383141761H328">
+<path class="link" d="M379.4739583333333,1069.8380566801618H536.6666666666666V1448.8663967611335H546.6666666666666">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V1301.7241379310344H328">
+<path class="link" d="M680.6041666666666,134.49392712550608H810V61.13360323886639H820">
 </path>
-<path class="link" d="M270.140625,1093.448275862069H318V1452.1455938697318H328">
+<path class="link" d="M680.6041666666666,134.49392712550608H810V97.81376518218623H820">
 </path>
-<path class="link" d="M461.9375,127.27969348659003H482V57.8544061302682H492">
+<path class="link" d="M680.6041666666666,134.49392712550608H810V134.49392712550608H820">
 </path>
-<path class="link" d="M461.9375,127.27969348659003H482V92.56704980842912H492">
+<path class="link" d="M680.6041666666666,134.49392712550608H810V171.1740890688259H820">
 </path>
-<path class="link" d="M461.9375,127.27969348659003H482V127.27969348659003H492">
+<path class="link" d="M680.6041666666666,134.49392712550608H810V207.85425101214574H820">
 </path>
-<path class="link" d="M461.9375,127.27969348659003H482V161.99233716475095H492">
+<path class="link" d="M660.6041666666666,293.4412955465587H810V256.7611336032389H820">
 </path>
-<path class="link" d="M461.9375,127.27969348659003H482V196.70498084291188H492">
+<path class="link" d="M660.6041666666666,293.4412955465587H810V293.4412955465587H820">
 </path>
-<path class="link" d="M475.265625,242.98850574712642H482V242.98850574712642H492">
+<path class="link" d="M660.6041666666666,293.4412955465587H810V330.12145748987854H820">
 </path>
-<path class="link" d="M406.359375,358.69731800766283H482V323.9846743295019H492">
+<path class="link" d="M695.6197916666666,434.0485829959514H810V379.02834008097165H820">
 </path>
-<path class="link" d="M406.359375,358.69731800766283H482V358.69731800766283H492">
+<path class="link" d="M695.6197916666666,434.0485829959514H810V415.7085020242915H820">
 </path>
-<path class="link" d="M406.359375,358.69731800766283H482V393.40996168582376H492">
+<path class="link" d="M695.6197916666666,434.0485829959514H810V452.3886639676113H820">
 </path>
-<path class="link" d="M441.375,491.76245210727967H482V439.69348659003833H492">
+<path class="link" d="M695.6197916666666,434.0485829959514H810V489.06882591093114H820">
 </path>
-<path class="link" d="M441.375,491.76245210727967H482V474.4061302681992H492">
+<path class="link" d="M656.1510416666666,592.995951417004H810V537.9757085020243H820">
 </path>
-<path class="link" d="M441.375,491.76245210727967H482V509.11877394636014H492">
+<path class="link" d="M656.1510416666666,592.995951417004H810V574.6558704453441H820">
 </path>
-<path class="link" d="M441.375,491.76245210727967H482V543.8314176245211H492">
+<path class="link" d="M656.1510416666666,592.995951417004H810V611.336032388664H820">
 </path>
-<path class="link" d="M460.84375,642.183908045977H482V590.1149425287356H492">
+<path class="link" d="M656.1510416666666,592.995951417004H810V648.0161943319838H820">
 </path>
-<path class="link" d="M460.84375,642.183908045977H482V624.8275862068965H492">
+<path class="link" d="M653.3854166666666,727.48987854251H810V727.48987854251H820">
 </path>
-<path class="link" d="M460.84375,642.183908045977H482V659.5402298850574H492">
+<path class="link" d="M637.8072916666666,813.0769230769231H810V776.3967611336031H820">
 </path>
-<path class="link" d="M460.84375,642.183908045977H482V694.2528735632184H492">
+<path class="link" d="M637.8072916666666,813.0769230769231H810V813.0769230769231H820">
 </path>
-<path class="link" d="M434.71875,769.463601532567H482V769.463601532567H492">
+<path class="link" d="M637.8072916666666,813.0769230769231H810V849.7570850202429H820">
 </path>
-<path class="link" d="M419.140625,850.4597701149426H482V815.7471264367816H492">
+<path class="link" d="M637.2604166666666,935.3441295546559H810V898.663967611336H820">
 </path>
-<path class="link" d="M419.140625,850.4597701149426H482V850.4597701149426H492">
+<path class="link" d="M637.2604166666666,935.3441295546559H810V935.3441295546559H820">
 </path>
-<path class="link" d="M419.140625,850.4597701149426H482V885.1724137931035H492">
+<path class="link" d="M637.2604166666666,935.3441295546559H810V972.0242914979757H820">
 </path>
-<path class="link" d="M418.59375,966.1685823754789H482V931.455938697318H492">
+<path class="link" d="M635.6041666666666,1094.2914979757084H810V1020.9311740890688H820">
 </path>
-<path class="link" d="M418.59375,966.1685823754789H482V966.1685823754789H492">
+<path class="link" d="M635.6041666666666,1094.2914979757084H810V1057.6113360323886H820">
 </path>
-<path class="link" d="M418.59375,966.1685823754789H482V1000.8812260536398H492">
+<path class="link" d="M635.6041666666666,1094.2914979757084H810V1094.2914979757084H820">
 </path>
-<path class="link" d="M416.9375,1116.5900383141761H482V1047.1647509578545H492">
+<path class="link" d="M635.6041666666666,1094.2914979757084H810V1130.9716599190283H820">
 </path>
-<path class="link" d="M416.9375,1116.5900383141761H482V1081.8773946360154H492">
+<path class="link" d="M635.6041666666666,1094.2914979757084H810V1167.651821862348H820">
 </path>
-<path class="link" d="M416.9375,1116.5900383141761H482V1116.5900383141761H492">
+<path class="link" d="M634.4791666666666,1289.919028340081H810V1216.5587044534414H820">
 </path>
-<path class="link" d="M416.9375,1116.5900383141761H482V1151.302681992337H492">
+<path class="link" d="M634.4791666666666,1289.919028340081H810V1253.238866396761H820">
 </path>
-<path class="link" d="M416.9375,1116.5900383141761H482V1186.015325670498H492">
+<path class="link" d="M634.4791666666666,1289.919028340081H810V1289.919028340081H820">
 </path>
-<path class="link" d="M415.8125,1301.7241379310344H482V1232.2988505747126H492">
+<path class="link" d="M634.4791666666666,1289.919028340081H810V1326.5991902834007H820">
 </path>
-<path class="link" d="M415.8125,1301.7241379310344H482V1267.0114942528735H492">
+<path class="link" d="M634.4791666666666,1289.919028340081H810V1363.2793522267207H820">
 </path>
-<path class="link" d="M415.8125,1301.7241379310344H482V1301.7241379310344H492">
+<path class="link" d="M657.8229166666666,1448.8663967611335H810V1412.1862348178138H820">
 </path>
-<path class="link" d="M415.8125,1301.7241379310344H482V1336.4367816091954H492">
+<path class="link" d="M657.8229166666666,1448.8663967611335H810V1448.8663967611335H820">
 </path>
-<path class="link" d="M415.8125,1301.7241379310344H482V1371.1494252873563H492">
+<path class="link" d="M657.8229166666666,1448.8663967611335H810V1485.5465587044534H820">
 </path>
-<path class="link" d="M439.15625,1452.1455938697318H482V1417.4329501915709H492">
-</path>
-<path class="link" d="M439.15625,1452.1455938697318H482V1452.1455938697318H492">
-</path>
-<path class="link" d="M439.15625,1452.1455938697318H482V1486.8582375478927H492">
-</path>
-<path class="link" d="M565.359375,624.8275862068965H646V566.9731800766283H656">
-</path>
-<path class="link" d="M565.359375,624.8275862068965H646V682.6819923371647H656">
-</path>
-<path class="link" d="M787.75,566.9731800766283H810V532.2605363984675H820">
-</path>
-<path class="link" d="M787.75,566.9731800766283H810V566.9731800766283H820">
-</path>
-<path class="link" d="M787.75,566.9731800766283H810V601.6858237547892H820">
-</path>
-<path class="link" d="M776.0625,682.6819923371647H810V647.9693486590038H820">
-</path>
-<path class="link" d="M776.0625,682.6819923371647H810V682.6819923371647H820">
-</path>
-<path class="link" d="M776.0625,682.6819923371647H810V717.3946360153257H820">
-</path>
-<g class="node" transform="translate(0,613.2567049808429)">
+<g class="node" transform="translate(0,574.6558704453441)">
 <rect x="0" y="-17.5" width="82.0234375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">src/index.ts</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(164,133.06513409961687)">
+<g class="node" transform="translate(273.3333333333333,79.47368421052632)">
 <rect x="0" y="-17.5" width="80.015625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">traversal</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/traversal.ts</text>
 </g>
-<g class="node" transform="translate(164,465.727969348659)">
-<rect x="0" y="-17.5" width="104.484375" height="35" rx="5" class="rect sourceFile">
+<g class="node" transform="translate(273.3333333333333,406.53846153846155)">
+<rect x="0" y="-17.5" width="116.703125" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">commandLine</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/commandLine.ts</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/cli/commandLine.ts</text>
 </g>
-<g class="node" transform="translate(164,688.4674329501916)">
+<g class="node" transform="translate(273.3333333333333,641.9028340080971)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(164,1093.448275862069)">
+<g class="node" transform="translate(273.3333333333333,1069.8380566801618)">
 <rect x="0" y="-17.5" width="106.140625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">outputFormats</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/outputFormats.ts</text>
 </g>
-<g class="node" transform="translate(328,23.14176245210728)">
+<g class="node" transform="translate(546.6666666666666,24.453441295546558)">
 <rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(328,57.8544061302682)">
+<g class="node" transform="translate(546.6666666666666,61.13360323886639)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(328,92.56704980842912)">
+<g class="node" transform="translate(546.6666666666666,97.81376518218623)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(328,127.27969348659003)">
+<g class="node" transform="translate(546.6666666666666,134.49392712550608)">
 <rect x="0" y="-17.5" width="133.9375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">importParser</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/importParser.ts</text>
 </g>
-<g class="node" transform="translate(328,242.98850574712642)">
-<rect x="0" y="-17.5" width="147.265625" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">commentParser</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/commentParser.ts</text>
-</g>
-<g class="node" transform="translate(328,289.27203065134097)">
+<g class="node" transform="translate(546.6666666666666,220.08097165991902)">
 <rect x="0" y="-17.5" width="84.3515625" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">commander</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(328,323.9846743295019)">
+<g class="node" transform="translate(546.6666666666666,256.7611336032389)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(328,358.69731800766283)">
-<rect x="0" y="-17.5" width="78.359375" height="35" rx="5" class="rect sourceFile">
+<g class="node" transform="translate(546.6666666666666,293.4412955465587)">
+<rect x="0" y="-17.5" width="113.9375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">tsConfig</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/tsConfig.ts</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/tsConfig.ts</text>
 </g>
-<g class="node" transform="translate(328,425.2298850574713)">
-<rect x="0" y="-17.5" width="85.59375" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">log</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/log.ts</text>
-</g>
-<g class="node" transform="translate(328,491.76245210727967)">
-<rect x="0" y="-17.5" width="113.375" height="35" rx="5" class="rect sourceFile">
+<g class="node" transform="translate(546.6666666666666,434.0485829959514)">
+<rect x="0" y="-17.5" width="148.953125" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">configFileParser</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/configFileParser.ts</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/configFileParser.ts</text>
 </g>
-<g class="node" transform="translate(328,642.183908045977)">
-<rect x="0" y="-17.5" width="132.84375" height="35" rx="5" class="rect sourceFile">
+<g class="node" transform="translate(546.6666666666666,592.995951417004)">
+<rect x="0" y="-17.5" width="109.484375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">optionMerge</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/optionMerge.ts</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/cli/optionMerge.ts</text>
 </g>
-<g class="node" transform="translate(328,688.4674329501916)">
+<g class="node" transform="translate(546.6666666666666,641.9028340080971)">
 <rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(328,734.7509578544061)">
+<g class="node" transform="translate(546.6666666666666,690.8097165991902)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(328,769.463601532567)">
+<g class="node" transform="translate(546.6666666666666,727.48987854251)">
 <rect x="0" y="-17.5" width="106.71875" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">console</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/console.ts</text>
 </g>
-<g class="node" transform="translate(328,850.4597701149426)">
+<g class="node" transform="translate(546.6666666666666,813.0769230769231)">
 <rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
 </g>
-<g class="node" transform="translate(328,966.1685823754789)">
+<g class="node" transform="translate(546.6666666666666,935.3441295546559)">
 <rect x="0" y="-17.5" width="90.59375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">json</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/json.ts</text>
 </g>
-<g class="node" transform="translate(328,1116.5900383141761)">
+<g class="node" transform="translate(546.6666666666666,1094.2914979757084)">
 <rect x="0" y="-17.5" width="88.9375" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">png</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/png.ts</text>
 </g>
-<g class="node" transform="translate(328,1301.7241379310344)">
+<g class="node" transform="translate(546.6666666666666,1289.919028340081)">
 <rect x="0" y="-17.5" width="87.8125" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">svg</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/svg.ts</text>
 </g>
-<g class="node" transform="translate(328,1452.1455938697318)">
+<g class="node" transform="translate(546.6666666666666,1448.8663967611335)">
 <rect x="0" y="-17.5" width="111.15625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">mermaid</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/mermaid.ts</text>
 </g>
-<g class="node" transform="translate(492,57.8544061302682)">
+<g class="node" transform="translate(820,61.13360323886639)">
 <rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,92.56704980842912)">
+<g class="node" transform="translate(820,97.81376518218623)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,127.27969348659003)">
+<g class="node" transform="translate(820,134.49392712550608)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,161.99233716475095)">
+<g class="node" transform="translate(820,171.1740890688259)">
 <rect x="0" y="-17.5" width="86.71875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">@types/uuid</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,196.70498084291188)">
+<g class="node" transform="translate(820,207.85425101214574)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,242.98850574712642)">
+<g class="node" transform="translate(820,256.7611336032389)">
 <rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,323.9846743295019)">
-<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
-</rect>
-<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
-</text>
-</g>
-<g class="node" transform="translate(492,358.69731800766283)">
+<g class="node" transform="translate(820,293.4412955465587)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,393.40996168582376)">
+<g class="node" transform="translate(820,330.12145748987854)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,439.69348659003833)">
+<g class="node" transform="translate(820,379.02834008097165)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,474.4061302681992)">
+<g class="node" transform="translate(820,415.7085020242915)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,509.11877394636014)">
+<g class="node" transform="translate(820,452.3886639676113)">
 <rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,543.8314176245211)">
+<g class="node" transform="translate(820,489.06882591093114)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,590.1149425287356)">
+<g class="node" transform="translate(820,537.9757085020243)">
 <rect x="0" y="-17.5" width="106.140625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">outputFormats</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/outputFormats.ts</text>
 </g>
-<g class="node" transform="translate(492,624.8275862068965)">
-<rect x="0" y="-17.5" width="73.359375" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">plugins</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins.ts</text>
-</g>
-<g class="node" transform="translate(492,659.5402298850574)">
+<g class="node" transform="translate(820,574.6558704453441)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,694.2528735632184)">
+<g class="node" transform="translate(820,611.336032388664)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,769.463601532567)">
+<g class="node" transform="translate(820,648.0161943319838)">
+<rect x="0" y="-17.5" width="116.703125" height="35" rx="5" class="rect sourceFile">
+</rect>
+<text y="-2" x="7" class="text" style="text-anchor: start;">commandLine</text>
+<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/cli/commandLine.ts</text>
+</g>
+<g class="node" transform="translate(820,727.48987854251)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,815.7471264367816)">
+<g class="node" transform="translate(820,776.3967611336031)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,850.4597701149426)">
+<g class="node" transform="translate(820,813.0769230769231)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,885.1724137931035)">
+<g class="node" transform="translate(820,849.7570850202429)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,931.455938697318)">
+<g class="node" transform="translate(820,898.663967611336)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,966.1685823754789)">
+<g class="node" transform="translate(820,935.3441295546559)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,1000.8812260536398)">
+<g class="node" transform="translate(820,972.0242914979757)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1047.1647509578545)">
+<g class="node" transform="translate(820,1020.9311740890688)">
 <rect x="0" y="-17.5" width="127.31640625" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">node-html-to-image</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1081.8773946360154)">
+<g class="node" transform="translate(820,1057.6113360323886)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,1116.5900383141761)">
+<g class="node" transform="translate(820,1094.2914979757084)">
 <rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
 </g>
-<g class="node" transform="translate(492,1151.302681992337)">
+<g class="node" transform="translate(820,1130.9716599190283)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1186.015325670498)">
+<g class="node" transform="translate(820,1167.651821862348)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1232.2988505747126)">
+<g class="node" transform="translate(820,1216.5587044534414)">
 <rect x="0" y="-17.5" width="74.337890625" height="35" rx="5" class="rect nodeModule">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">puppeteer</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1267.0114942528735)">
+<g class="node" transform="translate(820,1253.238866396761)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,1301.7241379310344)">
+<g class="node" transform="translate(820,1289.919028340081)">
 <rect x="0" y="-17.5" width="91.140625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">html</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/output/html.ts</text>
 </g>
-<g class="node" transform="translate(492,1336.4367816091954)">
+<g class="node" transform="translate(820,1326.5991902834007)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1371.1494252873563)">
+<g class="node" transform="translate(820,1363.2793522267207)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1417.4329501915709)">
+<g class="node" transform="translate(820,1412.1862348178138)">
 <rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
 </rect>
 <text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
 </g>
-<g class="node" transform="translate(492,1452.1455938697318)">
+<g class="node" transform="translate(820,1448.8663967611335)">
 <rect x="0" y="-17.5" width="26.99609375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">fs</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
 </g>
-<g class="node" transform="translate(492,1486.8582375478927)">
+<g class="node" transform="translate(820,1485.5465587044534)">
 <rect x="0" y="-17.5" width="40.34375" height="35" rx="5" class="rect unknown">
 </rect>
 <text y="3" x="7" class="text" style="text-anchor: start;">path</text>
 <text y="12" x="7" class="secondaryText" style="text-anchor: start;">
 </text>
-</g>
-<g class="node" transform="translate(656,566.9731800766283)">
-<rect x="0" y="-17.5" width="131.75" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">debugPlugin</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins/debugPlugin.ts</text>
-</g>
-<g class="node" transform="translate(656,682.6819923371647)">
-<rect x="0" y="-17.5" width="120.0625" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">docPlugin</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/plugins/docPlugin.ts</text>
-</g>
-<g class="node" transform="translate(820,532.2605363984675)">
-<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
-</rect>
-<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
-</text>
-</g>
-<g class="node" transform="translate(820,566.9731800766283)">
-<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
-</g>
-<g class="node" transform="translate(820,601.6858237547892)">
-<rect x="0" y="-17.5" width="133.9375" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">importParser</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/importParser.ts</text>
-</g>
-<g class="node" transform="translate(820,647.9693486590038)">
-<rect x="0" y="-17.5" width="74.35546875" height="35" rx="5" class="rect nodeModule">
-</rect>
-<text y="3" x="7" class="text" style="text-anchor: start;">typescript</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">
-</text>
-</g>
-<g class="node" transform="translate(820,682.6819923371647)">
-<rect x="0" y="-17.5" width="73.90625" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">types</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/types.d.ts</text>
-</g>
-<g class="node" transform="translate(820,717.3946360153257)">
-<rect x="0" y="-17.5" width="147.265625" height="35" rx="5" class="rect sourceFile">
-</rect>
-<text y="-2" x="7" class="text" style="text-anchor: start;">commentParser</text>
-<text y="12" x="7" class="secondaryText" style="text-anchor: start;">src/helpers/commentParser.ts</text>
 </g>
 </g>
 </svg>

@@ -1,5 +1,5 @@
 import * as fs from "fs";
-import type { ImportInfoV2, HtmlFormatOptions } from "../types";
+import type { ImportInfo, HtmlFormatOptions } from "../types";
 import path from "path";
 
 const defaultOptions = {
@@ -8,7 +8,7 @@ const defaultOptions = {
     template: "dependencyTree",
 };
 
-export const htmlOutputPlugin = (options: HtmlFormatOptions) => async (importInfos: ImportInfoV2[]) => {
+export const htmlOutputPlugin = (options: HtmlFormatOptions) => async (importInfos: ImportInfo[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const templatePath = `templates/${opt.template}.html`;
     const absoluteTemplatePath = path.resolve(__dirname, "../..", templatePath);

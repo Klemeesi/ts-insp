@@ -18,12 +18,8 @@ exports[`console Basic console output test 1`] = `
   "│ ├ src/types.d.ts",
   "│ ├ src/tsConfig.ts",
   "│ ├ src/output/log.ts",
-  "│ ├ src/plugins.ts",
   "├ src/types.d.ts",
   "│ ├ node_modules/typescript/lib/typescript.d.ts",
-  "│ ├ src/plugins.ts",
   "│ ├ src/output/log.ts",
-  "├ src/plugins.ts",
-  "│ ├ src/plugins/debugPlugin.ts",
 ]
 `;

@@ -1,4 +1,4 @@
-import type { ImportInfoV2, MermaidFormatOptions } from "../types";
+import type { ImportInfo, MermaidFormatOptions } from "../types";
 import * as fs from "fs";
 import path from "path";
 
@@ -12,13 +12,13 @@ const defaultOptions = {
 const encodeText = (text: string) => text.replace("@", "#64;");
 const encodeId = (id: string) => id.replace("@", "_");
 
-const getNodeGenerator = (opt: MermaidFormatOptions) => (i: ImportInfoV2) => ({
+const getNodeGenerator = (opt: MermaidFormatOptions) => (i: ImportInfo) => ({
     id: encodeId((i[opt.nodeId!] as string) || i.uniqueId),
     name: encodeText(i.moduleName),
     link: i.type === "Source file" ? "==>" : i.type === "Node module" ? "-->" : "-.-",
 });
 
-const returnMermaidLinks = (root: ImportInfoV2, getInfo: ReturnType<typeof getNodeGenerator>) => {
+const returnMermaidLinks = (root: ImportInfo, getInfo: ReturnType<typeof getNodeGenerator>) => {
     const src = getInfo(root);
     let lines: string[] = [];
     root.imports.forEach((dest) => {
@@ -28,7 +28,7 @@ const returnMermaidLinks = (root: ImportInfoV2, getInfo: ReturnType<typeof getNo
     return lines;
 };
 
-export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ImportInfoV2[]) => {
+export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ImportInfo[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath, `${opt.outputName}.md`);
 
