@@ -1,5 +1,5 @@
 import path from "path";
-import type { InspOptions } from "./types";
+import type { InspOptions } from "../types";
 import * as ts from "typescript";
 import fs from "fs";
 

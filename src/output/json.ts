@@ -1,5 +1,5 @@
 import path from "path";
-import type { ImportInfoV2, JsonFormatOptions } from "../types";
+import type { ImportInfo, JsonFormatOptions } from "../types";
 import * as fs from "fs";
 
 const defaultOptions = {
@@ -7,7 +7,7 @@ const defaultOptions = {
     outputName: "export",
 };
 
-export const jsonOutputPlugin = (options: JsonFormatOptions) => async (imports: ImportInfoV2[]) => {
+export const jsonOutputPlugin = (options: JsonFormatOptions) => async (imports: ImportInfo[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath, `${opt.outputName}.json`);
     const outputFolder = path.resolve(opt.outputPath);

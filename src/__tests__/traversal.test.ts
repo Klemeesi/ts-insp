@@ -1,6 +1,6 @@
 import { getImports } from "../traversal";
-import { getCompilerOptions } from "../tsConfig";
-import type { ImportInfoV2 } from "../types";
+import { getCompilerOptions } from "../helpers/tsConfig";
+import type { ImportInfo } from "../types";
 
 jest.mock("uuid", () => ({
     v4: jest.fn().mockReturnValue("mocked-uuid"), // Return a fixed ID 'mocked-uuid'
@@ -83,7 +83,7 @@ describe("traversal", () => {
             ...testConfig,
             inspOptions: {
                 ...testConfig.inspOptions,
-                filterModules: (a: ImportInfoV2) => {
+                filterModules: (a: ImportInfo) => {
                     return !a.absolutePath?.includes("node_modules");
                 },
             },

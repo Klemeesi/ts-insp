@@ -6,12 +6,12 @@ export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
 export type TraversalPlugin = { name: PluginName; processor: PluginProcessor };
 
-export type OutputFormatPlugin = (imports: ImportInfoV2[]) => Promise<unknown>;
+export type OutputFormatPlugin = (imports: ImportInfo[]) => Promise<unknown>;
 
 type ImportType = "Node module" | "Source file" | "Unknown";
 type Logger = (...data: any[]) => void;
 
-export interface ImportInfoV2 {
+export interface ImportInfo {
     // Same as absolutePath
     id: string;
     // Globally unique identifier for the file
@@ -35,15 +35,11 @@ export interface ImportInfoV2 {
     // Was this file traversed
     resolved: boolean;
     // Child imports
-    imports: ImportInfoV2[];
-    // Description parsed from the file
-    description?: string;
-    // Git href
-    gitHref?: string;
+    imports: ImportInfo[];
 }
 
 export interface TraversalResult {
-    imports: ImportInfoV2[];
+    imports: ImportInfo[];
 }
 
 export interface JsonFormatOptions {
@@ -61,7 +57,7 @@ export interface HtmlFormatOptions extends JsonFormatOptions {
 
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
-    nodeId?: keyof ImportInfoV2;
+    nodeId?: keyof ImportInfo;
 }
 
 export interface PngFormatOptions extends HtmlFormatOptions {}
@@ -84,7 +80,7 @@ export interface InspOptions {
     /** Defines if same module is retraversed. Good to avoid extra clutter and circular dependencies. By default modules are not retraversed */
     retraverse?: boolean;
     /** Return false to filter out results. By default everything is included */
-    filterModules?: (node: ImportInfoV2, parent?: ImportInfoV2) => boolean;
+    filterModules?: (node: ImportInfo, parent?: ImportInfo) => boolean;
     /** What output formats are done */
     format: OutputFormatPlugin[];
 }
@@ -98,7 +94,3 @@ export interface MainOptions {
     compilerOptions?: CompilerOptions;
     logger: Logger;
 }
-
-export type CommandLineParams = {
-    [K in keyof InspOptions]: string;
-};

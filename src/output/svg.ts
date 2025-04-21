@@ -1,5 +1,5 @@
 import puppeteer from "puppeteer";
-import type { ImportInfoV2, PngFormatOptions } from "../types";
+import type { ImportInfo, PngFormatOptions } from "../types";
 import { htmlOutputPlugin } from "./html";
 import path from "path";
 import fs from "fs";
@@ -13,7 +13,7 @@ const defaultOptions = {
     template: "dependencyTree",
 };
 
-export const svgOutputPlugin = (options: PngFormatOptions) => async (imports: ImportInfoV2[]) => {
+export const svgOutputPlugin = (options: PngFormatOptions) => async (imports: ImportInfo[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath, `${opt.outputName}.svg`);
     const outputFolder = path.resolve(opt.outputPath);

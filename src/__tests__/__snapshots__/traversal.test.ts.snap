@@ -5,7 +5,6 @@ exports[`traversal Basic traversal snapshot 1`] = `
   {
     "absolutePath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
     "alreadyTraversed": false,
-    "description": "",
     "extension": ".ts",
     "fullPath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
     "id": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
@@ -14,7 +13,6 @@ exports[`traversal Basic traversal snapshot 1`] = `
       {
         "absolutePath": undefined,
         "alreadyTraversed": false,
-        "description": "",
         "extension": "",
         "fullPath": undefined,
         "id": "fs",
@@ -36,7 +34,6 @@ exports[`traversal Basic traversal snapshot 1`] = `
   {
     "absolutePath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule2.js",
     "alreadyTraversed": false,
-    "description": "",
     "extension": ".js",
     "fullPath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule2.js",
     "id": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule2.js",
@@ -45,7 +42,6 @@ exports[`traversal Basic traversal snapshot 1`] = `
       {
         "absolutePath": undefined,
         "alreadyTraversed": false,
-        "description": "",
         "extension": "",
         "fullPath": undefined,
         "id": "typescript",
@@ -60,7 +56,6 @@ exports[`traversal Basic traversal snapshot 1`] = `
       {
         "absolutePath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
         "alreadyTraversed": true,
-        "description": "",
         "extension": ".ts",
         "fullPath": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
         "id": "C:\\Source\\ts-insp\\src\\__mocks__\\traversal\\folder\\submodule1.ts",
