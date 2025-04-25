@@ -4,38 +4,31 @@ Console tool for inspecting typescript project imports.
 
 This is meant for documenting existing code and it's dependencies. Just something I needed IRL and couldn't find suitable solutions. Asked some pointers from ChatGPT and seemed like a cool thing to do. So here we are...
 
-The tool itself traverses a dependency tree starting from a single typescript or javascript file. It visualizes the dependency tree in some format. Currently output options are very limited but will be improved later with support for custom formats if someone needs some specific visualization. Current options:
+The tool itself traverses a dependency tree starting from a single typescript or javascript file. It visualizes the dependency tree in some format. Currently output options are very limited. Current options:
 
 -   _Console output_ - Just printing the dependencies to console. Simple
 -   _JSON_ - Export to JSON file. If you just want to log the dependencies in JSON for future use, it is possible
--   _HTML_ - Export the dependency tree to HTML file. Currently only one HTML template is available that renders everything in tree shape.
--   _PNG_ - Same as HTML but the HTML output is rendered to png
--   _SVG_ - SVG output format generated with d3. Created based on the HTML output
--   _mermaid_ - Markdown file with mermaid chart
+-   _mermaid_ - Markdown file with mermaid chart. _SVG_ and _PNG_ versions of the chart can also be generated with mermaid-cli.
 
 ## Examples
 
 An visualisations (ts-insp is run against this github repository)
 
-### Dependency Tree as png
+### Dependency Graph as svg
 
-![Dependency Tree of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.png)
-
-### Dependency Tree as svg (experimental)
-
-![Dependency Tree of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.svg)
+![Dependency Graph of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/MermaidExample-1.svg)
 
 ### Dependency Graph as png
 
-![Dependency Graph of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyGraph.png)
+![Dependency Graph of ts-insp tool](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/MermaidExample-1.png)
 
 ### Dependency Tree as json
 
 [Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
 
-### Dependency Tree as mermaid markdown
+### Dependency Graph as mermaid markdown
 
-[Dependency Tree of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyGraph.md)
+[Dependency Graph of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/MermaidExample.md)
 
 ## Installing and running
 
@@ -68,7 +61,10 @@ Create configuration file e.g. `./ts-insp.config.ts` (javascript is possible too
 Example:
 
 ```ts
-import { InspOptions } from "ts-insp";
+import type { InspOptions } from "./dist/types.d.ts";
+import { consoleOutputPlugin } from "./dist/output/console";
+import { jsonOutputPlugin } from "./dist/output/json";
+import { mermaidOutputPlugin } from "./dist/output/mermaid";
 
 const config: Partial<InspOptions> = {
     // Debug logs
@@ -93,45 +89,19 @@ const config: Partial<InspOptions> = {
     // html and png formatting options. More information later
     format: {
         consoleOutputPlugin(),
+        jsonOutputPlugin({
+            outputPath: "docs",
+            outputName: "JsonExample",
+        }),
         mermaidOutputPlugin({
             outputPath: "docs",
-            nodeId: "uniqueId",
             dir: "LR",
-            outputName: "DependencyGraph"
-        }),
-        jsonOutputPlugin({ outputPath: "docs", outputName: "DependencyTree" }),
-        pngOutputPlugin({
-            outputPath: "docs",
-            outputName: "DependencyTree",
-            template: "d3dependencyTree",
-            customStyles: "body { width: 1200px !important; height: 100% !important; }",
-            slugs: {
-                diagramWidth: 1000,
-                diagramHeight: 1600,
-                maxRectWidth: 180,
-            },
-        }),
-        svgOutputPlugin({
-            outputPath: "docs",
-            outputName: "DependencyTree",
-            template: "d3dependencyTree",
-            customStyles: "body { width: 1200px !important; height: 100% !important; }",
-            slugs: {
-                diagramWidth: 1000,
-                diagramHeight: 1600,
-                maxRectWidth: 180,
-            },
-        }),
-        pngOutputPlugin({
-            outputPath: "docs",
-            outputName: "DependencyGraph",
-            template: "d3dependencyTree",
-            customStyles: "body { width: 1200px !important; height: 100% !important; }",
-            slugs: {
-                diagramWidth: 1000,
-                diagramHeight: 1200,
-                maxRectWidth: 180,
-                graph: true,
+            outputName: "MermaidExample",
+            chartType: "graph",
+            cliOptions: {
+                mmdcPathToken: "{mmdc}",
+                inputPathToken: "{inputPath}",
+                commands: ["{mmdc} -i {inputPath} -o docs\\MermaidExample.svg", "{mmdc} -i {inputPath} -o docs\\MermaidExample.png"],
             },
         }),
     }
@@ -154,8 +124,8 @@ yarn ts-insp --help
 
 ## Future improvements
 
-Some features that will come in the future. But first the project needs to be improved to be more maintainable:
+Some features will come in the future. But first the project needs to be improved to be more maintainable:
 
--   Planning to add Mermaid chart support and eventually deprecating everything else... So much simpler to work with Mermaid.
-
-But as said, for now I'm concentrating on writing unit tests, writing documentation and making the repository public. More comes later.
+-   More unit tests
+-   Traversing should be streamlined
+-   More premade features for Mermaid charts

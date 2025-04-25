@@ -2,8 +2,12 @@ import { getImports } from "../traversal";
 import { getCompilerOptions } from "../helpers/tsConfig";
 import type { ImportInfo } from "../types";
 
-jest.mock("uuid", () => ({
-    v4: jest.fn().mockReturnValue("mocked-uuid"), // Return a fixed ID 'mocked-uuid'
+jest.mock("crypto", () => ({
+    ...jest.requireActual("crypto"),
+    createHash: () => ({
+        update: () => {},
+        digest: () => "mocked-id",
+    }),
 }));
 
 const testConfig = {

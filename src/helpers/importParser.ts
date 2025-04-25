@@ -1,7 +1,7 @@
 import * as ts from "typescript";
 import * as path from "path";
 import * as fs from "fs";
-const { v4: uuidv4 } = require("uuid");
+import { createHash, randomBytes } from "crypto";
 import type { ImportInfo, MainOptions } from "../types";
 
 const getType = (absolutePath?: string) =>
@@ -63,6 +63,12 @@ const resolveImportPath = (options: MainOptions, normalizedPath: string, filePat
     }
 };
 
+const generateId = (input?: string): string => {
+    const hash = createHash("md5");
+    hash.update(input ?? randomBytes(16).toString());
+    return hash.digest("hex");
+};
+
 export const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): ImportInfo[] => {
     let results: ImportInfo[] = [];
     let importPath: string | undefined;
@@ -97,8 +103,8 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
             results = [
                 ...results,
                 {
-                    id: paths?.absolutePath || normalizedPath,
-                    uniqueId: uuidv4(),
+                    id: generateId(paths?.absolutePath || normalizedPath),
+                    uniqueId: generateId(),
                     import: normalizedPath,
                     extension: paths?.extension || "",
                     alreadyTraversed: false,
