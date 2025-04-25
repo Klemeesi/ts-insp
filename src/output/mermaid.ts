@@ -1,43 +1,44 @@
 import type { ImportInfo, MermaidFormatOptions } from "../types";
 import * as fs from "fs";
 import path from "path";
+import { mermaidRenderer } from "../treeToMermaid/renderer";
+import { getDefaultProcessors } from "../treeToMermaid/defaultProcessors";
+import { MermaidToken } from "../treeToMermaid/types";
+import { runMermaidCli } from "../treeToMermaid/cliWrapper";
 
-const defaultOptions = {
-    dir: "TB",
-    nodeId: "id",
+const defaultOptions: MermaidFormatOptions = {
+    dir: "LR",
     outputPath: "exports",
     outputName: "export",
-};
-
-const encodeText = (text: string) => text.replace("@", "#64;");
-const encodeId = (id: string) => id.replace("@", "_");
-
-const getNodeGenerator = (opt: MermaidFormatOptions) => (i: ImportInfo) => ({
-    id: encodeId((i[opt.nodeId!] as string) || i.uniqueId),
-    name: encodeText(i.moduleName),
-    link: i.type === "Source file" ? "==>" : i.type === "Node module" ? "-->" : "-.-",
-});
-
-const returnMermaidLinks = (root: ImportInfo, getInfo: ReturnType<typeof getNodeGenerator>) => {
-    const src = getInfo(root);
-    let lines: string[] = [];
-    root.imports.forEach((dest) => {
-        const dst = getInfo(dest);
-        lines = [...lines, `${src.id}[${src.name}] ${dst.link} ${dst.id}[${dst.name}]`, ...returnMermaidLinks(dest, getInfo)];
-    });
-    return lines;
+    chartType: "graph",
+    extractGroupName: (node: ImportInfo) => {
+        const ap = node.absolutePath || "";
+        if (ap.startsWith("node_modules") || node.type === "Unknown") {
+            return "node_modules";
+        } else {
+            const splitted = ap.split("/");
+            return splitted[splitted.length - 2] || undefined;
+        }
+    },
 };
 
 export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ImportInfo[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
-    const output = path.resolve(opt.outputPath, `${opt.outputName}.md`);
+    const output = path.resolve(opt.outputPath!, `${opt.outputName}.md`);
 
-    let lines: string[] = [];
-    imports.forEach((root) => {
-        lines = [...lines, ...returnMermaidLinks(root, getNodeGenerator(options))];
+    const processor = mermaidRenderer.create<ImportInfo>();
+    const defaultProcessors = getDefaultProcessors(opt);
+    Object.keys(defaultProcessors).forEach((key) => {
+        const name = key as keyof MermaidToken["type"];
+        processor.register(name, defaultProcessors[key]);
     });
-    const content = ["```mermaid", `graph ${opt.dir}`, ...lines, "```"].join("\n");
 
-    fs.writeFileSync(output, content);
-    console.log("Saved", output);
+    const result = processor.render(imports[0], {
+        extractChildren: (i) => i.imports,
+    });
+    fs.writeFileSync(output, result, "utf8");
+
+    if (opt.cliOptions) {
+        await runMermaidCli(opt.cliOptions, output);
+    }
 };

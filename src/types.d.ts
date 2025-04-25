@@ -57,7 +57,16 @@ export interface HtmlFormatOptions extends JsonFormatOptions {
 
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
-    nodeId?: keyof ImportInfo;
+    chartType?: "tree" | "graph";
+    extractGroupName?: (node: ImportInfo) => string | undefined;
+    cliOptions?: MermaidCliOptions;
+}
+
+export interface MermaidCliOptions {
+    mmdcPathToken?: string;
+    inputPathToken?: string;
+    outputPathToken?: string;
+    commands?: string[];
 }
 
 export interface PngFormatOptions extends HtmlFormatOptions {}

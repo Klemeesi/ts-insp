@@ -11,8 +11,8 @@
     "level": 0,
     "imports": [
       {
-        "id": "src/traversal.ts",
-        "uniqueId": "f4708f94-9638-4032-a550-383acc8b7adb",
+        "id": "97436aa4caaa9fe6c1f7fbda54bea5c5",
+        "uniqueId": "ee65f625bba8ccfcad88ea976f8047a4",
         "import": "./traversal",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -23,8 +23,8 @@
         "absolutePath": "src/traversal.ts",
         "imports": [
           {
-            "id": "node_modules/typescript/lib/typescript.d.ts",
-            "uniqueId": "99e6239f-2afe-4973-8209-07c926ff0af9",
+            "id": "ee253c483834accc136016fd0cfda308",
+            "uniqueId": "cee2976f8da98c490db4e6b3c549e4a1",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -37,8 +37,8 @@
             "level": 2
           },
           {
-            "id": "fs",
-            "uniqueId": "c1671098-e355-40fe-bc2b-7e99e86d68fe",
+            "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+            "uniqueId": "eb2e96846f102511e61f4eef0d4448bc",
             "import": "fs",
             "extension": "",
             "alreadyTraversed": false,
@@ -49,8 +49,8 @@
             "level": 2
           },
           {
-            "id": "src/types.d.ts",
-            "uniqueId": "77be151a-fd35-4338-9b15-300cac769871",
+            "id": "152b731d9960fa8a94d223c73a70437c",
+            "uniqueId": "25f893242acae14af0035b0fdab3dc18",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -63,8 +63,8 @@
             "level": 2
           },
           {
-            "id": "src/helpers/importParser.ts",
-            "uniqueId": "ba2f326e-ca47-4152-81fe-e9e86e25cc5e",
+            "id": "89368ad2b907401c75ac83d0c8f51150",
+            "uniqueId": "54cf78881532183b15ed06b5b5d4e76a",
             "import": "./helpers/importParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -75,8 +75,8 @@
             "absolutePath": "src/helpers/importParser.ts",
             "imports": [
               {
-                "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "cca4577f-7c11-4213-ac0c-1253ce7a9aeb",
+                "id": "ee253c483834accc136016fd0cfda308",
+                "uniqueId": "28501424019444e87b56f51c10f75fc4",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -89,8 +89,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "c0e1882e-3195-4bdc-89df-ee9c91b2739b",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "3d0bac0d38e2fd2d8d4fadd6ae773c9d",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": false,
@@ -101,8 +101,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "9f99dfeb-31dd-4375-b495-6f8f07188e7b",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "cb6502a5b563d8242eba0b38954da4a0",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -113,22 +113,20 @@
                 "level": 3
               },
               {
-                "id": "node_modules/@types/uuid/index.d.ts",
-                "uniqueId": "56c21eee-131b-4690-8713-7030e0c7ffce",
-                "import": "uuid",
-                "extension": ".d.ts",
+                "id": "5ae9b7f211e23aac3df5f2b8f3b8eada",
+                "uniqueId": "b098eef190c5493493fdd5af54e2c7f5",
+                "import": "crypto",
+                "extension": "",
                 "alreadyTraversed": false,
-                "fullPath": "C:\\Source\\ts-insp\\node_modules\\@types\\uuid\\index.d.ts",
-                "type": "Node module",
-                "moduleName": "@types/uuid",
-                "resolved": true,
-                "absolutePath": "node_modules/@types/uuid/index.d.ts",
+                "type": "Unknown",
+                "moduleName": "crypto",
+                "resolved": false,
                 "imports": [],
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "968f4d52-3c86-43f7-8626-8a068ca409ce",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "13cd3f7d698d109c34cf6d55c9f80b8f",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -147,8 +145,8 @@
         "level": 1
       },
       {
-        "id": "src/cli/commandLine.ts",
-        "uniqueId": "6a9babc0-8aa6-40fd-99bd-f684c5d727b5",
+        "id": "6eabf6036c1cd8aaca6f56d1c8fb63e0",
+        "uniqueId": "73478cab0c4751f051cffe1a2e98103b",
         "import": "./cli/commandLine",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -159,8 +157,8 @@
         "absolutePath": "src/cli/commandLine.ts",
         "imports": [
           {
-            "id": "node_modules/commander/typings/index.d.ts",
-            "uniqueId": "262299c6-93db-4675-b80e-1a9f2fec44d8",
+            "id": "590e227ecebc0951e8994717b1bc8669",
+            "uniqueId": "71f65a5bb123be1d219ca0f36b9c6a69",
             "import": "commander",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -173,8 +171,8 @@
             "level": 2
           },
           {
-            "id": "src/types.d.ts",
-            "uniqueId": "e3203a77-5cbe-4bb3-956c-293e830d0a0a",
+            "id": "152b731d9960fa8a94d223c73a70437c",
+            "uniqueId": "564649aaa068e37ccc754f24f8353ddb",
             "import": "../types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -187,8 +185,8 @@
             "level": 2
           },
           {
-            "id": "src/helpers/tsConfig.ts",
-            "uniqueId": "c93bf266-8d74-4f8d-8887-42ed1fe056a9",
+            "id": "333f22f566da67b693a352a010116a59",
+            "uniqueId": "4a90516ed057bbc58a6a678c43294b5a",
             "import": "../helpers/tsConfig",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -199,8 +197,8 @@
             "absolutePath": "src/helpers/tsConfig.ts",
             "imports": [
               {
-                "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "c503ae0e-684e-4c19-bae0-0fe8b9a14cfe",
+                "id": "ee253c483834accc136016fd0cfda308",
+                "uniqueId": "37f0fcfb29fb330d41da76d42d249f69",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -213,8 +211,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "d96b521c-eb42-4d02-acf1-be8e1dd294bf",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "9025267d3a031299c693633832897da1",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -225,8 +223,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "d0029fdc-2b94-4ce9-a16b-0b4616a3319a",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "1a177f476274248152f6d990077d6a0a",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -240,8 +238,8 @@
             "level": 2
           },
           {
-            "id": "src/helpers/configFileParser.ts",
-            "uniqueId": "3c542139-243a-4366-af7a-8ca6358b9743",
+            "id": "3fb28eb5baf18d345d0ad93d7e341109",
+            "uniqueId": "a8d71e7af480401d54383a0330b77e3a",
             "import": "../helpers/configFileParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -252,8 +250,8 @@
             "absolutePath": "src/helpers/configFileParser.ts",
             "imports": [
               {
-                "id": "path",
-                "uniqueId": "a2654c79-7576-4705-b256-49f73cc491c8",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "7c435b60cbd559824a2fbc79e1dd38bd",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -264,8 +262,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "66b90360-0697-4e1c-acc4-48923e1c3cc2",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "9abaf6564f7fa3fa39e3fbccbdbfb403",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -278,8 +276,8 @@
                 "level": 3
               },
               {
-                "id": "node_modules/typescript/lib/typescript.d.ts",
-                "uniqueId": "05935560-49d3-41d0-8875-e61d7a0925d4",
+                "id": "ee253c483834accc136016fd0cfda308",
+                "uniqueId": "a25e546014bd9f9044941f9d7d86efdf",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -292,8 +290,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "0c681bd0-cf13-45e7-b382-e22759907d61",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "49923a4efb41cbedf2f30cf3cf2eef26",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -307,8 +305,8 @@
             "level": 2
           },
           {
-            "id": "src/cli/optionMerge.ts",
-            "uniqueId": "9e0e7475-3d50-4275-b37a-eadac508445b",
+            "id": "e414dc75f5dcbe2827116d5050a8c6fa",
+            "uniqueId": "d616cadbcdfbcfa9ceaea725b0426671",
             "import": "./optionMerge",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -319,8 +317,8 @@
             "absolutePath": "src/cli/optionMerge.ts",
             "imports": [
               {
-                "id": "src/outputFormats.ts",
-                "uniqueId": "fb5f2e8d-456e-4e67-8803-3fe1a3c01aaa",
+                "id": "1fe092282d1f404a83c6dfaa449427eb",
+                "uniqueId": "424a69263a98122200856b69ffbe42c5",
                 "import": "../outputFormats",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -333,8 +331,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "2e44a5d2-8b86-4f72-af3d-e66c3c58dab7",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "0b87db4ff60ef761751fc4d75c909bee",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -347,8 +345,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "2639605c-e722-40b0-8413-a37cba413987",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "1af459745e4a9393f6c0252314fd6a85",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -359,8 +357,8 @@
                 "level": 3
               },
               {
-                "id": "src/cli/commandLine.ts",
-                "uniqueId": "68d416ea-7ad1-4581-b594-64d459f172bf",
+                "id": "6eabf6036c1cd8aaca6f56d1c8fb63e0",
+                "uniqueId": "f49a920f5fcd9002fdf93c3453e270c0",
                 "import": "./commandLine",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -379,8 +377,8 @@
         "level": 1
       },
       {
-        "id": "src/types.d.ts",
-        "uniqueId": "e0975c3e-44e5-4c17-a3cc-48d5b569d9da",
+        "id": "152b731d9960fa8a94d223c73a70437c",
+        "uniqueId": "3ffc0be908d05901517813d423a0561c",
         "import": "./types",
         "extension": ".d.ts",
         "alreadyTraversed": false,
@@ -391,8 +389,8 @@
         "absolutePath": "src/types.d.ts",
         "imports": [
           {
-            "id": "node_modules/typescript/lib/typescript.d.ts",
-            "uniqueId": "c7c5cc32-461f-4107-b6ce-97b4f8b9426c",
+            "id": "ee253c483834accc136016fd0cfda308",
+            "uniqueId": "dd774cf437d2976e53de386d26a59ab8",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -408,8 +406,8 @@
         "level": 1
       },
       {
-        "id": "src/outputFormats.ts",
-        "uniqueId": "e18de406-236d-4f6e-b20b-b1aeb5b1a7f5",
+        "id": "1fe092282d1f404a83c6dfaa449427eb",
+        "uniqueId": "d73b7b1cafa4c7a146ae766550c615dd",
         "import": "./outputFormats",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -420,8 +418,8 @@
         "absolutePath": "src/outputFormats.ts",
         "imports": [
           {
-            "id": "src/types.d.ts",
-            "uniqueId": "98930458-20ad-4d36-884e-53e3b6e1580a",
+            "id": "152b731d9960fa8a94d223c73a70437c",
+            "uniqueId": "da8647a963c213ccb8be890f1d8dddca",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -434,8 +432,8 @@
             "level": 2
           },
           {
-            "id": "src/output/console.ts",
-            "uniqueId": "99cf6273-d1a6-49ff-8e6f-b969c2a68504",
+            "id": "7029e3f6954c28b14ceaef910bc2c07b",
+            "uniqueId": "13f2905489f96b860c9a6214ff672657",
             "import": "./output/console",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -446,8 +444,8 @@
             "absolutePath": "src/output/console.ts",
             "imports": [
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "52ba5ac1-438c-465c-bbb2-8162e4bdf690",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "e90f0ae4f028674b84df57397506b8a9",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -463,8 +461,8 @@
             "level": 2
           },
           {
-            "id": "src/output/html.ts",
-            "uniqueId": "a041a9bb-5e6a-480d-a017-6fd05c459eea",
+            "id": "0db6041ec8d2e82f5e9c6db8fd8a97bc",
+            "uniqueId": "400c648f642f62888b0c83d4ec0f5140",
             "import": "./output/html",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -475,8 +473,8 @@
             "absolutePath": "src/output/html.ts",
             "imports": [
               {
-                "id": "fs",
-                "uniqueId": "93ef7ddd-30a1-4fd2-b063-78f7495a986b",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "c51c19e7150e71a2333df35786b0ef39",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -487,8 +485,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "5e4ec313-7f0c-498f-9f2a-23503f14f205",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "ca2a21b1c21c3c30c91732ac52310599",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -501,8 +499,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "318d1354-aead-4674-a09a-09fd8378e301",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "eec605b84d33f3394f3a342b7a928428",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -516,8 +514,8 @@
             "level": 2
           },
           {
-            "id": "src/output/json.ts",
-            "uniqueId": "fa71660a-58de-4e65-adc2-b29f2bbc5ac9",
+            "id": "1cdc6bd921f66f50622b5c56a23a8d72",
+            "uniqueId": "c9dc38ec6fa93754d9eccffacf6505fb",
             "import": "./output/json",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -528,8 +526,8 @@
             "absolutePath": "src/output/json.ts",
             "imports": [
               {
-                "id": "path",
-                "uniqueId": "c6800c33-202b-421a-a906-6b37cab7f9ba",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "4542469068034cba9ed14ec2c42238e3",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -540,8 +538,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "e87c32fe-fa78-45fd-a870-01010b3ed33a",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "2fca712de781d5b95e1ab08a017607a1",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -554,8 +552,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "5c6ff6d6-6ea9-4666-9149-38dcd9ad4b26",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "8d1674cc507039ad59cbd5924c1091ac",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -569,8 +567,8 @@
             "level": 2
           },
           {
-            "id": "src/output/png.ts",
-            "uniqueId": "944cfcb6-7987-487d-87d2-947db252a0c5",
+            "id": "9fbed50a45fceb27d386ff54167b51bb",
+            "uniqueId": "7d08fd8738bda27e116deee5c06cccc8",
             "import": "./output/png",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -581,8 +579,8 @@
             "absolutePath": "src/output/png.ts",
             "imports": [
               {
-                "id": "node_modules/node-html-to-image/dist/index.d.ts",
-                "uniqueId": "8db841ed-8d2c-42e9-a58e-fe7d47172b98",
+                "id": "660ad68f5b95885609cd57ba3bdf39ef",
+                "uniqueId": "1d5eafe057002f89928f6ebb7ca24fbc",
                 "import": "node-html-to-image",
                 "extension": ".d.ts",
                 "alreadyTraversed": false,
@@ -595,8 +593,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "47e2936c-8ba8-4df4-99d4-469b8bacd23f",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "325b78cfb7036ef354706fa4ccba78e6",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -609,8 +607,8 @@
                 "level": 3
               },
               {
-                "id": "src/output/html.ts",
-                "uniqueId": "b09ee3e0-f9da-4a04-be39-b911f2ada1c3",
+                "id": "0db6041ec8d2e82f5e9c6db8fd8a97bc",
+                "uniqueId": "b5eb4fe4d6d6267e8277080d80cb6654",
                 "import": "./html",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -623,8 +621,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "cd8aa6e2-45be-410f-8f98-37fdeba38f2e",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "b93fce31319889750d43af0daf0b9cdb",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -635,8 +633,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "8a41124e-f640-4c60-9948-b4af665c388c",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "1601c2d6f73a7bd86168ae48c145b226",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -650,8 +648,8 @@
             "level": 2
           },
           {
-            "id": "src/output/svg.ts",
-            "uniqueId": "df331353-31e1-490d-af0f-c33cce381afa",
+            "id": "3ea04c08e90c63ab428b8ddc0fa72e1a",
+            "uniqueId": "e204b08c495c5269085689eb78110b77",
             "import": "./output/svg",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -662,8 +660,8 @@
             "absolutePath": "src/output/svg.ts",
             "imports": [
               {
-                "id": "node_modules/puppeteer/lib/types.d.ts",
-                "uniqueId": "43cb3d0b-8a11-42f1-9dbd-73c815ab3f33",
+                "id": "0742e241c07c7470dbed6671089f6fda",
+                "uniqueId": "8ef7996e26dbf2fc4db42dfdba3d27ac",
                 "import": "puppeteer",
                 "extension": ".d.ts",
                 "alreadyTraversed": false,
@@ -676,8 +674,8 @@
                 "level": 3
               },
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "4f23c809-1622-454b-bec0-9058acc28bf5",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "d786c4c4248eeb8b1da27b17fcdf3fc9",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -690,8 +688,8 @@
                 "level": 3
               },
               {
-                "id": "src/output/html.ts",
-                "uniqueId": "0cd2ad11-dd3c-4a64-bca4-e932b92c33cf",
+                "id": "0db6041ec8d2e82f5e9c6db8fd8a97bc",
+                "uniqueId": "3e8f0510e95b47fcee080c4916341501",
                 "import": "./html",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -704,8 +702,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "63fbda1f-e665-4107-9e95-4b21a050e656",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "b0b69adb1fe23bdce0f8e567efab9082",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -716,8 +714,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "8f77b07b-928c-4c74-ab0f-921e227b51f3",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "163af34ab380177e8777a8ea60b270ca",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -731,8 +729,8 @@
             "level": 2
           },
           {
-            "id": "src/output/mermaid.ts",
-            "uniqueId": "fc705cc9-fd24-4552-846c-c80fa3a5ce30",
+            "id": "3c9aeb9e1a663982bf18432623f081c0",
+            "uniqueId": "a7b4ad6b958eb4251f9e888084af7da4",
             "import": "./output/mermaid",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -743,8 +741,8 @@
             "absolutePath": "src/output/mermaid.ts",
             "imports": [
               {
-                "id": "src/types.d.ts",
-                "uniqueId": "16baf8e9-0a8c-4e05-8510-30e72c9987a6",
+                "id": "152b731d9960fa8a94d223c73a70437c",
+                "uniqueId": "f7ff4f9dfd591e99af56ac29d958c2fd",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -757,8 +755,8 @@
                 "level": 3
               },
               {
-                "id": "fs",
-                "uniqueId": "3ed7e613-0c7d-40c8-aae7-9058460880f1",
+                "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
+                "uniqueId": "d0b89f8d9bb8235073c8b8466979d9e0",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -769,8 +767,8 @@
                 "level": 3
               },
               {
-                "id": "path",
-                "uniqueId": "c2eb6950-343d-484b-a25d-092ab4fc499e",
+                "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                "uniqueId": "83b02e948e29233f4440522929ffc382",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -778,6 +776,202 @@
                 "moduleName": "path",
                 "resolved": false,
                 "imports": [],
+                "level": 3
+              },
+              {
+                "id": "5fc5c7f77b9094999991e4a88935bbc8",
+                "uniqueId": "1522b3beb2b5576d7f3f13780ff732c7",
+                "import": "../treeToMermaid/renderer",
+                "extension": ".ts",
+                "alreadyTraversed": false,
+                "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\renderer.ts",
+                "type": "Source file",
+                "moduleName": "renderer",
+                "resolved": true,
+                "absolutePath": "src/treeToMermaid/renderer.ts",
+                "imports": [
+                  {
+                    "id": "ef9f86388078e0560db65509eefba48d",
+                    "uniqueId": "772652f1d7ead9cf67237bd59b7fa9ab",
+                    "import": "../helpers",
+                    "extension": ".ts",
+                    "alreadyTraversed": false,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\helpers\\index.ts",
+                    "type": "Source file",
+                    "moduleName": "index",
+                    "resolved": true,
+                    "absolutePath": "src/helpers/index.ts",
+                    "imports": [],
+                    "level": 4
+                  },
+                  {
+                    "id": "ba94a21f1b99f22bcbee495161be6017",
+                    "uniqueId": "d713b6f7fc287c9c7e44cf35c39525a9",
+                    "import": "./tokenRenderers",
+                    "extension": ".ts",
+                    "alreadyTraversed": false,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\tokenRenderers.ts",
+                    "type": "Source file",
+                    "moduleName": "tokenRenderers",
+                    "resolved": true,
+                    "absolutePath": "src/treeToMermaid/tokenRenderers.ts",
+                    "imports": [
+                      {
+                        "id": "ef9f86388078e0560db65509eefba48d",
+                        "uniqueId": "084d252d2ed00317283e8fb92b47d0aa",
+                        "import": "../helpers",
+                        "extension": ".ts",
+                        "alreadyTraversed": true,
+                        "fullPath": "C:\\Source\\ts-insp\\src\\helpers\\index.ts",
+                        "type": "Source file",
+                        "moduleName": "index",
+                        "resolved": true,
+                        "absolutePath": "src/helpers/index.ts",
+                        "imports": [],
+                        "level": 5
+                      },
+                      {
+                        "id": "43b2c294408e9aca405ff8cc04120742",
+                        "uniqueId": "eacd201d7d6ef95896d054b272f1353a",
+                        "import": "./types",
+                        "extension": ".ts",
+                        "alreadyTraversed": true,
+                        "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\types.ts",
+                        "type": "Source file",
+                        "moduleName": "types",
+                        "resolved": true,
+                        "absolutePath": "src/treeToMermaid/types.ts",
+                        "imports": [],
+                        "level": 5
+                      }
+                    ],
+                    "level": 4
+                  },
+                  {
+                    "id": "43b2c294408e9aca405ff8cc04120742",
+                    "uniqueId": "0f537e4426ac7e6bb6914065e212753e",
+                    "import": "./types",
+                    "extension": ".ts",
+                    "alreadyTraversed": true,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\types.ts",
+                    "type": "Source file",
+                    "moduleName": "types",
+                    "resolved": true,
+                    "absolutePath": "src/treeToMermaid/types.ts",
+                    "imports": [],
+                    "level": 4
+                  }
+                ],
+                "level": 3
+              },
+              {
+                "id": "a7c2c5aebf261da9ed0ec6111e63d2d3",
+                "uniqueId": "6d492707f4c0d24e29516e54a59218fd",
+                "import": "../treeToMermaid/defaultProcessors",
+                "extension": ".ts",
+                "alreadyTraversed": false,
+                "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\defaultProcessors.ts",
+                "type": "Source file",
+                "moduleName": "defaultProcessors",
+                "resolved": true,
+                "absolutePath": "src/treeToMermaid/defaultProcessors.ts",
+                "imports": [
+                  {
+                    "id": "152b731d9960fa8a94d223c73a70437c",
+                    "uniqueId": "cbf2372a970dea5eef126e91f664fcc7",
+                    "import": "../types",
+                    "extension": ".d.ts",
+                    "alreadyTraversed": true,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\types.d.ts",
+                    "type": "Source file",
+                    "moduleName": "types",
+                    "resolved": true,
+                    "absolutePath": "src/types.d.ts",
+                    "imports": [],
+                    "level": 4
+                  },
+                  {
+                    "id": "43b2c294408e9aca405ff8cc04120742",
+                    "uniqueId": "f9da09d92633b0e025848010317963e3",
+                    "import": "./types",
+                    "extension": ".ts",
+                    "alreadyTraversed": true,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\types.ts",
+                    "type": "Source file",
+                    "moduleName": "types",
+                    "resolved": true,
+                    "absolutePath": "src/treeToMermaid/types.ts",
+                    "imports": [],
+                    "level": 4
+                  }
+                ],
+                "level": 3
+              },
+              {
+                "id": "43b2c294408e9aca405ff8cc04120742",
+                "uniqueId": "10406c78d7578a7b6f08a93449983be9",
+                "import": "../treeToMermaid/types",
+                "extension": ".ts",
+                "alreadyTraversed": false,
+                "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\types.ts",
+                "type": "Source file",
+                "moduleName": "types",
+                "resolved": true,
+                "absolutePath": "src/treeToMermaid/types.ts",
+                "imports": [],
+                "level": 3
+              },
+              {
+                "id": "45fc45c3c3ddc9a6a05b8fa52cbd234c",
+                "uniqueId": "ffee22509c5ce106568c46f04d6f6a8f",
+                "import": "../treeToMermaid/cliWrapper",
+                "extension": ".ts",
+                "alreadyTraversed": false,
+                "fullPath": "C:\\Source\\ts-insp\\src\\treeToMermaid\\cliWrapper.ts",
+                "type": "Source file",
+                "moduleName": "cliWrapper",
+                "resolved": true,
+                "absolutePath": "src/treeToMermaid/cliWrapper.ts",
+                "imports": [
+                  {
+                    "id": "152b731d9960fa8a94d223c73a70437c",
+                    "uniqueId": "a594ff8d007c6dfea1c93808e9cbd520",
+                    "import": "../types",
+                    "extension": ".d.ts",
+                    "alreadyTraversed": true,
+                    "fullPath": "C:\\Source\\ts-insp\\src\\types.d.ts",
+                    "type": "Source file",
+                    "moduleName": "types",
+                    "resolved": true,
+                    "absolutePath": "src/types.d.ts",
+                    "imports": [],
+                    "level": 4
+                  },
+                  {
+                    "id": "6bdd121cf07238ae4acd0de370dd13bf",
+                    "uniqueId": "f38c5e6d5ac5812017e2f16653f1caee",
+                    "import": "child_process",
+                    "extension": "",
+                    "alreadyTraversed": false,
+                    "type": "Unknown",
+                    "moduleName": "child_process",
+                    "resolved": false,
+                    "imports": [],
+                    "level": 4
+                  },
+                  {
+                    "id": "d6fe1d0be6347b8ef2427fa629c04485",
+                    "uniqueId": "91d24a3b53af6e95e4ee264b6df3f6f5",
+                    "import": "path",
+                    "extension": "",
+                    "alreadyTraversed": true,
+                    "type": "Unknown",
+                    "moduleName": "path",
+                    "resolved": false,
+                    "imports": [],
+                    "level": 4
+                  }
+                ],
                 "level": 3
               }
             ],
