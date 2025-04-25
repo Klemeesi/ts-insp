@@ -124,8 +124,8 @@ yarn ts-insp --help
 
 ## Future improvements
 
-Some features that will come in the future. But first the project needs to be improved to be more maintainable:
+Some features will come in the future. But first the project needs to be improved to be more maintainable:
 
-Currently I'm concentrating on Mermaid charts so adding more support there is the next long term thing to do.
-
-But as said, for now I'm concentrating on writing unit tests, writing documentation and making the repository public. More comes later.
+-   More unit tests
+-   Traversing should be streamlined
+-   More premade features for Mermaid charts

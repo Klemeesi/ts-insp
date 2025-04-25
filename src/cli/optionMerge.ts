@@ -1,7 +1,10 @@
 import { getDefaultPlugin } from "../outputFormats";
 import type { InspOptions } from "../types";
 import * as fs from "fs";
-import { CommandLineParams } from "./commandLine";
+
+export type CommandLineParams = {
+    [K in keyof InspOptions]: string;
+};
 
 const mergeArrays = <T>(arr1: T[] = [], arr2: T[] = []): T[] => (arr2.length > 0 ? arr2 : arr1);
 

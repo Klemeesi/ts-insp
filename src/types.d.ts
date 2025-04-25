@@ -1,6 +1,6 @@
 import type { CompilerOptions, SourceFile, Node } from "typescript";
 
-export type OutputFormats = "html" | "console" | "json" | "png" | "svg" | "mermaid";
+export type OutputFormats = "console" | "json" | "mermaid";
 
 export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
@@ -47,14 +47,6 @@ export interface JsonFormatOptions {
     outputName?: string;
 }
 
-export interface HtmlFormatOptions extends JsonFormatOptions {
-    template?: string;
-    customStyles?: string;
-    slugs?: { [key: string]: unknown };
-    // Only relevant for HTML output format
-    dontSave?: boolean;
-}
-
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
     chartType?: "tree" | "graph";
@@ -68,8 +60,6 @@ export interface MermaidCliOptions {
     outputPathToken?: string;
     commands?: string[];
 }
-
-export interface PngFormatOptions extends HtmlFormatOptions {}
 
 export interface InspOptions {
     /** Verbose... */

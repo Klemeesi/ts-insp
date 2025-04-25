@@ -17,8 +17,6 @@ bc7b36fe4d2924e49800d9b3dc4a325c["fs"]
 d6fe1d0be6347b8ef2427fa629c04485["path"]
 5ae9b7f211e23aac3df5f2b8f3b8eada["crypto"]
 590e227ecebc0951e8994717b1bc8669["commander"]
-660ad68f5b95885609cd57ba3bdf39ef["node-html-to-image"]
-0742e241c07c7470dbed6671089f6fda["puppeteer"]
 6bdd121cf07238ae4acd0de370dd13bf["child_process"]
 end
 subgraph helpers
@@ -33,10 +31,7 @@ e414dc75f5dcbe2827116d5050a8c6fa["optionMerge"]
 end
 subgraph output
 7029e3f6954c28b14ceaef910bc2c07b["console"]
-0db6041ec8d2e82f5e9c6db8fd8a97bc["html"]
 1cdc6bd921f66f50622b5c56a23a8d72["json"]
-9fbed50a45fceb27d386ff54167b51bb["png"]
-3ea04c08e90c63ab428b8ddc0fa72e1a["svg"]
 3c9aeb9e1a663982bf18432623f081c0["mermaid"]
 end
 subgraph treeToMermaid
@@ -57,15 +52,12 @@ cli cli_node_modules@--> node_modules
 cli cli_src@--> src
 cli cli_helpers@--> helpers
 6eabf6036c1cd8aaca6f56d1c8fb63e0 6eabf6036c1cd8aaca6f56d1c8fb63e0_e414dc75f5dcbe2827116d5050a8c6fa@--> e414dc75f5dcbe2827116d5050a8c6fa
-e414dc75f5dcbe2827116d5050a8c6fa e414dc75f5dcbe2827116d5050a8c6fa_6eabf6036c1cd8aaca6f56d1c8fb63e0@--> 6eabf6036c1cd8aaca6f56d1c8fb63e0
 root root_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 root root_1fe092282d1f404a83c6dfaa449427eb@--> 1fe092282d1f404a83c6dfaa449427eb
 1fe092282d1f404a83c6dfaa449427eb 1fe092282d1f404a83c6dfaa449427eb_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 src src_output@--> output
 output output_src@--> src
 output output_node_modules@--> node_modules
-9fbed50a45fceb27d386ff54167b51bb 9fbed50a45fceb27d386ff54167b51bb_0db6041ec8d2e82f5e9c6db8fd8a97bc@--> 0db6041ec8d2e82f5e9c6db8fd8a97bc
-3ea04c08e90c63ab428b8ddc0fa72e1a 3ea04c08e90c63ab428b8ddc0fa72e1a_0db6041ec8d2e82f5e9c6db8fd8a97bc@--> 0db6041ec8d2e82f5e9c6db8fd8a97bc
 output output_treeToMermaid@--> treeToMermaid
 treeToMermaid treeToMermaid_helpers@--> helpers
 5fc5c7f77b9094999991e4a88935bbc8 5fc5c7f77b9094999991e4a88935bbc8_ba94a21f1b99f22bcbee495161be6017@--> ba94a21f1b99f22bcbee495161be6017

@@ -2,13 +2,9 @@ import { program } from "commander";
 import type { InspOptions, MainOptions } from "../types";
 import { getCompilerOptions } from "../helpers/tsConfig";
 import { getSettingsFromConfigFile } from "../helpers/configFileParser";
-import { commandLineToInspOptions, mergeOptions, validateInspOptions } from "./optionMerge";
+import { CommandLineParams, commandLineToInspOptions, mergeOptions, validateInspOptions } from "./optionMerge";
 
 const log = (...data: any[]) => console.debug("ts-insp >", ...data);
-
-export type CommandLineParams = {
-    [K in keyof InspOptions]: string;
-};
 
 export const getConfig = (): MainOptions => {
     program
