@@ -1,6 +1,6 @@
 import { getImports } from "../traversal";
 import { getCompilerOptions } from "../helpers/tsConfig";
-import type { ImportInfo } from "../types";
+import type { ResultTreeNode } from "../types";
 
 jest.mock("crypto", () => ({
     ...jest.requireActual("crypto"),
@@ -87,7 +87,7 @@ describe("traversal", () => {
             ...testConfig,
             inspOptions: {
                 ...testConfig.inspOptions,
-                filterModules: (a: ImportInfo) => {
+                filterModules: (a: ResultTreeNode) => {
                     return !a.absolutePath?.includes("node_modules");
                 },
             },

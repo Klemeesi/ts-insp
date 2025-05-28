@@ -6,12 +6,12 @@ export type PluginName = "debug" | "doc";
 export type PluginProcessor = (node: Node, sourceFile: SourceFile, key: string, options: MainOptions) => void;
 export type TraversalPlugin = { name: PluginName; processor: PluginProcessor };
 
-export type OutputFormatPlugin = (imports: ImportInfo[]) => Promise<unknown>;
+export type OutputFormatPlugin = (imports: ResultTreeNode[]) => Promise<unknown>;
 
 type ImportType = "Node module" | "Source file" | "Unknown";
 type Logger = (...data: any[]) => void;
 
-export interface ImportInfo {
+export interface ResultTreeNode {
     // Same as absolutePath
     id: string;
     // Globally unique identifier for the file
@@ -35,11 +35,13 @@ export interface ImportInfo {
     // Was this file traversed
     resolved: boolean;
     // Child imports
-    imports: ImportInfo[];
+    imports: ResultTreeNode[];
+    // Properties for the node. Can be used to store additional information about the node.
+    properties: Record<string, string>;
 }
 
 export interface TraversalResult {
-    imports: ImportInfo[];
+    imports: ResultTreeNode[];
 }
 
 export interface JsonFormatOptions {
@@ -50,7 +52,7 @@ export interface JsonFormatOptions {
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
     chartType?: "tree" | "graph";
-    extractGroupName?: (node: ImportInfo) => string | undefined;
+    extractGroupName?: (node: ResultTreeNode) => string | undefined;
     cliOptions?: MermaidCliOptions;
 }
 
@@ -79,7 +81,7 @@ export interface InspOptions {
     /** Defines if same module is retraversed. Good to avoid extra clutter and circular dependencies. By default modules are not retraversed */
     retraverse?: boolean;
     /** Return false to filter out results. By default everything is included */
-    filterModules?: (node: ImportInfo, parent?: ImportInfo) => boolean;
+    filterModules?: (node: ResultTreeNode, parent?: ResultTreeNode) => boolean;
     /** What output formats are done */
     format: OutputFormatPlugin[];
 }

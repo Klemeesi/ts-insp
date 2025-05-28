@@ -1,18 +1,18 @@
-import { ImportInfo, MermaidFormatOptions } from "../types";
+import { ResultTreeNode, MermaidFormatOptions } from "../types";
 import { MermaidProcessor, MermaidToken } from "./types";
 
-export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, MermaidProcessor<ImportInfo>> => {
+export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, MermaidProcessor<ResultTreeNode>> => {
     if (opt.chartType === "tree") {
         return {
             graph: () => ({
                 id: "idk",
                 dir: opt.dir,
             }),
-            node: (current?: ImportInfo) => ({
+            node: (current?: ResultTreeNode) => ({
                 id: current?.uniqueId!,
                 name: current?.moduleName,
             }),
-            link: (current?: ImportInfo, parent?: ImportInfo) => {
+            link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
                 if (current && parent) {
                     return {
                         id: `${parent?.uniqueId}_${current?.uniqueId}`,
@@ -34,7 +34,7 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
             id: "idk",
             dir: opt.dir,
         }),
-        node: (current?: ImportInfo) => {
+        node: (current?: ResultTreeNode) => {
             if (!current) {
                 return undefined;
             }
@@ -44,7 +44,7 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
                 groupName: opt.extractGroupName ? opt.extractGroupName(current) : undefined,
             };
         },
-        link: (current?: ImportInfo, parent?: ImportInfo) => {
+        link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
             if (!current || !parent) {
                 return undefined;
             }

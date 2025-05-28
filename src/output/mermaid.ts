@@ -1,4 +1,4 @@
-import type { ImportInfo, MermaidFormatOptions } from "../types";
+import type { ResultTreeNode, MermaidFormatOptions } from "../types";
 import * as fs from "fs";
 import path from "path";
 import { mermaidRenderer } from "../treeToMermaid/renderer";
@@ -11,7 +11,7 @@ const defaultOptions: MermaidFormatOptions = {
     outputPath: "exports",
     outputName: "export",
     chartType: "graph",
-    extractGroupName: (node: ImportInfo) => {
+    extractGroupName: (node: ResultTreeNode) => {
         const ap = node.absolutePath || "";
         if (ap.startsWith("node_modules") || node.type === "Unknown") {
             return "node_modules";
@@ -22,11 +22,11 @@ const defaultOptions: MermaidFormatOptions = {
     },
 };
 
-export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ImportInfo[]) => {
+export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ResultTreeNode[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath!, `${opt.outputName}.md`);
 
-    const processor = mermaidRenderer.create<ImportInfo>();
+    const processor = mermaidRenderer.create<ResultTreeNode>();
     const defaultProcessors = getDefaultProcessors(opt);
     Object.keys(defaultProcessors).forEach((key) => {
         const name = key as keyof MermaidToken["type"];

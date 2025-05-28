@@ -1,5 +1,5 @@
 import path from "path";
-import type { ImportInfo, JsonFormatOptions } from "../types";
+import type { ResultTreeNode, JsonFormatOptions } from "../types";
 import * as fs from "fs";
 
 const defaultOptions = {
@@ -7,7 +7,7 @@ const defaultOptions = {
     outputName: "export",
 };
 
-export const jsonOutputPlugin = (options: JsonFormatOptions) => async (imports: ImportInfo[]) => {
+export const jsonOutputPlugin = (options: JsonFormatOptions) => async (imports: ResultTreeNode[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath, `${opt.outputName}.json`);
     const outputFolder = path.resolve(opt.outputPath);

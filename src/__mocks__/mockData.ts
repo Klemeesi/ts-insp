@@ -1,6 +1,6 @@
-import { ImportInfo } from "../types";
+import { ResultTreeNode } from "../types";
 
-export const testDataSet1: ImportInfo[] = [
+export const testDataSet1: ResultTreeNode[] = [
     {
         id: "root",
         uniqueId: "root",
