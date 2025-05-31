@@ -11,6 +11,7 @@ export const testDataSet1: ResultTreeNode[] = [
         moduleName: "test-data/test1.ts",
         resolved: true,
         level: 0,
+        properties: {},
         imports: [
             {
                 id: "fs",
@@ -23,6 +24,7 @@ export const testDataSet1: ResultTreeNode[] = [
                 resolved: false,
                 imports: [],
                 level: 1,
+                properties: {},
             },
             {
                 id: "src/index.ts",
@@ -49,6 +51,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/traversal.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/console.ts",
@@ -63,6 +66,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/console.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/commandLine.ts",
@@ -77,6 +81,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/commandLine.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/html.ts",
@@ -91,6 +96,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/html.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/json.ts",
@@ -105,6 +111,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/json.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/png.ts",
@@ -119,6 +126,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/png.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/types.d.ts",
@@ -133,9 +141,11 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/types.d.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                 ],
                 level: 1,
+                properties: {},
             },
             {
                 id: "src/commandLine.ts",
@@ -160,6 +170,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         resolved: false,
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "node_modules/commander/typings/index.d.ts",
@@ -174,6 +185,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "node_modules/commander/typings/index.d.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/types.d.ts",
@@ -188,6 +200,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/types.d.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/tsConfig.ts",
@@ -202,6 +215,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/tsConfig.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/log.ts",
@@ -216,9 +230,11 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/log.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                 ],
                 level: 1,
+                properties: {},
             },
             {
                 id: "src/types.d.ts",
@@ -245,6 +261,7 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "node_modules/typescript/lib/typescript.d.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                     {
                         id: "src/output/log.ts",
@@ -259,9 +276,11 @@ export const testDataSet1: ResultTreeNode[] = [
                         absolutePath: "src/output/log.ts",
                         imports: [],
                         level: 2,
+                        properties: {},
                     },
                 ],
                 level: 1,
+                properties: {},
             },
         ],
     },

@@ -46,5 +46,6 @@ export const mergeOptions = (cmdLineOptions: InspOptions, configFileOptions: Par
         filterModules: configFileOptions.filterModules,
         retraverse: !!cmdLineOptions.retraverse || configFileOptions.retraverse,
         format: mergeArrays(cmdLineOptions.format, configFileOptions.format),
+        inspectors: configFileOptions.inspectors || [],
     };
 };

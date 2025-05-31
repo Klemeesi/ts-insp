@@ -53,7 +53,7 @@ describe("traversal", () => {
     it("Traversal with traverseNodeModules", () => {
         const config = { ...testConfig, inspOptions: { ...testConfig.inspOptions, traverseNodeModules: true } };
         const result = getImports(config, "./src/__mocks__/traversal/folder/submodule3.ts");
-        expect(result.imports[0].moduleName).toBe("node-html-to-image");
+        expect(result.imports[0].moduleName).toBe("ts-jest");
         expect(result.imports[0].imports.length).toBeGreaterThan(0);
     });
 

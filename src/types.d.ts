@@ -63,6 +63,8 @@ export interface MermaidCliOptions {
     commands?: string[];
 }
 
+type Inspector = (result: TraversalResult) => Promise<boolean>;
+
 export interface InspOptions {
     /** Verbose... */
     verbose?: boolean;
@@ -84,6 +86,8 @@ export interface InspOptions {
     filterModules?: (node: ResultTreeNode, parent?: ResultTreeNode) => boolean;
     /** What output formats are done */
     format: OutputFormatPlugin[];
+    /** Inspectors that are run after traversing analysizing the results */
+    inspectors?: Inspector[];
 }
 
 export interface InspConfig extends Partial<InspOptions> {}

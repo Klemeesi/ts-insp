@@ -2,6 +2,8 @@ import type { InspOptions } from "./dist/types.d.ts";
 import { consoleOutputPlugin } from "./dist/output/console";
 import { jsonOutputPlugin } from "./dist/output/json";
 import { mermaidOutputPlugin } from "./dist/output/mermaid";
+import { circularDependencyInspector } from "./dist/inspectors/circularDependencyInspector";
+import { largeFileInspector } from "./dist/inspectors/largeFileInspector";
 
 const config: Partial<InspOptions> = {
     verbose: false,
@@ -27,6 +29,7 @@ const config: Partial<InspOptions> = {
             },
         }),
     ],
+    inspectors: [circularDependencyInspector(), largeFileInspector(10000)],
 };
 
 export default config;
