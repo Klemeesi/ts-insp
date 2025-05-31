@@ -24,11 +24,12 @@ An visualisations (ts-insp is run against this github repository)
 
 ### Dependency Tree as json
 
-[Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/DependencyTree.json)
+[Dependency Tree of ts-insp tool as JSON](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/JsonExample.json)
 
 ### Dependency Graph as mermaid markdown
 
-[Dependency Graph of ts-insp tool as markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/MermaidExample.md)
+[Dependency Graph of ts-insp tool as raw mermaid markdown](https://raw.githubusercontent.com/Klemeesi/ts-insp/main/docs/MermaidExample.md)
+[Dependency Graph of ts-insp tool](docs/MermaidExample.md)
 
 ## Installing and running
 
@@ -84,8 +85,6 @@ const config: Partial<InspOptions> = {
     skipTypeImports: false,
     // Filter modules from results. Everything shown by default.
     filterModules: (node, parent) => true,
-    // Output format. Supported types are console, json, png, html
-    format: ["console", "png"],
     // html and png formatting options. More information later
     format: {
         consoleOutputPlugin(),
