@@ -1,6 +1,6 @@
-import type { ImportInfo } from "../types";
+import type { ResultTreeNode } from "../types";
 
-const consoleOutput = async (imports: ImportInfo[]) => {
+const consoleOutput = async (imports: ResultTreeNode[]) => {
     imports.forEach((i) => {
         const indentation = i.level! > 1 ? "│ ".repeat(i.level! - 1) : "";
         const branch = i.level! > 0 ? "├ " : "";

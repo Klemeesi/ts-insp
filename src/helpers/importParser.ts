@@ -2,7 +2,7 @@ import * as ts from "typescript";
 import * as path from "path";
 import * as fs from "fs";
 import { createHash, randomBytes } from "crypto";
-import type { ImportInfo, MainOptions } from "../types";
+import type { ResultTreeNode, MainOptions } from "../types";
 
 const getType = (absolutePath?: string) =>
     absolutePath?.includes("node_modules") ? "Node module" : absolutePath ? "Source file" : "Unknown";
@@ -69,8 +69,8 @@ const generateId = (input?: string): string => {
     return hash.digest("hex");
 };
 
-export const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): ImportInfo[] => {
-    let results: ImportInfo[] = [];
+export const getImportsFromNode = (options: MainOptions, filePath: string, node: ts.Node, sourceFile: ts.SourceFile): ResultTreeNode[] => {
+    let results: ResultTreeNode[] = [];
     let importPath: string | undefined;
     let knownImport = false;
 
@@ -114,6 +114,7 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
                     resolved: !!paths,
                     absolutePath: paths?.absolutePath,
                     imports: [],
+                    properties: getProperties(filePath),
                 },
             ];
         }
@@ -125,4 +126,16 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
     });
 
     return results;
+};
+
+export const getProperties = (filePath: string): Record<string, string> => {
+    const properties: Record<string, string> = {};
+    const fileStats = fs.statSync(filePath);
+    const fileContent = fs.readFileSync(filePath, "utf-8");
+    properties["size"] = fileStats.size.toString();
+    properties["created"] = fileStats.birthtime.toISOString();
+    properties["modified"] = fileStats.mtime.toISOString();
+    properties["path"] = filePath;
+    properties["lines"] = fileContent.split("\n").length.toString();
+    return properties;
 };
