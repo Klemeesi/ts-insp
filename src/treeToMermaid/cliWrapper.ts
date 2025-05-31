@@ -8,6 +8,11 @@ export const runMermaidCli = async (opt: MermaidCliOptions, input: string) => {
     for (const cmd of cmds) {
         const command = cmd.replace(opt.mmdcPathToken || "{mmdcPath}", mmdcPath).replace(opt.inputPathToken || "{inputPath}", input);
         console.log("Running command:", command);
-        await exec(command);
+        await exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error executing command: ${error.message}`);
+                return;
+            }
+        });
     }
 };
