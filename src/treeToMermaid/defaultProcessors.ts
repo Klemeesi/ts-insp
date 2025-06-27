@@ -1,7 +1,10 @@
 import { ResultTreeNode, MermaidFormatOptions } from "../types";
-import { MermaidProcessor, MermaidToken } from "./types";
+import { MermaidProcessor } from "./types";
 
 export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, MermaidProcessor<ResultTreeNode>> => {
+    const getSubgraphName = opt.policies?.subgraph as (node: ResultTreeNode) => string | undefined;
+    const getNodeName = opt.policies?.nodeName as (node: ResultTreeNode) => string;
+
     if (opt.chartType === "tree") {
         return {
             graph: () => ({
@@ -10,7 +13,7 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
             }),
             node: (current?: ResultTreeNode) => ({
                 id: current?.uniqueId!,
-                name: current?.moduleName,
+                name: getNodeName ? getNodeName(current!) : current?.moduleName,
             }),
             link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
                 if (current && parent) {
@@ -40,16 +43,16 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
             }
             return {
                 id: current.id!,
-                name: current.moduleName,
-                groupName: opt.extractGroupName ? opt.extractGroupName(current) : undefined,
+                name: getNodeName ? getNodeName(current!) : current?.moduleName,
+                groupName: getSubgraphName ? getSubgraphName(current) : undefined,
             };
         },
         link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
             if (!current || !parent) {
                 return undefined;
             }
-            const startGroup = opt.extractGroupName ? opt.extractGroupName(parent) : undefined;
-            const endGroup = opt.extractGroupName ? opt.extractGroupName(current) : undefined;
+            const startGroup = getSubgraphName ? getSubgraphName(parent) : undefined;
+            const endGroup = getSubgraphName ? getSubgraphName(current) : undefined;
             let startId;
             let endId;
             if (startGroup === endGroup || !startGroup) {

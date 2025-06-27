@@ -5,26 +5,23 @@ import { mermaidRenderer } from "../treeToMermaid/renderer";
 import { getDefaultProcessors } from "../treeToMermaid/defaultProcessors";
 import { MermaidToken } from "../treeToMermaid/types";
 import { runMermaidCli } from "../treeToMermaid/cliWrapper";
+import { getMermaidGroupNamePolicy, getMermaidNodeNamePolicy } from "./mermaidPolicies";
 
 const defaultOptions: MermaidFormatOptions = {
     dir: "LR",
     outputPath: "exports",
     outputName: "export",
     chartType: "graph",
-    extractGroupName: (node: ResultTreeNode) => {
-        const ap = node.absolutePath || "";
-        if (ap.startsWith("node_modules") || node.type === "Unknown") {
-            return "node_modules";
-        } else {
-            const splitted = ap.split("/");
-            return splitted[splitted.length - 2] || undefined;
-        }
-    },
 };
 
 export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imports: ResultTreeNode[]) => {
     const opt = { ...defaultOptions, ...(options || {}) };
     const output = path.resolve(opt.outputPath!, `${opt.outputName}.md`);
+
+    opt.policies = {
+        subgraph: getMermaidGroupNamePolicy(opt.policies?.subgraph),
+        nodeName: getMermaidNodeNamePolicy(opt.policies?.nodeName),
+    };
 
     const processor = mermaidRenderer.create<ResultTreeNode>();
     const defaultProcessors = getDefaultProcessors(opt);

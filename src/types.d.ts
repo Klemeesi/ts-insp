@@ -49,11 +49,17 @@ export interface JsonFormatOptions {
     outputName?: string;
 }
 
+export type MermaidSubgraphPolicy = "none" | "default" | ((node: ResultTreeNode) => string | undefined);
+export type MermaidNodeNamePolicy = "default" | ((node: ResultTreeNode) => string);
+
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
     chartType?: "tree" | "graph";
-    extractGroupName?: (node: ResultTreeNode) => string | undefined;
     cliOptions?: MermaidCliOptions;
+    policies?: {
+        subgraph?: MermaidSubgraphPolicy;
+        nodeName?: MermaidNodeNamePolicy;
+    };
 }
 
 export interface MermaidCliOptions {

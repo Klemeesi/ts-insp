@@ -7,7 +7,8 @@
         "strict": true,
         "moduleResolution": "node",
         "esModuleInterop": true,
-        "types": ["jest", "node"]
+        "types": ["jest", "node"],
+        "declaration": true
     },
     "exclude": ["./src/__mocks__", "./src/__tests__", "dist", "test-data", "./ts-insp.config.ts"]
 }

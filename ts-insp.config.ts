@@ -22,6 +22,10 @@ const config: Partial<InspOptions> = {
             dir: "LR",
             outputName: "MermaidExample",
             chartType: "graph",
+            policies: {
+                subgraph: "default",
+                nodeName: "default",
+            },
             cliOptions: {
                 mmdcPathToken: "{mmdc}",
                 inputPathToken: "{inputPath}",
