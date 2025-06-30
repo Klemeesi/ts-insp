@@ -33,6 +33,7 @@ subgraph output
 7029e3f6954c28b14ceaef910bc2c07b["console"]
 1cdc6bd921f66f50622b5c56a23a8d72["json"]
 3c9aeb9e1a663982bf18432623f081c0["mermaid"]
+02be73a92c1e73068fee3f6a5570552a["mermaidPolicies"]
 end
 subgraph treeToMermaid
 5fc5c7f77b9094999991e4a88935bbc8["renderer"]
@@ -66,5 +67,6 @@ ba94a21f1b99f22bcbee495161be6017 ba94a21f1b99f22bcbee495161be6017_43b2c294408e9a
 treeToMermaid treeToMermaid_src@--> src
 a7c2c5aebf261da9ed0ec6111e63d2d3 a7c2c5aebf261da9ed0ec6111e63d2d3_43b2c294408e9aca405ff8cc04120742@--> 43b2c294408e9aca405ff8cc04120742
 treeToMermaid treeToMermaid_node_modules@--> node_modules
+3c9aeb9e1a663982bf18432623f081c0 3c9aeb9e1a663982bf18432623f081c0_02be73a92c1e73068fee3f6a5570552a@--> 02be73a92c1e73068fee3f6a5570552a
 
 ```

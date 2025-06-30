@@ -7,9 +7,9 @@ import fs from "fs";
 export const getSettingsFromConfigFile = (filePath: string): Partial<InspOptions> => {
     const extension = filePath.split(".").pop();
     let contents = undefined;
-    if (extension === "js") {
+    if (extension === "js" || extension === "mjs") {
         contents = require(path.resolve(filePath));
-    } else if (extension === "ts") {
+    } else if (extension === "ts" || extension === "mts") {
         const inputFilePath = path.resolve(process.cwd(), filePath);
         const postfix = Date.now();
         const outputFilePath = inputFilePath.replace(/\.ts$/, `_${postfix}.js`);

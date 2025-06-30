@@ -96,7 +96,16 @@ const config: Partial<InspOptions> = {
             outputPath: "docs",
             dir: "LR",
             outputName: "MermaidExample",
+            // Options: tree, graph
             chartType: "graph",
+            // Rendering policies
+            policies: {
+                // How grouping to subgraphs is done. Options: "none", "default", or a function that returns a string or undefined
+                subgraph: "default",
+                // How node names are generated. Options: "default" or a function that returns a string
+                nodeName: "default",
+            },
+            // Options that are used if you want to export
             cliOptions: {
                 mmdcPathToken: "{mmdc}",
                 inputPathToken: "{inputPath}",
