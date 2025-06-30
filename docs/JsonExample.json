@@ -12,7 +12,7 @@
     "imports": [
       {
         "id": "97436aa4caaa9fe6c1f7fbda54bea5c5",
-        "uniqueId": "601633be3507cac205859ef0c8094f3c",
+        "uniqueId": "9aa92e56e9c36d961d5421009ef8a988",
         "import": "./traversal",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -24,7 +24,7 @@
         "imports": [
           {
             "id": "ee253c483834accc136016fd0cfda308",
-            "uniqueId": "78ec75ee5434d09c630bc9daa2849975",
+            "uniqueId": "177cdf1fa3162fa67657118336ad9cf7",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -45,7 +45,7 @@
           },
           {
             "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-            "uniqueId": "a06d79f4cf1ad1f6962c17e794dd845d",
+            "uniqueId": "359d5500c21652e478f4b4412714c5fe",
             "import": "fs",
             "extension": "",
             "alreadyTraversed": false,
@@ -64,7 +64,7 @@
           },
           {
             "id": "152b731d9960fa8a94d223c73a70437c",
-            "uniqueId": "f068b11bc98b795eb875e28f44d3ac48",
+            "uniqueId": "180e7b2122fd5652ccd3c41df828172f",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -85,7 +85,7 @@
           },
           {
             "id": "89368ad2b907401c75ac83d0c8f51150",
-            "uniqueId": "a2828d7e1c4839da428eb989e054d32c",
+            "uniqueId": "0776b0b0d1a9e3b077c40b2be60d84f8",
             "import": "./helpers/importParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -97,7 +97,7 @@
             "imports": [
               {
                 "id": "ee253c483834accc136016fd0cfda308",
-                "uniqueId": "2f291f79110270175368f123be3aabd5",
+                "uniqueId": "c5a734a223edad79ba56b13ca9d3a60c",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -118,7 +118,7 @@
               },
               {
                 "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                "uniqueId": "00073dba9b30a8a81e122f71fc1da535",
+                "uniqueId": "a1b74e958a2ee75a0638092e2bbe3e6f",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": false,
@@ -137,7 +137,7 @@
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "d9dcdd166b6321a38d5a973c4bfeb11d",
+                "uniqueId": "d0ba45e454f5e6f5e0b1795c7b769ca7",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -156,7 +156,7 @@
               },
               {
                 "id": "5ae9b7f211e23aac3df5f2b8f3b8eada",
-                "uniqueId": "54ad39a67b065f97318fd1693df64df3",
+                "uniqueId": "e3291c7f232e85219ae38e6734c7c73c",
                 "import": "crypto",
                 "extension": "",
                 "alreadyTraversed": false,
@@ -175,7 +175,7 @@
               },
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "0070de587c247fcc40be0f9c50fb2548",
+                "uniqueId": "848eb6a962ced54f43ccc4a79d056a05",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -216,7 +216,7 @@
       },
       {
         "id": "6eabf6036c1cd8aaca6f56d1c8fb63e0",
-        "uniqueId": "716dafa096f604cdeea4848325692c46",
+        "uniqueId": "11fd85a24d8024eac7e588dde135f9da",
         "import": "./cli/commandLine",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -228,7 +228,7 @@
         "imports": [
           {
             "id": "590e227ecebc0951e8994717b1bc8669",
-            "uniqueId": "1c5c27a887ff85d7069621299f9d4e74",
+            "uniqueId": "acd88d253449afe7171ac1f01272ba5d",
             "import": "commander",
             "extension": ".d.ts",
             "alreadyTraversed": false,
@@ -249,7 +249,7 @@
           },
           {
             "id": "152b731d9960fa8a94d223c73a70437c",
-            "uniqueId": "fbf184a87023fc0aad9ce895be9be084",
+            "uniqueId": "6a4b253ac111a075c6d70e5d304c9619",
             "import": "../types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -270,7 +270,7 @@
           },
           {
             "id": "333f22f566da67b693a352a010116a59",
-            "uniqueId": "b3cceaea5f67b482462591abf162765f",
+            "uniqueId": "9603afa0e0ce9b12e64d6753f25c7b21",
             "import": "../helpers/tsConfig",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -282,7 +282,7 @@
             "imports": [
               {
                 "id": "ee253c483834accc136016fd0cfda308",
-                "uniqueId": "9c800ab1aee3c595255248154e278c61",
+                "uniqueId": "088f3cad6371f9074373f8478a3e6a8b",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -293,17 +293,17 @@
                 "absolutePath": "node_modules/typescript/lib/typescript.d.ts",
                 "imports": [],
                 "properties": {
-                  "size": "1275",
+                  "size": "1387",
                   "created": "2024-02-29T18:25:52.878Z",
-                  "modified": "2025-04-24T18:23:18.639Z",
+                  "modified": "2025-06-30T06:14:22.571Z",
                   "path": "src/helpers/tsConfig.ts",
-                  "lines": "38"
+                  "lines": "43"
                 },
                 "level": 3
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "32d72682d100728f96b2b49a874e08a8",
+                "uniqueId": "306efdc0b381d4328a73d813245aaee3",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -312,17 +312,17 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1275",
+                  "size": "1387",
                   "created": "2024-02-29T18:25:52.878Z",
-                  "modified": "2025-04-24T18:23:18.639Z",
+                  "modified": "2025-06-30T06:14:22.571Z",
                   "path": "src/helpers/tsConfig.ts",
-                  "lines": "38"
+                  "lines": "43"
                 },
                 "level": 3
               },
               {
                 "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                "uniqueId": "8e097cd47a7559e7f9a4a264188bf6f7",
+                "uniqueId": "8fda30abb539f5f91e9792f453e403ad",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -331,11 +331,11 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1275",
+                  "size": "1387",
                   "created": "2024-02-29T18:25:52.878Z",
-                  "modified": "2025-04-24T18:23:18.639Z",
+                  "modified": "2025-06-30T06:14:22.571Z",
                   "path": "src/helpers/tsConfig.ts",
-                  "lines": "38"
+                  "lines": "43"
                 },
                 "level": 3
               }
@@ -351,7 +351,7 @@
           },
           {
             "id": "3fb28eb5baf18d345d0ad93d7e341109",
-            "uniqueId": "c3674336ebd4835a7d46c5f0a0a41755",
+            "uniqueId": "e045e392ac87775daf2ab4a6cda15396",
             "import": "../helpers/configFileParser",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -363,7 +363,7 @@
             "imports": [
               {
                 "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                "uniqueId": "7240fd6aec93e5730f22f6b2788f7aac",
+                "uniqueId": "528743349e6a6d465ec0160f0aff33d3",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -372,9 +372,9 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1530",
+                  "size": "1576",
                   "created": "2024-04-18T17:39:08.501Z",
-                  "modified": "2025-05-31T05:51:30.880Z",
+                  "modified": "2025-06-30T06:09:40.666Z",
                   "path": "src/helpers/configFileParser.ts",
                   "lines": "44"
                 },
@@ -382,7 +382,7 @@
               },
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "b3a26505bd5afa17de56693eeec81559",
+                "uniqueId": "7097eb15d50692599897f5d9fd28d0be",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -393,9 +393,9 @@
                 "absolutePath": "src/types.d.ts",
                 "imports": [],
                 "properties": {
-                  "size": "1530",
+                  "size": "1576",
                   "created": "2024-04-18T17:39:08.501Z",
-                  "modified": "2025-05-31T05:51:30.880Z",
+                  "modified": "2025-06-30T06:09:40.666Z",
                   "path": "src/helpers/configFileParser.ts",
                   "lines": "44"
                 },
@@ -403,7 +403,7 @@
               },
               {
                 "id": "ee253c483834accc136016fd0cfda308",
-                "uniqueId": "e32d734de0efa0fc002db7651e10fc25",
+                "uniqueId": "aa457c04c10666343035717080184c9e",
                 "import": "typescript",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -414,9 +414,9 @@
                 "absolutePath": "node_modules/typescript/lib/typescript.d.ts",
                 "imports": [],
                 "properties": {
-                  "size": "1530",
+                  "size": "1576",
                   "created": "2024-04-18T17:39:08.501Z",
-                  "modified": "2025-05-31T05:51:30.880Z",
+                  "modified": "2025-06-30T06:09:40.666Z",
                   "path": "src/helpers/configFileParser.ts",
                   "lines": "44"
                 },
@@ -424,7 +424,7 @@
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "1a1a5d689409cd80b0dc899a19b36d0a",
+                "uniqueId": "9574a51125be9bae015279b0afeb9f1f",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -433,9 +433,9 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1530",
+                  "size": "1576",
                   "created": "2024-04-18T17:39:08.501Z",
-                  "modified": "2025-05-31T05:51:30.880Z",
+                  "modified": "2025-06-30T06:09:40.666Z",
                   "path": "src/helpers/configFileParser.ts",
                   "lines": "44"
                 },
@@ -453,7 +453,7 @@
           },
           {
             "id": "e414dc75f5dcbe2827116d5050a8c6fa",
-            "uniqueId": "2afd0cf1b1e9493c33228237afd055f5",
+            "uniqueId": "918024b498377d97561ab97474fc93e2",
             "import": "./optionMerge",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -465,7 +465,7 @@
             "imports": [
               {
                 "id": "1fe092282d1f404a83c6dfaa449427eb",
-                "uniqueId": "037fab97bdb23336d0f8a5a987158733",
+                "uniqueId": "42f7c18c5cf8563516634e455eac4b02",
                 "import": "../outputFormats",
                 "extension": ".ts",
                 "alreadyTraversed": true,
@@ -486,7 +486,7 @@
               },
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "0fb79b605364ad102a71c9790dabc938",
+                "uniqueId": "e77d4c23a580c84acba57d6cb8ea07ed",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -507,7 +507,7 @@
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "e49934b602b55605d84664a4e383d387",
+                "uniqueId": "e7c0b2a2c7aca73573db1ba4d86b1cbf",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -546,7 +546,7 @@
       },
       {
         "id": "152b731d9960fa8a94d223c73a70437c",
-        "uniqueId": "5db039f81cdd819fbe585f2cc33d3755",
+        "uniqueId": "fefb7af1f533fe0048c2ccc730872826",
         "import": "./types",
         "extension": ".d.ts",
         "alreadyTraversed": false,
@@ -558,7 +558,7 @@
         "imports": [
           {
             "id": "ee253c483834accc136016fd0cfda308",
-            "uniqueId": "8fdb9e90d3ab4a187419a123a79d4019",
+            "uniqueId": "c00a19cb5bce274b8b5d6e79c5f3ab84",
             "import": "typescript",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -589,7 +589,7 @@
       },
       {
         "id": "1fe092282d1f404a83c6dfaa449427eb",
-        "uniqueId": "e90d04fb4e592966ef0590028b376d5a",
+        "uniqueId": "203c8db49bc4cabd02343a3a829db463",
         "import": "./outputFormats",
         "extension": ".ts",
         "alreadyTraversed": false,
@@ -601,7 +601,7 @@
         "imports": [
           {
             "id": "152b731d9960fa8a94d223c73a70437c",
-            "uniqueId": "1e5cb7e15548f1e2bd49b838a2d66218",
+            "uniqueId": "018133435627239eb5b848d31264fdcb",
             "import": "./types",
             "extension": ".d.ts",
             "alreadyTraversed": true,
@@ -622,7 +622,7 @@
           },
           {
             "id": "7029e3f6954c28b14ceaef910bc2c07b",
-            "uniqueId": "866c8abd0586f7c8b51699b301bd48be",
+            "uniqueId": "77063034da77932a74675109db5b8071",
             "import": "./output/console",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -634,7 +634,7 @@
             "imports": [
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "69ec99a671687301a6fae8b55d3781c2",
+                "uniqueId": "add056aadf9aa3eed4091df9a6a226a7",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -665,7 +665,7 @@
           },
           {
             "id": "1cdc6bd921f66f50622b5c56a23a8d72",
-            "uniqueId": "04351b399728e5f3bc061f39c5e2181c",
+            "uniqueId": "045829ca0b0f59c08e2f20c324a3da5f",
             "import": "./output/json",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -677,7 +677,7 @@
             "imports": [
               {
                 "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                "uniqueId": "f452e2f1cbc35792e79d63c2aba16f84",
+                "uniqueId": "ba8c97eeadad5c91f3d5bcc955070f2c",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -696,7 +696,7 @@
               },
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "320d83ec1c964982e795002fb7ba2f31",
+                "uniqueId": "a280c291f8e35a5e168760ed9369f74a",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -717,7 +717,7 @@
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "8ee396106423c29a73f725877f420449",
+                "uniqueId": "69875aab598c7cc1ee4b1a567f29477c",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -746,7 +746,7 @@
           },
           {
             "id": "3c9aeb9e1a663982bf18432623f081c0",
-            "uniqueId": "623193373621342f86b7cfec3ad65fc7",
+            "uniqueId": "92133061ab5bb33aba90faa2f5e505a4",
             "import": "./output/mermaid",
             "extension": ".ts",
             "alreadyTraversed": false,
@@ -758,7 +758,7 @@
             "imports": [
               {
                 "id": "152b731d9960fa8a94d223c73a70437c",
-                "uniqueId": "c936007b39979ec4ae10a857ddec1fc7",
+                "uniqueId": "d3bbb79af2ca512d50dd2587ab3ecf01",
                 "import": "../types",
                 "extension": ".d.ts",
                 "alreadyTraversed": true,
@@ -769,17 +769,17 @@
                 "absolutePath": "src/types.d.ts",
                 "imports": [],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "bc7b36fe4d2924e49800d9b3dc4a325c",
-                "uniqueId": "fc6fef490a895561b04d43441d0bdc94",
+                "uniqueId": "448e61fe9bd3971b4a1cb8ef2eb54abe",
                 "import": "fs",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -788,17 +788,17 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                "uniqueId": "9675212d74ab029849193e123e078975",
+                "uniqueId": "d3111ddcff5df52f87d6be616b891da9",
                 "import": "path",
                 "extension": "",
                 "alreadyTraversed": true,
@@ -807,17 +807,17 @@
                 "resolved": false,
                 "imports": [],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "5fc5c7f77b9094999991e4a88935bbc8",
-                "uniqueId": "cd8e51572d19654bd0fabd3648def256",
+                "uniqueId": "e474b17ca7006fed7f2237726598bdb3",
                 "import": "../treeToMermaid/renderer",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -829,7 +829,7 @@
                 "imports": [
                   {
                     "id": "ef9f86388078e0560db65509eefba48d",
-                    "uniqueId": "68d9faa1356d6df8c19f0ebe0b24ac30",
+                    "uniqueId": "8f82322a211ae40537b4826c245f01ec",
                     "import": "../helpers",
                     "extension": ".ts",
                     "alreadyTraversed": false,
@@ -850,7 +850,7 @@
                   },
                   {
                     "id": "ba94a21f1b99f22bcbee495161be6017",
-                    "uniqueId": "b4b4dbdb3020003908f9d43d4c75b1c8",
+                    "uniqueId": "4899b775367ed56a96f1fa062fd2a48d",
                     "import": "./tokenRenderers",
                     "extension": ".ts",
                     "alreadyTraversed": false,
@@ -862,7 +862,7 @@
                     "imports": [
                       {
                         "id": "ef9f86388078e0560db65509eefba48d",
-                        "uniqueId": "4aa59075c4b626f883d23e31cf5a92f2",
+                        "uniqueId": "c70d2407be7b76e95cbe8514c4d64eaf",
                         "import": "../helpers",
                         "extension": ".ts",
                         "alreadyTraversed": true,
@@ -883,7 +883,7 @@
                       },
                       {
                         "id": "43b2c294408e9aca405ff8cc04120742",
-                        "uniqueId": "32c5e54ae19a075a9c5f8d0499de1ef6",
+                        "uniqueId": "012f21cef6426a3017f531802bf9ed1c",
                         "import": "./types",
                         "extension": ".ts",
                         "alreadyTraversed": true,
@@ -914,7 +914,7 @@
                   },
                   {
                     "id": "43b2c294408e9aca405ff8cc04120742",
-                    "uniqueId": "557183a2e7e93638ed7e3798da8c4bb1",
+                    "uniqueId": "6a24333cd6b583649832649cbfa139e6",
                     "import": "./types",
                     "extension": ".ts",
                     "alreadyTraversed": true,
@@ -935,17 +935,17 @@
                   }
                 ],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "a7c2c5aebf261da9ed0ec6111e63d2d3",
-                "uniqueId": "a0cd2294b3fd27160200f8ebcdfc9042",
+                "uniqueId": "e1b105da434874d03c576b549333b361",
                 "import": "../treeToMermaid/defaultProcessors",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -957,7 +957,7 @@
                 "imports": [
                   {
                     "id": "152b731d9960fa8a94d223c73a70437c",
-                    "uniqueId": "636cf0238401f6a4bdcd9b994c5a7024",
+                    "uniqueId": "bf4976a454da2272272522d12f3691ab",
                     "import": "../types",
                     "extension": ".d.ts",
                     "alreadyTraversed": true,
@@ -978,7 +978,7 @@
                   },
                   {
                     "id": "43b2c294408e9aca405ff8cc04120742",
-                    "uniqueId": "7ce1fdab3d919a78dab057e377c9ba82",
+                    "uniqueId": "20951743ec687a7f1bcb8db4d546d12e",
                     "import": "./types",
                     "extension": ".ts",
                     "alreadyTraversed": true,
@@ -999,17 +999,17 @@
                   }
                 ],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "43b2c294408e9aca405ff8cc04120742",
-                "uniqueId": "02a47affae0568ccc60ead3eba4d3734",
+                "uniqueId": "195870be3759d86deaebe0409ca3122b",
                 "import": "../treeToMermaid/types",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -1020,17 +1020,17 @@
                 "absolutePath": "src/treeToMermaid/types.ts",
                 "imports": [],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "45fc45c3c3ddc9a6a05b8fa52cbd234c",
-                "uniqueId": "4804a618091b99f7dfaee7ea0c0bb6c9",
+                "uniqueId": "2b5fbef5f932d1366121d8b8d440e8f5",
                 "import": "../treeToMermaid/cliWrapper",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -1042,7 +1042,7 @@
                 "imports": [
                   {
                     "id": "152b731d9960fa8a94d223c73a70437c",
-                    "uniqueId": "8f6c19ddc135da10f4b9f0181300a2b5",
+                    "uniqueId": "af762fe908461c1f2e0cf8c3892d6f62",
                     "import": "../types",
                     "extension": ".d.ts",
                     "alreadyTraversed": true,
@@ -1063,7 +1063,7 @@
                   },
                   {
                     "id": "6bdd121cf07238ae4acd0de370dd13bf",
-                    "uniqueId": "916fcdc4fc4140d24aba1786034fb9c6",
+                    "uniqueId": "42ff00ab160121caeb6b46d0dd45dd95",
                     "import": "child_process",
                     "extension": "",
                     "alreadyTraversed": false,
@@ -1082,7 +1082,7 @@
                   },
                   {
                     "id": "d6fe1d0be6347b8ef2427fa629c04485",
-                    "uniqueId": "23c957a6f369be71180a01e9768053c2",
+                    "uniqueId": "74b244077d8225870f9d20f865c4adbd",
                     "import": "path",
                     "extension": "",
                     "alreadyTraversed": true,
@@ -1101,17 +1101,17 @@
                   }
                 ],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               },
               {
                 "id": "02be73a92c1e73068fee3f6a5570552a",
-                "uniqueId": "8b9831c391b414d0578967ebb04ca5dd",
+                "uniqueId": "b55786895252f9a6110fae5b15b7acca",
                 "import": "./mermaidPolicies",
                 "extension": ".ts",
                 "alreadyTraversed": false,
@@ -1123,7 +1123,7 @@
                 "imports": [
                   {
                     "id": "152b731d9960fa8a94d223c73a70437c",
-                    "uniqueId": "7a576f320355e2fe75e1a839f759d018",
+                    "uniqueId": "800591a81d687840ce9f416f73520cf3",
                     "import": "../types",
                     "extension": ".d.ts",
                     "alreadyTraversed": true,
@@ -1144,30 +1144,11 @@
                   }
                 ],
                 "properties": {
-                  "size": "1619",
+                  "size": "1590",
                   "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
+                  "modified": "2025-06-27T07:22:02.121Z",
                   "path": "src/output/mermaid.ts",
-                  "lines": "43"
-                },
-                "level": 3
-              },
-              {
-                "id": "80791b3ae7002cb88c246876d9faa8f8",
-                "uniqueId": "e0e73b577bbe4937ba9fd0fa4fd8ae66",
-                "import": "http",
-                "extension": "",
-                "alreadyTraversed": false,
-                "type": "Unknown",
-                "moduleName": "http",
-                "resolved": false,
-                "imports": [],
-                "properties": {
-                  "size": "1619",
-                  "created": "2025-01-31T17:43:42.074Z",
-                  "modified": "2025-06-23T16:41:43.566Z",
-                  "path": "src/output/mermaid.ts",
-                  "lines": "43"
+                  "lines": "42"
                 },
                 "level": 3
               }

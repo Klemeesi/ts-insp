@@ -5,11 +5,16 @@ import * as path from "path";
 const getTsConfigFilePath = (initialFilePath: string) => {
     let currentDir = path.dirname(initialFilePath);
     while (currentDir !== "/") {
+        console.log("FOOBAR", currentDir);
         const tsConfigFilePath = path.join(currentDir, "tsconfig.json");
         if (fs.existsSync(tsConfigFilePath)) {
             return { tsConfigFilePath, tsConfigPath: currentDir };
         }
         currentDir = path.dirname(currentDir);
+
+        if (currentDir !== ".") {
+            break;
+        }
     }
     return {};
 };
