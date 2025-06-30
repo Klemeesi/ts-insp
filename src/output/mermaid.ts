@@ -5,7 +5,7 @@ import { mermaidRenderer } from "../treeToMermaid/renderer";
 import { getDefaultProcessors } from "../treeToMermaid/defaultProcessors";
 import { MermaidToken } from "../treeToMermaid/types";
 import { runMermaidCli } from "../treeToMermaid/cliWrapper";
-import { getMermaidGroupNamePolicy, getMermaidNodeNamePolicy } from "./mermaidPolicies";
+import { getMermaidGroupNamePolicy, getMermaidLinkPolicy, getMermaidNodeNamePolicy } from "./mermaidPolicies";
 
 const defaultOptions: MermaidFormatOptions = {
     dir: "LR",
@@ -21,6 +21,7 @@ export const mermaidOutputPlugin = (options: MermaidFormatOptions) => async (imp
     opt.policies = {
         subgraph: getMermaidGroupNamePolicy(opt.policies?.subgraph),
         nodeName: getMermaidNodeNamePolicy(opt.policies?.nodeName),
+        link: getMermaidLinkPolicy(opt),
     };
 
     const processor = mermaidRenderer.create<ResultTreeNode>();

@@ -43,13 +43,13 @@ a7c2c5aebf261da9ed0ec6111e63d2d3["defaultProcessors"]
 45fc45c3c3ddc9a6a05b8fa52cbd234c["cliWrapper"]
 end
 root root_97436aa4caaa9fe6c1f7fbda54bea5c5@--> 97436aa4caaa9fe6c1f7fbda54bea5c5
-src src_node_modules@--> node_modules
+src src_node_modules@~~~ node_modules
 97436aa4caaa9fe6c1f7fbda54bea5c5 97436aa4caaa9fe6c1f7fbda54bea5c5_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 src src_helpers@--> helpers
-helpers helpers_node_modules@--> node_modules
+helpers helpers_node_modules@~~~ node_modules
 helpers helpers_src@--> src
 root root_6eabf6036c1cd8aaca6f56d1c8fb63e0@--> 6eabf6036c1cd8aaca6f56d1c8fb63e0
-cli cli_node_modules@--> node_modules
+cli cli_node_modules@~~~ node_modules
 cli cli_src@--> src
 cli cli_helpers@--> helpers
 6eabf6036c1cd8aaca6f56d1c8fb63e0 6eabf6036c1cd8aaca6f56d1c8fb63e0_e414dc75f5dcbe2827116d5050a8c6fa@--> e414dc75f5dcbe2827116d5050a8c6fa
@@ -58,7 +58,7 @@ root root_1fe092282d1f404a83c6dfaa449427eb@--> 1fe092282d1f404a83c6dfaa449427eb
 1fe092282d1f404a83c6dfaa449427eb 1fe092282d1f404a83c6dfaa449427eb_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 src src_output@--> output
 output output_src@--> src
-output output_node_modules@--> node_modules
+output output_node_modules@~~~ node_modules
 output output_treeToMermaid@--> treeToMermaid
 treeToMermaid treeToMermaid_helpers@--> helpers
 5fc5c7f77b9094999991e4a88935bbc8 5fc5c7f77b9094999991e4a88935bbc8_ba94a21f1b99f22bcbee495161be6017@--> ba94a21f1b99f22bcbee495161be6017
@@ -66,7 +66,7 @@ ba94a21f1b99f22bcbee495161be6017 ba94a21f1b99f22bcbee495161be6017_43b2c294408e9a
 5fc5c7f77b9094999991e4a88935bbc8 5fc5c7f77b9094999991e4a88935bbc8_43b2c294408e9aca405ff8cc04120742@--> 43b2c294408e9aca405ff8cc04120742
 treeToMermaid treeToMermaid_src@--> src
 a7c2c5aebf261da9ed0ec6111e63d2d3 a7c2c5aebf261da9ed0ec6111e63d2d3_43b2c294408e9aca405ff8cc04120742@--> 43b2c294408e9aca405ff8cc04120742
-treeToMermaid treeToMermaid_node_modules@--> node_modules
+treeToMermaid treeToMermaid_node_modules@~~~ node_modules
 3c9aeb9e1a663982bf18432623f081c0 3c9aeb9e1a663982bf18432623f081c0_02be73a92c1e73068fee3f6a5570552a@--> 02be73a92c1e73068fee3f6a5570552a
 
 ```

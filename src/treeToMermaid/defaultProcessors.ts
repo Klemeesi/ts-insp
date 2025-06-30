@@ -4,6 +4,10 @@ import { MermaidProcessor } from "./types";
 export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, MermaidProcessor<ResultTreeNode>> => {
     const getSubgraphName = opt.policies?.subgraph as (node: ResultTreeNode) => string | undefined;
     const getNodeName = opt.policies?.nodeName as (node: ResultTreeNode) => string;
+    const getLink = opt.policies?.link as (
+        to?: ResultTreeNode,
+        from?: ResultTreeNode
+    ) => { id: string; startId: string; endId: string; linkType: string } | undefined;
 
     if (opt.chartType === "tree") {
         return {
@@ -15,16 +19,7 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
                 id: current?.uniqueId!,
                 name: getNodeName ? getNodeName(current!) : current?.moduleName,
             }),
-            link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
-                if (current && parent) {
-                    return {
-                        id: `${parent?.uniqueId}_${current?.uniqueId}`,
-                        startId: parent?.uniqueId,
-                        endId: current?.uniqueId,
-                        linkType: current.type === "Source file" ? "thick" : current.type === "Node module" ? "arrow" : "dotted",
-                    };
-                }
-            },
+            link: getLink,
             config: () => ({
                 id: "config",
                 theme: "default",
@@ -47,31 +42,7 @@ export const getDefaultProcessors = (opt: MermaidFormatOptions): Record<string, 
                 groupName: getSubgraphName ? getSubgraphName(current) : undefined,
             };
         },
-        link: (current?: ResultTreeNode, parent?: ResultTreeNode) => {
-            if (!current || !parent) {
-                return undefined;
-            }
-            const startGroup = getSubgraphName ? getSubgraphName(parent) : undefined;
-            const endGroup = getSubgraphName ? getSubgraphName(current) : undefined;
-            let startId;
-            let endId;
-            if (startGroup === endGroup || !startGroup) {
-                startId = parent.id;
-                endId = current.id;
-            } else if (startGroup !== endGroup) {
-                startId = startGroup;
-                endId = endGroup;
-            }
-
-            if (startId && endId) {
-                return {
-                    id: `${startId}_${endId}`,
-                    startId,
-                    endId,
-                    linkType: "arrow",
-                };
-            }
-        },
+        link: getLink,
         config: () => ({
             id: "config",
             theme: "default",

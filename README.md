@@ -104,6 +104,8 @@ const config: Partial<InspOptions> = {
                 subgraph: "default",
                 // How node names are generated. Options: "default" or a function that returns a string
                 nodeName: "default",
+                // How links are generated. Options: "default" or a function that returns an object
+                link: "default"
             },
             // Options that are used if you want to export
             cliOptions: {

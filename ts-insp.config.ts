@@ -25,6 +25,7 @@ const config: Partial<InspOptions> = {
             policies: {
                 subgraph: "default",
                 nodeName: "default",
+                link: "default",
             },
             cliOptions: {
                 mmdcPathToken: "{mmdc}",
