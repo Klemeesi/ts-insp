@@ -51,6 +51,9 @@ export interface JsonFormatOptions {
 
 export type MermaidSubgraphPolicy = "none" | "default" | ((node: ResultTreeNode) => string | undefined);
 export type MermaidNodeNamePolicy = "default" | ((node: ResultTreeNode) => string);
+export type MermaidLinkPolicy =
+    | "default"
+    | ((to?: ResultTreeNode, from?: ResultTreeNode) => { id: string; startId: string; endId: string; linkType: string } | undefined);
 
 export interface MermaidFormatOptions extends JsonFormatOptions {
     dir?: "TB" | "BT" | "LR" | "RL";
@@ -59,6 +62,7 @@ export interface MermaidFormatOptions extends JsonFormatOptions {
     policies?: {
         subgraph?: MermaidSubgraphPolicy;
         nodeName?: MermaidNodeNamePolicy;
+        link?: MermaidLinkPolicy;
     };
 }
 
