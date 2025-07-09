@@ -2,9 +2,11 @@ import path from "path";
 import type { InspOptions } from "../types";
 import * as ts from "typescript";
 import fs from "fs";
+import { getCompilerOptions, getPackageJson } from "./projectOptions";
 
-// Supports only javascript files
 export const getSettingsFromConfigFile = (filePath: string): Partial<InspOptions> => {
+    const packageJson = getPackageJson(filePath);
+    const compilerOptions = getCompilerOptions(filePath);
     const extension = filePath.split(".").pop();
     let contents = undefined;
     if (extension === "js" || extension === "mjs") {
@@ -16,8 +18,8 @@ export const getSettingsFromConfigFile = (filePath: string): Partial<InspOptions
 
         const tsSrc = fs.readFileSync(inputFilePath, "utf-8");
         const transpiledResult = ts.transpileModule(tsSrc, {
-            compilerOptions: {
-                module: ts.ModuleKind.CommonJS,
+            compilerOptions: compilerOptions?.options ?? {
+                module: packageJson?.type === "module" ? ts.ModuleKind.ESNext : ts.ModuleKind.CommonJS,
             },
         });
         const output = transpiledResult.outputText;

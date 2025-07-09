@@ -21,7 +21,7 @@ d6fe1d0be6347b8ef2427fa629c04485["path"]
 end
 subgraph helpers
 89368ad2b907401c75ac83d0c8f51150["importParser"]
-333f22f566da67b693a352a010116a59["tsConfig"]
+351b0e6945d7a40a2f10c3f7099d2659["projectOptions"]
 3fb28eb5baf18d345d0ad93d7e341109["configFileParser"]
 ef9f86388078e0560db65509eefba48d["index"]
 end
@@ -52,8 +52,8 @@ root root_6eabf6036c1cd8aaca6f56d1c8fb63e0@--> 6eabf6036c1cd8aaca6f56d1c8fb63e0
 cli cli_node_modules@~~~ node_modules
 cli cli_src@--> src
 cli cli_helpers@--> helpers
+3fb28eb5baf18d345d0ad93d7e341109 3fb28eb5baf18d345d0ad93d7e341109_351b0e6945d7a40a2f10c3f7099d2659@--> 351b0e6945d7a40a2f10c3f7099d2659
 6eabf6036c1cd8aaca6f56d1c8fb63e0 6eabf6036c1cd8aaca6f56d1c8fb63e0_e414dc75f5dcbe2827116d5050a8c6fa@--> e414dc75f5dcbe2827116d5050a8c6fa
-root root_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 root root_1fe092282d1f404a83c6dfaa449427eb@--> 1fe092282d1f404a83c6dfaa449427eb
 1fe092282d1f404a83c6dfaa449427eb 1fe092282d1f404a83c6dfaa449427eb_152b731d9960fa8a94d223c73a70437c@--> 152b731d9960fa8a94d223c73a70437c
 src src_output@--> output
