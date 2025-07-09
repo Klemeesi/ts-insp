@@ -1,6 +1,6 @@
 import { program } from "commander";
 import type { InspOptions, MainOptions } from "../types";
-import { getCompilerOptions } from "../helpers/tsConfig";
+import { getCompilerOptions } from "../helpers/projectOptions";
 import { getSettingsFromConfigFile } from "../helpers/configFileParser";
 import { CommandLineParams, commandLineToInspOptions, mergeOptions, validateInspOptions } from "./optionMerge";
 
@@ -33,7 +33,7 @@ export const getConfig = (): MainOptions => {
 
     const compilerOptions = getCompilerOptions(inspOptions.file);
     if (!compilerOptions) {
-        !!inspOptions.verbose && log("Failed to read tsconfig.json for file ${inspOptions.file}");
+        !!inspOptions.verbose && log(`Failed to read tsconfig.json for file ${inspOptions.file}`);
     } else {
         !!inspOptions.verbose && log("Using tsconfig.json from: ", compilerOptions.tsConfigFilePath);
     }
