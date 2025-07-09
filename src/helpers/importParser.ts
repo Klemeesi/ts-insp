@@ -114,7 +114,7 @@ export const getImportsFromNode = (options: MainOptions, filePath: string, node:
                     resolved: !!paths,
                     absolutePath: paths?.absolutePath,
                     imports: [],
-                    properties: getProperties(filePath),
+                    properties: paths?.absolutePath ? getProperties(paths?.absolutePath) : {},
                 },
             ];
         }
